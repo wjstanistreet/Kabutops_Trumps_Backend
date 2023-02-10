@@ -1,11 +1,10 @@
 package com.example.kabutops_trumps.components;
 
+import com.example.kabutops_trumps.models.Account;
 import com.example.kabutops_trumps.models.Card;
+import com.example.kabutops_trumps.models.Ownership;
 import com.example.kabutops_trumps.models.PokeType;
-import com.example.kabutops_trumps.repositories.AccountRepository;
-import com.example.kabutops_trumps.repositories.CardRepository;
-import com.example.kabutops_trumps.repositories.GameRepository;
-import com.example.kabutops_trumps.repositories.TypeRepository;
+import com.example.kabutops_trumps.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -28,6 +27,9 @@ public class DataLoader implements ApplicationRunner {
 
     @Autowired
     CardRepository cardRepository;
+
+    @Autowired
+    OwnershipRepository ownershipRepository;
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
@@ -73,6 +75,14 @@ public class DataLoader implements ApplicationRunner {
         Card garchomp = new Card("Garchomp", "https://wallpapercave.com/wp/wp8659080.png", "Dragon", 108, 130, 95, 80, 85,102);
 //
         cardRepository.save(garchomp);
+
+        Account cynthia = new Account("Cynthia", "IChooseYouGible");
+        accountRepository.save(cynthia);
+
+        Ownership cynthiaGarchomp = new Ownership(cynthia, garchomp);
+        ownershipRepository.save(cynthiaGarchomp);
+
+
     }
 
 }
