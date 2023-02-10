@@ -14,6 +14,10 @@ public class GameService {
     @Autowired
     GameRepository gameRepository;
 
+    public List<Game> getAllGames() {
+        return gameRepository.findAll();
+    }
+
     public Game startNewGame(String accountA, String accountB){
         Game game = new Game(accountA, accountB);
         gameRepository.save(game);
@@ -67,5 +71,6 @@ public class GameService {
         }
         return currentGame;
     }
+
 
 }
