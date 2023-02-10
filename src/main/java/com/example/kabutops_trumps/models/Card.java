@@ -26,8 +26,10 @@ public class Card {
     private String type; // may change this to Type Class later on
 
 
-    @Column(name = "stats")
-    private HashMap<String, Integer> stats;
+//    @Column(name = "stats")
+//    private HashMap<String, Integer> stats;
+
+
 
     @ManyToMany(mappedBy = "cardsOwned")
     @JsonIgnoreProperties({"cardsOwned"})
@@ -38,11 +40,11 @@ public class Card {
     private ArrayList<Account> decksThatOwnCards;
 
 
-    public Card(String name, String imgUrl, String type, HashMap<String, Integer> stats) {
+    public Card(String name, String imgUrl, String type ) {
         this.name = name;
         this.imgUrl = imgUrl;
         this.type = type;
-        this.stats = stats;
+
     }
 
     public Card() {};
@@ -79,11 +81,11 @@ public class Card {
         this.type = type;
     }
 
-    public HashMap<String, Integer> getStats() {
-        return stats;
-    }
-
-    public void setStats(HashMap<String, Integer> stats) {
-        this.stats = stats;
-    }
+//    public HashMap<String, Integer> getStats() {
+//        return stats;
+//    }
+//
+//    public void setStats(HashMap<String, Integer> stats) {
+//        this.stats = stats;
+//    }
 }

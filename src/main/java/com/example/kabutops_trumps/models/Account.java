@@ -7,6 +7,7 @@ import org.springframework.jmx.export.annotation.ManagedAttribute;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
+@Entity(name = "accounts")
 public class Account {
 
     @Id
