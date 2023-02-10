@@ -1,5 +1,6 @@
 package com.example.kabutops_trumps.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 import java.lang.reflect.Array;
@@ -28,7 +29,13 @@ public class Card {
     @Column(name = "stats")
     private HashMap<String, Integer> stats;
 
-    private List<Account> card;
+    @ManyToMany(mappedBy = "cardsOwned")
+    @JsonIgnoreProperties({"cardsOwned"})
+    private ArrayList<Account> accountsThatOwnCards;
+
+    @ManyToMany(mappedBy = "deck")
+    @JsonIgnoreProperties({"deck"})
+    private ArrayList<Account> decksThatOwnCards;
 
 
     public Card(String name, String imgUrl, String type, HashMap<String, Integer> stats) {
