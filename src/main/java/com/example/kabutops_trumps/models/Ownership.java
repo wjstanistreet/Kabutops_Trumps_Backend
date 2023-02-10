@@ -54,4 +54,12 @@ public class Ownership {
     public void setCard(Card card) {
         this.card = card;
     }
+
+    public boolean isInDeck() {
+        return inDeck;
+    }
+
+    public void setInDeck(boolean inDeck) {
+        this.inDeck = inDeck;
+    }
 }

@@ -36,7 +36,7 @@ public class Account {
 //    private ArrayList<Card> cardsOwned;
 
     @OneToMany(mappedBy = "account")
-    @JsonIgnoreProperties({"reader"})
+    @JsonIgnoreProperties({"account"})
     private List<Ownership> ownerships;
 
     @Column(name = "spriteNumber")

@@ -73,14 +73,18 @@ public class DataLoader implements ApplicationRunner {
         typeRepository.save(fairy);
 //
         Card garchomp = new Card("Garchomp", "https://wallpapercave.com/wp/wp8659080.png", "Dragon", 108, 130, 95, 80, 85,102);
+        Card lucario = new Card("Lucario", "https://image-1.uhdpaper.com/wallpaper/lucario-pokemon-phone-wallpaper-hd-uhdpaper.com-466@1@j.jpg", "Fighting", 70, 110, 70, 115, 70,90);
 //
         cardRepository.save(garchomp);
+        cardRepository.save(lucario);
 
         Account cynthia = new Account("Cynthia", "IChooseYouGible");
         accountRepository.save(cynthia);
 
         Ownership cynthiaGarchomp = new Ownership(cynthia, garchomp);
+        Ownership cynthiaLucario = new Ownership(cynthia, lucario);
         ownershipRepository.save(cynthiaGarchomp);
+        ownershipRepository.save(cynthiaLucario);
 
 
     }
