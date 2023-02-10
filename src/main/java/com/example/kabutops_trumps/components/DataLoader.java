@@ -68,7 +68,7 @@ public class DataLoader implements ApplicationRunner {
 //
         Card garchomp = new Card("Garchomp", "https://wallpapercave.com/wp/wp8659080.png", "Dragon", 108, 130, 95, 80, 85,102);
 //
-        //cardRepository.save(garchomp);
+        cardRepository.save(garchomp);
     }
 
 }

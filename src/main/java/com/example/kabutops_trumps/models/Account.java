@@ -6,6 +6,7 @@ import org.springframework.jmx.export.annotation.ManagedAttribute;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.List;
 
 @Entity(name = "accounts")
 public class Account {
@@ -28,12 +29,16 @@ public class Account {
     private int wins;
 
 
-    @ManyToMany
-    @JoinTable(name = "accounts_cards",
-    joinColumns = @JoinColumn(name = "account_id"),
-    inverseJoinColumns = @JoinColumn(name ="card_id"))
-    @JsonIgnoreProperties({"accountsThatOwnCards"})
-    private ArrayList<Card> cardsOwned;
+//    @ManyToMany
+//    @JoinTable(name = "accounts_cards",
+//    joinColumns = @JoinColumn(name = "account_id"),
+//    inverseJoinColumns = @JoinColumn(name ="card_id"))
+//    @JsonIgnoreProperties({"accountsThatOwnCards"})
+//    private ArrayList<Card> cardsOwned;
+
+    @OneToMany(mappedBy = "account")
+    @JsonIgnoreProperties({"reader"})
+    private List<Ownership> ownerships;
 
 
     @Column(name = "spriteNumber")
@@ -42,12 +47,12 @@ public class Account {
     @Column(name = "trainerTitle")
     private String trainerTitle;
 
-    @ManyToMany
-    @JoinTable(name = "accounts_decks",
-    joinColumns = @JoinColumn(name = "account_id"),
-    inverseJoinColumns = @JoinColumn(name = "card_id"))
-    @JsonIgnoreProperties({"decksThatOwnCards"})
-    private ArrayList<Card> deck;
+//    @ManyToMany
+//    @JoinTable(name = "accounts_decks",
+//    joinColumns = @JoinColumn(name = "account_id"),
+//    inverseJoinColumns = @JoinColumn(name = "card_id"))
+//    @JsonIgnoreProperties({"decksThatOwnCards"})
+//    private ArrayList<Card> deck;
 
 
     @Column(name = "isComputer")
@@ -58,10 +63,10 @@ public class Account {
         this.password = password;
         this.gamesPlayed = 0;
         this.wins = 0;
-        this.cardsOwned = new ArrayList<Card>();
+        this.ownerships = new ArrayList<>();
         this.spriteNumber = 0;
         this.trainerTitle = "Trainer";
-        this.deck = new ArrayList<Card>();
+        //this.deck = new ArrayList<Card>();
         this.isComputer = false;
     }
 
@@ -109,12 +114,12 @@ public class Account {
         this.wins = wins;
     }
 
-    public ArrayList<Card> getCardsOwned() {
-        return cardsOwned;
+    public List<Ownership> getOwnerships() {
+        return ownerships;
     }
 
-    public void setCardsOwned(ArrayList<Card> cardsOwned) {
-        this.cardsOwned = cardsOwned;
+    public void setOwnerships(List<Ownership> ownerships) {
+        this.ownerships = ownerships;
     }
 
     public int getSpriteNumber() {
@@ -133,13 +138,13 @@ public class Account {
         this.trainerTitle = trainerTitle;
     }
 
-    public ArrayList<Card> getDeck() {
-        return deck;
-    }
-
-    public void setDeck(ArrayList<Card> deck) {
-        this.deck = deck;
-    }
+//    public ArrayList<Card> getDeck() {
+//        return deck;
+//    }
+//
+//    public void setDeck(ArrayList<Card> deck) {
+//        this.deck = deck;
+//    }
 
     public boolean isComputer() {
         return isComputer;
