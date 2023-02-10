@@ -1,12 +1,24 @@
 package com.example.kabutops_trumps.models;
 
+import jakarta.persistence.*;
+
 import java.util.ArrayList;
 
+@Entity(name = "types")
 public class Type {
 
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "strongAgainst")
     private ArrayList<String> strongAgainst;
+
+    @Column(name = "weakAgainst")
     private ArrayList<String> weakAgainst;
 
     public Type(String name, ArrayList<String> strongAgainst, ArrayList<String> weakAgainst) {
