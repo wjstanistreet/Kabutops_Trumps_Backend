@@ -1,19 +1,53 @@
 package com.example.kabutops_trumps.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import jakarta.persistence.*;
+import org.springframework.jmx.export.annotation.ManagedAttribute;
+
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Account {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
+    @Column(name = "username")
     private String username;
+
+    @Column(name = "password")
     private String password;
+
+    @Column(name = "gamesPlayed")
     private int gamesPlayed;
+
+
+    @Column(name = "wins")
     private int wins;
+
+
+    @ManyToMany
+    @JoinTable(name = "accounts_cards",
+    joinColumns = @JoinColumn(name = "account_id"),
+    inverseJoinColumns = @JoinColumn(name ="card_id"))
     private ArrayList<Card> cardsOwned;
+
+
+    @Column(name = "spriteNumber")
     private int spriteNumber;
+
+    @Column(name = "trainerTitle")
     private String trainerTitle;
+
+    @ManyToMany
+    @JoinTable(name = "accounts_decks",
+    joinColumns = @JoinColumn(name = "account_id"),
+    inverseJoinColumns = @JoinColumn(name = "card_id"))
     private ArrayList<Card> deck;
+
+
+    @Column(name = "isComputer")
     private boolean isComputer;
 
     public Account(String username, String password) {

@@ -6,8 +6,7 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-@Entity
-@Table(name = "Cards")
+@Entity(name = "cards")
 public class Card {
 
 
