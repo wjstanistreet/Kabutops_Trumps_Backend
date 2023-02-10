@@ -1,17 +1,36 @@
 package com.example.kabutops_trumps.models;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
+@Entity(name = "games")
 public class Game {
 
+
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
+
+    @Column(name = "playerA")
     private String playerA;
+
+    @Column(name = "playerB")
     private String playerB;
+
+    @Column(name = "scoreA")
     private int scoreA;
+
+    @Column(name = "scoreB")
     private int scoreB;
+
+    @Column(name = "roundNumber")
     private int roundNumber;
+
+    @Column(name = "playerATurn")
     private boolean playerATurn;
+
+    @Column(name = "winner")
     private String winner;
 
     public Game(String playerA, String playerB) {

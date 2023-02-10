@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 @Entity(name = "cards")
 public class Card {
@@ -26,6 +27,9 @@ public class Card {
 
     @Column(name = "stats")
     private HashMap<String, Integer> stats;
+
+    private List<Account> card;
+
 
     public Card(String name, String imgUrl, String type, HashMap<String, Integer> stats) {
         this.name = name;
