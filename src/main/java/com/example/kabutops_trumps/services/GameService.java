@@ -69,6 +69,7 @@ public class GameService {
                 }
             }
         }
+        gameRepository.save(currentGame);
         return currentGame;
     }
 
