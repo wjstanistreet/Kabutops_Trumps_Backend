@@ -55,16 +55,16 @@ public class Account {
     @Column(name = "isComputer")
     private boolean isComputer;
 
-    public Account(String username, String password) {
+    public Account(String username, String password, String trainerTitle, boolean isComputer ) {
         this.username = username;
         this.password = password;
         this.gamesPlayed = 0;
         this.wins = 0;
         this.ownerships = new ArrayList<>();
         this.spriteNumber = 0;
-        this.trainerTitle = "Trainer";
+        this.trainerTitle = trainerTitle;
         //this.deck = new ArrayList<Card>();
-        this.isComputer = false;
+        this.isComputer = isComputer;
     }
 
     public Account() {};

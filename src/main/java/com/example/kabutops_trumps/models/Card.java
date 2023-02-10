@@ -31,11 +31,11 @@ public class Card {
     @Column(name ="attack")
     private int attack;
 
-    @Column(name ="specialAttack")
-    private int specialAttack;
-
     @Column(name ="defence")
     private int defence;
+
+    @Column(name ="specialAttack")
+    private int specialAttack;
 
     @Column(name ="specialDefence")
     private int specialDefence;

@@ -93,24 +93,24 @@ public class DataLoader implements ApplicationRunner {
         cardRepository.save(roserade);
         cardRepository.save(togekiss);
 
-        Account ash = new Account("Ash","ichooseyouPikachu");
+        Account ash = new Account("Ash","ichooseyouPikachu", "Trainer", false);
         accountRepository.save(ash);
-        Account cynthia = new Account("Cynthia", "IChooseYouGible");
+        Account cynthia = new Account("Cynthia", "IChooseYouGible", "Champion", true);
         accountRepository.save(cynthia);
 
-        Ownership cynthiaGarchomp = new Ownership(cynthia, garchomp);
-        Ownership cynthiaLucario = new Ownership(cynthia, lucario);
-        Ownership cynthiaRoserade = new Ownership(cynthia, roserade);
-        Ownership cynthiaSpiritomb = new Ownership(cynthia, spiritomb);
-        Ownership cynthiaMilotic = new Ownership(cynthia, milotic);
-        Ownership cynthiaTogekiss = new Ownership(cynthia, togekiss);
+        Ownership cynthiaGarchomp = new Ownership(cynthia, garchomp, true);
+        Ownership cynthiaLucario = new Ownership(cynthia, lucario, true);
+        Ownership cynthiaRoserade = new Ownership(cynthia, roserade, true);
+        Ownership cynthiaSpiritomb = new Ownership(cynthia, spiritomb, true);
+        Ownership cynthiaMilotic = new Ownership(cynthia, milotic, true);
+        Ownership cynthiaTogekiss = new Ownership(cynthia, togekiss, true);
 
-        Ownership ashGarchomp = new Ownership(ash, garchomp);
-        Ownership ashLucario = new Ownership(ash, lucario);
-        Ownership ashRoserade = new Ownership(ash, roserade);
-        Ownership ashSpiritomb = new Ownership(ash, spiritomb);
-        Ownership ashMilotic = new Ownership(ash, milotic);
-        Ownership ashTogekiss = new Ownership(ash, togekiss);
+        Ownership ashGarchomp = new Ownership(ash, garchomp, true);
+        Ownership ashLucario = new Ownership(ash, lucario, true);
+        Ownership ashRoserade = new Ownership(ash, roserade, true);
+        Ownership ashSpiritomb = new Ownership(ash, spiritomb, true);
+        Ownership ashMilotic = new Ownership(ash, milotic, true);
+        Ownership ashTogekiss = new Ownership(ash, togekiss, true);
 
         ownershipRepository.save(cynthiaGarchomp);
         ownershipRepository.save(cynthiaLucario);

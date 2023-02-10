@@ -23,10 +23,10 @@ public class Ownership {
     @JoinColumn(name = "card_id")
     private Card card;
 
-    public Ownership(Account account, Card card) {
+    public Ownership(Account account, Card card, boolean inDeck) {
         this.account = account;
         this.card = card;
-        this.inDeck = false;
+        this.inDeck = inDeck;
     }
 
     public Ownership(){}
