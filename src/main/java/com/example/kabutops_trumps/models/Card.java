@@ -23,7 +23,7 @@ public class Card {
     private String imgUrl;
 
     @ManyToOne
-    @JsonIgnoreProperties({"cards"})
+    @JsonIgnoreProperties({"cardList"})
     @JoinColumn(name = "type_id")
     private Type type; // may change this to Type Class later on
 
