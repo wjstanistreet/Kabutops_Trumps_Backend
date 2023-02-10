@@ -1,14 +1,13 @@
 package com.example.kabutops_trumps.models;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+@Entity
+@Table(name = "Cards")
 public class Card {
 
 
