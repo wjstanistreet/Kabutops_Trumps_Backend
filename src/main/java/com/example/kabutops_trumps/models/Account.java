@@ -32,6 +32,7 @@ public class Account {
     @JoinTable(name = "accounts_cards",
     joinColumns = @JoinColumn(name = "account_id"),
     inverseJoinColumns = @JoinColumn(name ="card_id"))
+    @JsonIgnoreProperties({"accountsThatOwnCards"})
     private ArrayList<Card> cardsOwned;
 
 
@@ -45,6 +46,7 @@ public class Account {
     @JoinTable(name = "accounts_decks",
     joinColumns = @JoinColumn(name = "account_id"),
     inverseJoinColumns = @JoinColumn(name = "card_id"))
+    @JsonIgnoreProperties({"decksThatOwnCards"})
     private ArrayList<Card> deck;
 
 

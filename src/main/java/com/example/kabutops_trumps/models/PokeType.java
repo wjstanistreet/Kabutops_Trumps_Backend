@@ -4,8 +4,8 @@ import jakarta.persistence.*;
 
 import java.util.ArrayList;
 
-@Entity(name = "types")
-public class Type {
+@Entity(name = "pokeTypes")
+public class PokeType {
 
 
     @Id
@@ -21,13 +21,13 @@ public class Type {
     @Column(name = "weakAgainst")
     private ArrayList<String> weakAgainst;
 
-    public Type(String name, ArrayList<String> strongAgainst, ArrayList<String> weakAgainst) {
+    public PokeType(String name, ArrayList<String> strongAgainst, ArrayList<String> weakAgainst) {
         this.name = name;
         this.strongAgainst = strongAgainst;
         this.weakAgainst = weakAgainst;
     }
 
-    public Type() {};
+    public PokeType() {};
 
     public long getId() {
         return id;
