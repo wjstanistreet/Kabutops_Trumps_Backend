@@ -45,11 +45,11 @@ public class Card {
 
     @ManyToMany(mappedBy = "cardsOwned")
     @JsonIgnoreProperties({"cardsOwned"})
-    private ArrayList<Account> accountsThatOwnCards;
+    private List<Account> accountsThatOwnCards;
 
     @ManyToMany(mappedBy = "deck")
     @JsonIgnoreProperties({"deck"})
-    private ArrayList<Account> decksThatOwnCards;
+    private List<Account> decksThatOwnCards;
 
 
     public Card(String name, String imgUrl, String type, int hp, int attack, int defence, int specialAttack, int specialDefence, int speed) {
@@ -148,19 +148,19 @@ public class Card {
         this.speed = speed;
     }
 
-    public ArrayList<Account> getAccountsThatOwnCards() {
+    public List<Account> getAccountsThatOwnCards() {
         return accountsThatOwnCards;
     }
 
-    public void setAccountsThatOwnCards(ArrayList<Account> accountsThatOwnCards) {
+    public void setAccountsThatOwnCards(List<Account> accountsThatOwnCards) {
         this.accountsThatOwnCards = accountsThatOwnCards;
     }
 
-    public ArrayList<Account> getDecksThatOwnCards() {
+    public List<Account> getDecksThatOwnCards() {
         return decksThatOwnCards;
     }
 
-    public void setDecksThatOwnCards(ArrayList<Account> decksThatOwnCards) {
+    public void setDecksThatOwnCards(List<Account> decksThatOwnCards) {
         this.decksThatOwnCards = decksThatOwnCards;
     }
 }

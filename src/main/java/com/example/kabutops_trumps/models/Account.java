@@ -6,6 +6,7 @@ import org.springframework.jmx.export.annotation.ManagedAttribute;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.List;
 
 @Entity(name = "accounts")
 public class Account {
@@ -33,7 +34,7 @@ public class Account {
     joinColumns = @JoinColumn(name = "account_id"),
     inverseJoinColumns = @JoinColumn(name ="card_id"))
     @JsonIgnoreProperties({"accountsThatOwnCards"})
-    private ArrayList<Card> cardsOwned;
+    private List<Card> cardsOwned;
 
 
     @Column(name = "spriteNumber")
@@ -47,7 +48,7 @@ public class Account {
     joinColumns = @JoinColumn(name = "account_id"),
     inverseJoinColumns = @JoinColumn(name = "card_id"))
     @JsonIgnoreProperties({"decksThatOwnCards"})
-    private ArrayList<Card> deck;
+    private List<Card> deck;
 
 
     @Column(name = "isComputer")
@@ -109,11 +110,11 @@ public class Account {
         this.wins = wins;
     }
 
-    public ArrayList<Card> getCardsOwned() {
+    public List<Card> getCardsOwned() {
         return cardsOwned;
     }
 
-    public void setCardsOwned(ArrayList<Card> cardsOwned) {
+    public void setCardsOwned(List<Card> cardsOwned) {
         this.cardsOwned = cardsOwned;
     }
 
@@ -133,11 +134,11 @@ public class Account {
         this.trainerTitle = trainerTitle;
     }
 
-    public ArrayList<Card> getDeck() {
+    public List<Card> getDeck() {
         return deck;
     }
 
-    public void setDeck(ArrayList<Card> deck) {
+    public void setDeck(List<Card> deck) {
         this.deck = deck;
     }
 
