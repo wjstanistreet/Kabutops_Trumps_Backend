@@ -22,8 +22,10 @@ public class Card {
     @Column(name = "imgUrl")
     private String imgUrl;
 
-    @Column(name = "type")
-    private String type; // may change this to Type Class later on
+    @ManyToOne
+    @JsonIgnoreProperties({"cards"})
+    @JoinColumn(name = "type_id")
+    private Type type; // may change this to Type Class later on
 
     @Column(name ="hp")
     private int hp;
@@ -56,7 +58,7 @@ public class Card {
 //    private ArrayList<Account> decksThatOwnCards;
 
 
-    public Card(String name, String imgUrl, String type, int hp, int attack, int defence, int specialAttack, int specialDefence, int speed) {
+    public Card(String name, String imgUrl, Type type, int hp, int attack, int defence, int specialAttack, int specialDefence, int speed) {
         this.name = name;
         this.imgUrl = imgUrl;
         this.type = type;
@@ -96,11 +98,11 @@ public class Card {
         this.imgUrl = imgUrl;
     }
 
-    public String getType() {
+    public Type getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(Type type) {
         this.type = type;
     }
 

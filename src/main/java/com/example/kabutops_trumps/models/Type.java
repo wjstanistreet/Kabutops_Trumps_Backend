@@ -1,12 +1,13 @@
 package com.example.kabutops_trumps.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Entity(name = "pokeTypes")
 public class Type {
-
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,6 +21,10 @@ public class Type {
 
     @Column(name = "weakAgainst")
     private ArrayList<String> weakAgainst;
+
+    @OneToMany(mappedBy = "type")
+    @JsonIgnoreProperties({"type"})
+    private List<Card> cardList;
 
     public Type(String name, ArrayList<String> strongAgainst, ArrayList<String> weakAgainst) {
         this.name = name;
