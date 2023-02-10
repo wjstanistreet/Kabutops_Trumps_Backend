@@ -75,24 +75,56 @@ public class DataLoader implements ApplicationRunner {
         typeRepository.save(dragon);
         typeRepository.save(dark);
         typeRepository.save(fairy);
-//
+
         Card garchomp = new Card("Garchomp", "https://wallpapercave.com/wp/wp8659080.png", "Dragon", 108, 130, 95, 80, 85,102);
+        Card milotic = new Card("Milotic", "https://i.pinimg.com/originals/7a/40/a3/7a40a3fee27f2e18947994b6e2363451.png", "Water", 95, 60, 79, 100, 125,81);
         Card lucario = new Card("Lucario", "https://image-1.uhdpaper.com/wallpaper/lucario-pokemon-phone-wallpaper-hd-uhdpaper.com-466@1@j.jpg", "Fighting", 70, 110, 70, 115, 70,90);
-//
+        Card roserade = new Card("Roserade", "https://i.pinimg.com/originals/11/4f/cf/114fcf1aeb43384bfb5055bda8d0849b.png", "Grass", 60, 70, 65, 125, 105,90);
+        Card spiritomb = new Card("Spiritomb", "https://wallpapercave.com/wp/wp3186974.jpg", "Ghost", 50, 92, 108, 92, 108,35);
+        Card togekiss = new Card("Togekiss", "https://e0.pxfuel.com/wallpapers/586/880/desktop-wallpaper-togekiss-pokemon-fairy-type-pokemon-cute-pokemon.jpg", "Fairy", 85, 50, 95, 120, 115,80);
+
+        Card pikachu = new Card("Pikachu", "https://e0.pxfuel.com/wallpapers/586/880/desktop-wallpaper-togekiss-pokemon-fairy-type-pokemon-cute-pokemon.jpg", "Fairy", 85, 50, 95, 120, 115,80);
+
+
         cardRepository.save(garchomp);
+        cardRepository.save(milotic);
         cardRepository.save(lucario);
+        cardRepository.save(spiritomb);
+        cardRepository.save(roserade);
+        cardRepository.save(togekiss);
 
         Account ash = new Account("Ash","ichooseyouPikachu");
         accountRepository.save(ash);
-
-
         Account cynthia = new Account("Cynthia", "IChooseYouGible");
         accountRepository.save(cynthia);
 
         Ownership cynthiaGarchomp = new Ownership(cynthia, garchomp);
         Ownership cynthiaLucario = new Ownership(cynthia, lucario);
+        Ownership cynthiaRoserade = new Ownership(cynthia, roserade);
+        Ownership cynthiaSpiritomb = new Ownership(cynthia, spiritomb);
+        Ownership cynthiaMilotic = new Ownership(cynthia, milotic);
+        Ownership cynthiaTogekiss = new Ownership(cynthia, togekiss);
+
+        Ownership ashGarchomp = new Ownership(ash, garchomp);
+        Ownership ashLucario = new Ownership(ash, lucario);
+        Ownership ashRoserade = new Ownership(ash, roserade);
+        Ownership ashSpiritomb = new Ownership(ash, spiritomb);
+        Ownership ashMilotic = new Ownership(ash, milotic);
+        Ownership ashTogekiss = new Ownership(ash, togekiss);
+
         ownershipRepository.save(cynthiaGarchomp);
         ownershipRepository.save(cynthiaLucario);
+        ownershipRepository.save(cynthiaRoserade);
+        ownershipRepository.save(cynthiaSpiritomb);
+        ownershipRepository.save(cynthiaMilotic);
+        ownershipRepository.save(cynthiaTogekiss);
+        
+        ownershipRepository.save(ashGarchomp);
+        ownershipRepository.save(ashLucario);
+        ownershipRepository.save(ashRoserade);
+        ownershipRepository.save(ashSpiritomb);
+        ownershipRepository.save(ashMilotic);
+        ownershipRepository.save(ashTogekiss);
 
     }
 
