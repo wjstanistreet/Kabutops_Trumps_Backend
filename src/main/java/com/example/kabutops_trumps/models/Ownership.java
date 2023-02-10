@@ -10,6 +10,9 @@ public class Ownership {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @Column(name = "inDeck")
+    private boolean inDeck;
+
     @ManyToOne
     @JsonIgnoreProperties({"ownerships"})
     @JoinColumn(name = "account_id")
@@ -23,6 +26,7 @@ public class Ownership {
     public Ownership(Account account, Card card) {
         this.account = account;
         this.card = card;
+        this.inDeck = false;
     }
 
     public Ownership(){}

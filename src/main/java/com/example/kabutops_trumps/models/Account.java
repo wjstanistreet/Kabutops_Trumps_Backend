@@ -28,7 +28,6 @@ public class Account {
     @Column(name = "wins")
     private int wins;
 
-
 //    @ManyToMany
 //    @JoinTable(name = "accounts_cards",
 //    joinColumns = @JoinColumn(name = "account_id"),
@@ -39,7 +38,6 @@ public class Account {
     @OneToMany(mappedBy = "account")
     @JsonIgnoreProperties({"reader"})
     private List<Ownership> ownerships;
-
 
     @Column(name = "spriteNumber")
     private int spriteNumber;
