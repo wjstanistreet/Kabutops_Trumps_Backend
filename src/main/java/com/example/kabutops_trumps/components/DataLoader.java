@@ -1,5 +1,6 @@
 package com.example.kabutops_trumps.components;
 
+import com.example.kabutops_trumps.models.Account;
 import com.example.kabutops_trumps.models.Card;
 import com.example.kabutops_trumps.models.Type;
 import com.example.kabutops_trumps.repositories.AccountRepository;
@@ -73,6 +74,10 @@ public class DataLoader implements ApplicationRunner {
         Card garchomp = new Card("Garchomp", "https://wallpapercave.com/wp/wp8659080.png", "Dragon", 108, 130, 95, 80, 85,102);
 //
         cardRepository.save(garchomp);
+
+        Account ash = new Account("Ash","ichooseyouPikachu");
+        accountRepository.save(ash);
+
     }
 
 }
