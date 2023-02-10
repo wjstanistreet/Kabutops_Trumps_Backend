@@ -1,15 +1,32 @@
 package com.example.kabutops_trumps.models;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Card {
 
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "imgUrl")
     private String imgUrl;
+
+    @Column(name = "type")
     private String type; // may change this to Type Class later on
+
+
+    @Column(name = "stats")
     private HashMap<String, Integer> stats;
 
     public Card(String name, String imgUrl, String type, HashMap<String, Integer> stats) {
