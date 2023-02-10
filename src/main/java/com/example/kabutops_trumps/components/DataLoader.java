@@ -7,6 +7,8 @@ import com.example.kabutops_trumps.repositories.AccountRepository;
 import com.example.kabutops_trumps.repositories.CardRepository;
 import com.example.kabutops_trumps.repositories.GameRepository;
 import com.example.kabutops_trumps.repositories.TypeRepository;
+import com.example.kabutops_trumps.models.Ownership;
+import com.example.kabutops_trumps.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -30,6 +32,9 @@ public class DataLoader implements ApplicationRunner {
     @Autowired
     CardRepository cardRepository;
 
+    @Autowired
+    OwnershipRepository ownershipRepository;
+
     @Override
     public void run(ApplicationArguments args) throws Exception {
 
@@ -51,7 +56,7 @@ public class DataLoader implements ApplicationRunner {
         Type dragon = new Type("Dragon", new ArrayList<>(List.of("Dragon")),new ArrayList<>(List.of("Steel","Fairy")));
         Type dark = new Type("Dark", new ArrayList<>(List.of("Ghost","Psychic")),new ArrayList<>(List.of("Fighting","Dark","Fairy")));
         Type fairy = new Type("Fairy", new ArrayList<>(List.of("Fighting","Dragon","Dark")),new ArrayList<>(List.of("Poison","Steel","Fire")));
-//
+
         typeRepository.save(normal);
         typeRepository.save(fighting);
         typeRepository.save(flying);
@@ -72,11 +77,22 @@ public class DataLoader implements ApplicationRunner {
         typeRepository.save(fairy);
 //
         Card garchomp = new Card("Garchomp", "https://wallpapercave.com/wp/wp8659080.png", "Dragon", 108, 130, 95, 80, 85,102);
+        Card lucario = new Card("Lucario", "https://image-1.uhdpaper.com/wallpaper/lucario-pokemon-phone-wallpaper-hd-uhdpaper.com-466@1@j.jpg", "Fighting", 70, 110, 70, 115, 70,90);
 //
         cardRepository.save(garchomp);
+        cardRepository.save(lucario);
 
         Account ash = new Account("Ash","ichooseyouPikachu");
         accountRepository.save(ash);
+
+
+        Account cynthia = new Account("Cynthia", "IChooseYouGible");
+        accountRepository.save(cynthia);
+
+        Ownership cynthiaGarchomp = new Ownership(cynthia, garchomp);
+        Ownership cynthiaLucario = new Ownership(cynthia, lucario);
+        ownershipRepository.save(cynthiaGarchomp);
+        ownershipRepository.save(cynthiaLucario);
 
     }
 

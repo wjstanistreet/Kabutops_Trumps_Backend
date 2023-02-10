@@ -43,13 +43,17 @@ public class Card {
     @Column(name ="speed")
     private int speed;
 
-    @ManyToMany(mappedBy = "cardsOwned")
-    @JsonIgnoreProperties({"cardsOwned"})
-    private List<Account> accountsThatOwnCards;
+//    @ManyToMany(mappedBy = "cardsOwned")
+//    @JsonIgnoreProperties({"cardsOwned"})
+//    private ArrayList<Account> accountsThatOwnCards;
 
-    @ManyToMany(mappedBy = "deck")
-    @JsonIgnoreProperties({"deck"})
-    private List<Account> decksThatOwnCards;
+    @OneToMany(mappedBy = "card")
+    @JsonIgnoreProperties({"card"})
+    private List<Ownership> ownerships;
+
+//    @ManyToMany(mappedBy = "deck")
+//    @JsonIgnoreProperties({"deck"})
+//    private ArrayList<Account> decksThatOwnCards;
 
 
     public Card(String name, String imgUrl, String type, int hp, int attack, int defence, int specialAttack, int specialDefence, int speed) {
@@ -62,8 +66,8 @@ public class Card {
         this.defence = defence;
         this.specialDefence = specialDefence;
         this.speed = speed;
-        this.accountsThatOwnCards = new ArrayList<>();
-        this.decksThatOwnCards = new ArrayList<>();
+        this.ownerships = new ArrayList<>();
+        //this.decksThatOwnCards = new ArrayList<Account>();
     }
 
     public Card() {};
@@ -148,19 +152,19 @@ public class Card {
         this.speed = speed;
     }
 
-    public List<Account> getAccountsThatOwnCards() {
-        return accountsThatOwnCards;
+    public List<Ownership> getOwnerships() {
+        return ownerships;
     }
 
-    public void setAccountsThatOwnCards(List<Account> accountsThatOwnCards) {
-        this.accountsThatOwnCards = accountsThatOwnCards;
+    public void setOwnerships(List<Ownership> ownerships) {
+        this.ownerships = ownerships;
     }
 
-    public List<Account> getDecksThatOwnCards() {
-        return decksThatOwnCards;
-    }
-
-    public void setDecksThatOwnCards(List<Account> decksThatOwnCards) {
-        this.decksThatOwnCards = decksThatOwnCards;
-    }
+//    public ArrayList<Account> getDecksThatOwnCards() {
+//        return decksThatOwnCards;
+//    }
+//
+//    public void setDecksThatOwnCards(ArrayList<Account> decksThatOwnCards) {
+//        this.decksThatOwnCards = decksThatOwnCards;
+//    }
 }

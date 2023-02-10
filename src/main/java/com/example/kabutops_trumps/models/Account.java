@@ -28,14 +28,16 @@ public class Account {
     @Column(name = "wins")
     private int wins;
 
+//    @ManyToMany
+//    @JoinTable(name = "accounts_cards",
+//    joinColumns = @JoinColumn(name = "account_id"),
+//    inverseJoinColumns = @JoinColumn(name ="card_id"))
+//    @JsonIgnoreProperties({"accountsThatOwnCards"})
+//    private ArrayList<Card> cardsOwned;
 
-    @ManyToMany
-    @JoinTable(name = "accounts_cards",
-    joinColumns = @JoinColumn(name = "account_id"),
-    inverseJoinColumns = @JoinColumn(name ="card_id"))
-    @JsonIgnoreProperties({"accountsThatOwnCards"})
-    private List<Card> cardsOwned;
-
+    @OneToMany(mappedBy = "account")
+    @JsonIgnoreProperties({"account"})
+    private List<Ownership> ownerships;
 
     @Column(name = "spriteNumber")
     private int spriteNumber;
@@ -43,13 +45,12 @@ public class Account {
     @Column(name = "trainerTitle")
     private String trainerTitle;
 
-    @ManyToMany
-    @JoinTable(name = "accounts_decks",
-    joinColumns = @JoinColumn(name = "account_id"),
-    inverseJoinColumns = @JoinColumn(name = "card_id"))
-    @JsonIgnoreProperties({"decksThatOwnCards"})
-    private List<Card> deck;
-
+//    @ManyToMany
+//    @JoinTable(name = "accounts_decks",
+//    joinColumns = @JoinColumn(name = "account_id"),
+//    inverseJoinColumns = @JoinColumn(name = "card_id"))
+//    @JsonIgnoreProperties({"decksThatOwnCards"})
+//    private ArrayList<Card> deck;
 
     @Column(name = "isComputer")
     private boolean isComputer;
@@ -59,10 +60,10 @@ public class Account {
         this.password = password;
         this.gamesPlayed = 0;
         this.wins = 0;
-        this.cardsOwned = new ArrayList<Card>();
+        this.ownerships = new ArrayList<>();
         this.spriteNumber = 0;
         this.trainerTitle = "Trainer";
-        this.deck = new ArrayList<Card>();
+        //this.deck = new ArrayList<Card>();
         this.isComputer = false;
     }
 
@@ -110,12 +111,13 @@ public class Account {
         this.wins = wins;
     }
 
-    public List<Card> getCardsOwned() {
-        return cardsOwned;
+
+    public List<Ownership> getOwnerships() {
+        return ownerships;
     }
 
-    public void setCardsOwned(List<Card> cardsOwned) {
-        this.cardsOwned = cardsOwned;
+    public void setOwnerships(List<Ownership> ownerships) {
+        this.ownerships = ownerships;
     }
 
     public int getSpriteNumber() {
@@ -134,13 +136,14 @@ public class Account {
         this.trainerTitle = trainerTitle;
     }
 
-    public List<Card> getDeck() {
-        return deck;
-    }
 
-    public void setDeck(List<Card> deck) {
-        this.deck = deck;
-    }
+//    public ArrayList<Card> getDeck() {
+//        return deck;
+//    }
+//
+//    public void setDeck(ArrayList<Card> deck) {
+//        this.deck = deck;
+//    }
 
     public boolean isComputer() {
         return isComputer;
