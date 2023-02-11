@@ -1,7 +1,9 @@
 package com.example.kabutops_trumps.services;
 
 import com.example.kabutops_trumps.models.Account;
+import com.example.kabutops_trumps.models.Ownership;
 import com.example.kabutops_trumps.repositories.AccountRepository;
+import com.example.kabutops_trumps.repositories.OwnershipRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +14,9 @@ public class AccountService {
 
     @Autowired
     AccountRepository accountRepository;
+
+    @Autowired
+    OwnershipRepository ownershipRepository;
     
     public List<Account> getAllAccounts(){
         return accountRepository.findAll();
@@ -36,7 +41,13 @@ public class AccountService {
     }
 
     // to complete
-    public boolean deleteAccount(long id) {
-        return false;
+    public void deleteAccount(long id) {
+
+        List<Ownership> ownershipsToDelete = ownershipRepository.findByAccount(accountRepository.findById(id).get());
+        for (Ownership ownership : ownershipsToDelete) {
+            ownershipRepository.deleteById(ownership.getId());
+        }
+        accountRepository.deleteById(id);
+
     }
 }

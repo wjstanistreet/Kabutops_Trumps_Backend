@@ -38,18 +38,25 @@ public class CardController {
     }
 
     @GetMapping(value = "/{id}")
+    public ResponseEntity<Card> getCardById(@PathVariable long id){
+        Card card = cardRepository.findById(id).get();
+        return new ResponseEntity<>(card, HttpStatus.OK);
+    }
+
+
+    @GetMapping(value = "/account/{id}")
     public ResponseEntity<List<Card>> getCardsByAccountId(@PathVariable long id){
         List<Card> cardsInAccount = cardRepository.findByOwnershipsAccount(accountRepository.findById(id).get());
         return new ResponseEntity<>(cardsInAccount, HttpStatus.OK);
     }
 
-    @GetMapping(value = "/{id}/deck")
+    @GetMapping(value = "/account/{id}/deck")
     public ResponseEntity<List<Card>> getCardsInDeckByAccountId(@PathVariable long id){
         List<Card> cardsInAccountDeck = cardRepository.findByOwnershipsAccountAndOwnershipsInDeckTrue(accountRepository.findById(id).get());
         return new ResponseEntity<>(cardsInAccountDeck, HttpStatus.OK);
     }
 
-    @GetMapping(value = "/{id}/deck/shuffle")
+    @GetMapping(value = "/account/{id}/deck/shuffle")
     public ResponseEntity<List<Card>> getShuffledDeckForAccount(@PathVariable long id){
         List<Card> shuffledDeck = cardService.shuffleDeck(accountRepository.findById(id).get());
         return new ResponseEntity<>(shuffledDeck, HttpStatus.OK);

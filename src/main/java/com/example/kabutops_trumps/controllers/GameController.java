@@ -33,7 +33,7 @@ public class GameController {
     }
 
     @PostMapping
-    public ResponseEntity<Game> addNewReader(@RequestBody Game game) {
+    public ResponseEntity<Game> addNewGame(@RequestBody Game game) {
         Game newGame = gameService.startNewGame(game.getPlayerA(), game.getPlayerB());
         return new ResponseEntity<>(newGame, HttpStatus.CREATED);
     }

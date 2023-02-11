@@ -26,6 +26,12 @@ public class AccountController {
         return new ResponseEntity<>(accounts, HttpStatus.OK);
     }
 
+    @GetMapping(value = "/{id}")
+    public ResponseEntity<Account> getAccountById(@PathVariable long id){
+        Account account = accountRepository.findById(id).get();
+        return new ResponseEntity<>(account, HttpStatus.OK);
+    }
+
     @PostMapping
     public ResponseEntity<Account> addNewAccount(@RequestBody Account account) {
         Account newAccount = accountService.addNewAccount(account);
@@ -40,10 +46,8 @@ public class AccountController {
 
     @DeleteMapping(value = "/{id}")
     public ResponseEntity<Long> deleteAccount(@PathVariable long id){
-        if (accountService.deleteAccount(id)){
-            return new ResponseEntity<>(id, HttpStatus.OK);
-        }
-        return new ResponseEntity<>(id, HttpStatus.METHOD_NOT_ALLOWED);
+        accountService.deleteAccount(id);
+        return new ResponseEntity<>(id, HttpStatus.OK);
     }
 
 
