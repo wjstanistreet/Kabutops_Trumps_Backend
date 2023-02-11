@@ -27,19 +27,32 @@ public class GameService {
     //Type Multiplier - Eesaa Sheikh §§§§§§§§§§§§§§§§§§§§§§§§§§
     //§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
 
-    public Type typeCompare(Type typeA, Type typeB, int statA, int statB){
-        int strAgainstMultiplier =  2;
+    public int typeCompare(Type typeA, Type typeB, int statA, int statB) {
+        int strAgainstMultiplier = 2;
 
-        if (typeA.getStrongAgainst().contains(typeB.getName())){
+        if (typeA.getStrongAgainst().contains(typeB.getName())) {
             statA *= strAgainstMultiplier;
+
+            return statA;
         }
 
-        if (typeB.getStrongAgainst().contains(typeA.getName())){
+        if (typeB.getStrongAgainst().contains(typeA.getName())) {
             statB *= strAgainstMultiplier;
-        }
 
+            return statB;
+
+        }
+//        ArrayList<Integer> statList = new ArrayList<Integer>();
+//        statList.add(statA);
+//        statList.add(statB);
+
+//        int stats[] = new int[2];
+//
+//        stats[0] = statA;
+//        stats[1] = statB;
 
         return statA;
+
     }
 
     //§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
