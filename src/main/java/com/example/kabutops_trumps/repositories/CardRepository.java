@@ -13,5 +13,6 @@ public interface CardRepository extends JpaRepository<Card, Long> {
 
     List<Card> findByOwnershipsAccountAndOwnershipsInDeckTrue(Account account);
 
+    List<Card> findByOwnershipsAccount(Account account);
 
 }

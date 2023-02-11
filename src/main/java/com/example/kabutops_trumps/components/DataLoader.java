@@ -109,6 +109,7 @@ public class DataLoader implements ApplicationRunner {
         Account cynthia = new Account("Cynthia", "IChooseYouGible", "Champion", true);
         accountRepository.save(cynthia);
 
+        // Cynthia
         Ownership cynthiaGarchomp = new Ownership(cynthia, garchomp, true);
         Ownership cynthiaLucario = new Ownership(cynthia, lucario, true);
         Ownership cynthiaRoserade = new Ownership(cynthia, roserade, true);
@@ -116,6 +117,7 @@ public class DataLoader implements ApplicationRunner {
         Ownership cynthiaMilotic = new Ownership(cynthia, milotic, true);
         Ownership cynthiaTogekiss = new Ownership(cynthia, togekiss, true);
 
+        // Ash
         Ownership ashPikachu = new Ownership(ash, pikachu, false);
         Ownership ashCharizard = new Ownership(ash, charizard, true);
         Ownership ashSceptile = new Ownership(ash, sceptile, true);

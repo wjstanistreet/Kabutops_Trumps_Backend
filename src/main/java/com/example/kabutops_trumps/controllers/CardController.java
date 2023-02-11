@@ -29,9 +29,6 @@ public class CardController {
     AccountRepository accountRepository;
 
     @Autowired
-    OwnershipRepository ownershipRepository;
-
-    @Autowired
     CardService cardService;
 
     @GetMapping
@@ -40,8 +37,14 @@ public class CardController {
         return new ResponseEntity<>(cards, HttpStatus.OK);
     }
 
+    @GetMapping(value = "/{id}")
+    public ResponseEntity<List<Card>> getCardsByAccountId(@PathVariable long id){
+        List<Card> cardsInAccount = cardRepository.findByOwnershipsAccount(accountRepository.findById(id).get());
+        return new ResponseEntity<>(cardsInAccount, HttpStatus.OK);
+    }
+
     @GetMapping(value = "/{id}/deck")
-    public ResponseEntity<List<Card>> getCardsByAccountInDeck(@PathVariable long id){
+    public ResponseEntity<List<Card>> getCardsInDeckByAccountId(@PathVariable long id){
         List<Card> cardsInAccountDeck = cardRepository.findByOwnershipsAccountAndOwnershipsInDeckTrue(accountRepository.findById(id).get());
         return new ResponseEntity<>(cardsInAccountDeck, HttpStatus.OK);
     }
