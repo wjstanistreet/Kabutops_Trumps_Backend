@@ -116,7 +116,7 @@ public class DataLoader implements ApplicationRunner {
         Ownership cynthiaMilotic = new Ownership(cynthia, milotic, true);
         Ownership cynthiaTogekiss = new Ownership(cynthia, togekiss, true);
 
-        Ownership ashPikachu = new Ownership(ash, pikachu, true);
+        Ownership ashPikachu = new Ownership(ash, pikachu, false);
         Ownership ashCharizard = new Ownership(ash, charizard, true);
         Ownership ashSceptile = new Ownership(ash, sceptile, true);
         Ownership ashInfernape = new Ownership(ash, infernape, true);
