@@ -83,7 +83,12 @@ public class DataLoader implements ApplicationRunner {
         Card spiritomb = new Card("Spiritomb", "https://wallpapercave.com/wp/wp3186974.jpg", ghost, 50, 92, 108, 92, 108,35);
         Card togekiss = new Card("Togekiss", "https://e0.pxfuel.com/wallpapers/586/880/desktop-wallpaper-togekiss-pokemon-fairy-type-pokemon-cute-pokemon.jpg", fairy, 85, 50, 95, 120, 115,80);
 
-        Card pikachu = new Card("Pikachu", "https://e0.pxfuel.com/wallpapers/586/880/desktop-wallpaper-togekiss-pokemon-fairy-type-pokemon-cute-pokemon.jpg", fairy, 85, 50, 95, 120, 115,80);
+        Card pikachu = new Card("Pikachu", "https://wallpaperaccess.com/full/20999.jpg", electric, 35, 55, 40, 50, 50,90);
+        Card charizard = new Card("Charizard", "https://newcdn.mowplayer.com/689084892688/2021/12/08/thumbnails/8hvnfr6ipzxguaoi.jpg", fire, 78, 84, 78, 109, 85,100);
+        Card sceptile = new Card("Sceptile", "https://i.pinimg.com/originals/43/8b/cb/438bcb48ef21a8d88249afc6bd06842c.jpg", grass, 70, 85, 65, 105, 85,120);
+        Card infernape = new Card("Infernape", "https://64.media.tumblr.com/ab5e1e8b87e0f237a8024bb2972b563d/6c09776eefd9ebd6-b2/s1280x1920/7a9477f8bd9223df48a6a974d62bf2dc52845884.png", fire, 76, 104, 71, 104, 71,108);
+        Card greninja = new Card("Greninja", "https://moewalls.com/wp-content/uploads/2021/12/greninja-pokemon-thumb.jpg", water, 72, 95, 67, 103, 71,122);
+        Card megaLucario = new Card("Mega Lucario", "https://w0.peakpx.com/wallpaper/511/197/HD-wallpaper-mega-lucario-pokemon.jpg", fighting, 70, 145, 88, 140, 70,112);
 
 
         cardRepository.save(garchomp);
@@ -92,6 +97,12 @@ public class DataLoader implements ApplicationRunner {
         cardRepository.save(spiritomb);
         cardRepository.save(roserade);
         cardRepository.save(togekiss);
+        cardRepository.save(pikachu);
+        cardRepository.save(charizard);
+        cardRepository.save(sceptile);
+        cardRepository.save(infernape);
+        cardRepository.save(greninja);
+        cardRepository.save(megaLucario);
 
         Account ash = new Account("Ash","ichooseyouPikachu", "Trainer", false);
         accountRepository.save(ash);
@@ -105,12 +116,12 @@ public class DataLoader implements ApplicationRunner {
         Ownership cynthiaMilotic = new Ownership(cynthia, milotic, true);
         Ownership cynthiaTogekiss = new Ownership(cynthia, togekiss, true);
 
-        Ownership ashGarchomp = new Ownership(ash, garchomp, true);
-        Ownership ashLucario = new Ownership(ash, lucario, true);
-        Ownership ashRoserade = new Ownership(ash, roserade, true);
-        Ownership ashSpiritomb = new Ownership(ash, spiritomb, true);
-        Ownership ashMilotic = new Ownership(ash, milotic, true);
-        Ownership ashTogekiss = new Ownership(ash, togekiss, true);
+        Ownership ashPikachu = new Ownership(ash, pikachu, true);
+        Ownership ashCharizard = new Ownership(ash, charizard, true);
+        Ownership ashSceptile = new Ownership(ash, sceptile, true);
+        Ownership ashInfernape = new Ownership(ash, infernape, true);
+        Ownership ashGreninja = new Ownership(ash, greninja, true);
+        Ownership ashMegaLucario = new Ownership(ash, megaLucario, true);
 
         ownershipRepository.save(cynthiaGarchomp);
         ownershipRepository.save(cynthiaLucario);
@@ -119,12 +130,12 @@ public class DataLoader implements ApplicationRunner {
         ownershipRepository.save(cynthiaMilotic);
         ownershipRepository.save(cynthiaTogekiss);
         
-        ownershipRepository.save(ashGarchomp);
-        ownershipRepository.save(ashLucario);
-        ownershipRepository.save(ashRoserade);
-        ownershipRepository.save(ashSpiritomb);
-        ownershipRepository.save(ashMilotic);
-        ownershipRepository.save(ashTogekiss);
+        ownershipRepository.save(ashPikachu);
+        ownershipRepository.save(ashCharizard);
+        ownershipRepository.save(ashSceptile);
+        ownershipRepository.save(ashInfernape);
+        ownershipRepository.save(ashGreninja);
+        ownershipRepository.save(ashMegaLucario);
 
     }
 
