@@ -40,4 +40,8 @@ public class OwnershipService {
         ownershipRepository.save(ownership);
 
     }
+
+    public void deleteOwnership(long id) {
+        ownershipRepository.deleteById(id);
+    }
 }

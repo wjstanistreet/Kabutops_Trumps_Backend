@@ -54,10 +54,13 @@ public class OwnershipController {
     public ResponseEntity<Ownership> updateOwnershipDetails(@PathVariable long id, @RequestParam boolean inDeck){
         ownershipService.updateOwnership(id, inDeck);
         return new ResponseEntity<>(ownershipRepository.findById(id).get(), HttpStatus.OK);
-
     }
 
-
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity<Long> deleteOwnership(@PathVariable long id){
+        ownershipService.deleteOwnership(id);
+        return new ResponseEntity<>(id, HttpStatus.NO_CONTENT);
+    }
 
 
 }
