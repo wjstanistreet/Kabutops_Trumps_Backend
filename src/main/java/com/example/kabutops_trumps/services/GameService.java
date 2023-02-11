@@ -2,10 +2,12 @@ package com.example.kabutops_trumps.services;
 
 import com.example.kabutops_trumps.models.Account;
 import com.example.kabutops_trumps.models.Game;
+import com.example.kabutops_trumps.models.Type;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.example.kabutops_trumps.repositories.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -14,10 +16,22 @@ public class GameService {
     @Autowired
     GameRepository gameRepository;
 
+    @Autowired
+    TypeRepository typeRepository;
+
     public List<Game> getAllGames() {
         return gameRepository.findAll();
     }
 
+    //Type Multiplier - Eesaa Sheikh §§§§§§§§§§§§§§§§§§§§§§§§§§
+    //§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
+
+    public Type typeCompare(ArrayList<String> strongAgainst, ArrayList<String> weakAgainst){
+
+    }
+
+    //§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
+    //§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
     public Game startNewGame(String accountA, String accountB){
         Game game = new Game(accountA, accountB);
         gameRepository.save(game);
