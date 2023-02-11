@@ -16,4 +16,7 @@ public class OwnershipService {
     public List<Ownership> getAllOwnerships() {
         return ownershipRepository.findAll();
     }
+
+
+
 }

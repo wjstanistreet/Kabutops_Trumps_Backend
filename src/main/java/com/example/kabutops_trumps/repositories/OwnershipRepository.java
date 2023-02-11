@@ -11,4 +11,7 @@ import java.util.List;
 public interface OwnershipRepository extends JpaRepository<Ownership, Long> {
 
     List<Ownership> findByAccountAndInDeckTrue(Account account);
+
+    List<Ownership> findByAccount(Account account);
+
 }

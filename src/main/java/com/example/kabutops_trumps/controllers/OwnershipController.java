@@ -40,4 +40,10 @@ public class OwnershipController {
         return new ResponseEntity<>(ownershipsInAccountDeck, HttpStatus.OK);
     }
 
+    @GetMapping(value = "/{id}")
+    public ResponseEntity<List<Ownership>> getOwnershipsByAccount(@PathVariable long id){
+        List<Ownership> ownershipsInAccount = ownershipRepository.findByAccount(accountRepository.findById(id).get());
+        return new ResponseEntity<>(ownershipsInAccount, HttpStatus.OK);
+    }
+
 }
