@@ -49,4 +49,10 @@ public class CardController {
         return new ResponseEntity<>(cardsInAccountDeck, HttpStatus.OK);
     }
 
+    @GetMapping(value = "/{id}/deck/shuffle")
+    public ResponseEntity<List<Card>> getShuffledDeckForAccount(@PathVariable long id){
+        List<Card> shuffledDeck = cardService.shuffleDeck(accountRepository.findById(id).get());
+        return new ResponseEntity<>(shuffledDeck, HttpStatus.OK);
+    }
+
 }
