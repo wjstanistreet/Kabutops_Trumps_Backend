@@ -21,4 +21,22 @@ public class AccountService {
         accountRepository.save(account);
         return account;
     }
+
+    public void updateAccountDetails(long id, Account accountParameter) {
+        Account account = accountRepository.findById(id).get();
+        account.setUsername(accountParameter.getUsername());
+        account.setPassword(accountParameter.getPassword());
+        account.setGamesPlayed(accountParameter.getGamesPlayed());
+        account.setWins(accountParameter.getWins());
+        account.setOwnerships(accountParameter.getOwnerships());
+        account.setSpriteNumber(accountParameter.getSpriteNumber());
+        account.setTrainerTitle(accountParameter.getTrainerTitle());
+        account.setComputer(accountParameter.isComputer());
+        accountRepository.save(account);
+    }
+
+    // to complete
+    public boolean deleteAccount(long id) {
+        return false;
+    }
 }
