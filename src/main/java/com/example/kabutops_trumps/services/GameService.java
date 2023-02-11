@@ -51,7 +51,7 @@ public class GameService {
 //        stats[0] = statA;
 //        stats[1] = statB;
 
-        return statA;
+        return statA + statB;
 
     }
 
