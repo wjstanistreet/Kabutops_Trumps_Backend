@@ -1,6 +1,7 @@
 package com.example.kabutops_trumps.services;
 
 import com.example.kabutops_trumps.models.Account;
+import com.example.kabutops_trumps.models.Card;
 import com.example.kabutops_trumps.models.Game;
 import com.example.kabutops_trumps.models.Type;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,8 +27,19 @@ public class GameService {
     //Type Multiplier - Eesaa Sheikh §§§§§§§§§§§§§§§§§§§§§§§§§§
     //§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
 
-    public Type typeCompare(ArrayList<String> strongAgainst, ArrayList<String> weakAgainst){
+    public Type typeCompare(Type typeA, Type typeB, int statA, int statB){
+        int strAgainstMultiplier =  2;
 
+        if (typeA.getStrongAgainst().contains(typeB.getName())){
+            statA *= strAgainstMultiplier;
+        }
+
+        if (typeB.getStrongAgainst().contains(typeA.getName())){
+            statB *= strAgainstMultiplier;
+        }
+
+
+        return statA;
     }
 
     //§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
