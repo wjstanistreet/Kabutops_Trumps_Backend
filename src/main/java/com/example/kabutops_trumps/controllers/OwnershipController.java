@@ -5,13 +5,11 @@ import com.example.kabutops_trumps.models.Ownership;
 import com.example.kabutops_trumps.repositories.AccountRepository;
 import com.example.kabutops_trumps.repositories.OwnershipRepository;
 import com.example.kabutops_trumps.services.OwnershipService;
+import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -45,5 +43,21 @@ public class OwnershipController {
         List<Ownership> ownershipsInAccount = ownershipRepository.findByAccount(accountRepository.findById(id).get());
         return new ResponseEntity<>(ownershipsInAccount, HttpStatus.OK);
     }
+
+    @PostMapping(value = "/{accountId}/{cardId}")
+    public ResponseEntity<Ownership> addOwnership(@PathVariable long accountId, @PathVariable long cardId, @RequestParam boolean inDeck){
+        Ownership newOwnership = ownershipService.addOwnership(accountId, cardId, inDeck);
+        return new ResponseEntity<>(newOwnership, HttpStatus.CREATED);
+    }
+
+    @PatchMapping(value = "/{id}")
+    public ResponseEntity<Ownership> updateOwnershipDetails(@PathVariable long id, @RequestParam boolean inDeck){
+        ownershipService.updateOwnership(id, inDeck);
+        return new ResponseEntity<>(ownershipRepository.findById(id).get(), HttpStatus.OK);
+
+    }
+
+
+
 
 }
