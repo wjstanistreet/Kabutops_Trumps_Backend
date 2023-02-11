@@ -1,11 +1,14 @@
 package com.example.kabutops_trumps.services;
 
 import com.example.kabutops_trumps.models.Account;
+import com.example.kabutops_trumps.models.Card;
 import com.example.kabutops_trumps.models.Game;
+import com.example.kabutops_trumps.models.Type;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.example.kabutops_trumps.repositories.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -14,10 +17,71 @@ public class GameService {
     @Autowired
     GameRepository gameRepository;
 
+    @Autowired
+    TypeRepository typeRepository;
+
     public List<Game> getAllGames() {
         return gameRepository.findAll();
     }
 
+    //Type Multiplier - Eesaa Sheikh §§§§§§§§§§§§§§§§§§§§§§§§§§
+    //§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
+
+    public int typeCompare(Type typeA, Type typeB, int statA, int statB) {
+        int strAgainstMultiplier = 2;
+
+        if (typeA.getStrongAgainst().contains(typeB.getName())) {
+            statA *= strAgainstMultiplier;
+
+            return statA;
+        }
+
+        if (typeB.getStrongAgainst().contains(typeA.getName())) {
+            statB *= strAgainstMultiplier;
+
+            return statB;
+
+        }
+//        ArrayList<Integer> statList = new ArrayList<Integer>();
+//        statList.add(statA);
+//        statList.add(statB);
+
+//        int stats[] = new int[2];
+//
+//        stats[0] = statA;
+//        stats[1] = statB;
+
+        return statA + statB;
+
+    }
+    //§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
+    //if the code from line 30 does not work, use this instead.
+
+
+    //§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
+//    public int typeCompareStrong(Type typeA, Type typeB, int statA, int statB){
+//        int strAgainstMultiplier = 2;
+//        if (typeA.getStrongAgainst().contains(typeB.getName())) {
+//            statA *= strAgainstMultiplier;
+//
+//
+//        }
+//        return statA;
+//    }
+//
+//    public int typeCompareWeak(Type typeA, Type typeB, int statA, int statB){
+//        int strAgainstMultiplier = 2;
+//        if (typeB.getStrongAgainst().contains(typeA.getName())) {
+//            statB *= strAgainstMultiplier;
+//
+//
+//        }
+//        return statB;
+//    }
+
+
+
+    //§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
     public Game startNewGame(String accountA, String accountB){
         Game game = new Game(accountA, accountB);
         gameRepository.save(game);
