@@ -54,8 +54,33 @@ public class GameService {
         return statA + statB;
 
     }
-
     //§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
+    //if the code from line 30 does not work, use this instead.
+
+
+    //§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
+//    public int typeCompareStrong(Type typeA, Type typeB, int statA, int statB){
+//        int strAgainstMultiplier = 2;
+//        if (typeA.getStrongAgainst().contains(typeB.getName())) {
+//            statA *= strAgainstMultiplier;
+//
+//
+//        }
+//        return statA;
+//    }
+//
+//    public int typeCompareWeak(Type typeA, Type typeB, int statA, int statB){
+//        int strAgainstMultiplier = 2;
+//        if (typeB.getStrongAgainst().contains(typeA.getName())) {
+//            statB *= strAgainstMultiplier;
+//
+//
+//        }
+//        return statB;
+//    }
+
+
+
     //§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
     public Game startNewGame(String accountA, String accountB){
         Game game = new Game(accountA, accountB);
