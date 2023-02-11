@@ -93,6 +93,7 @@ public class GameService {
         players.add(accountB);
         System.out.println(players);
         Game game = new Game(players);
+        game.setPlayers(players);
         gameRepository.save(game);
         return game;
     }

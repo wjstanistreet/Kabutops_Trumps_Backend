@@ -28,7 +28,8 @@ public class Game {
 //    private Account playerB;
 
     @ManyToMany(mappedBy = "games")
-    private List<Account> players = new ArrayList<>();
+    //@JsonIgnoreProperties({"games"})
+    private List<Account> players;
 
     @Column(name = "scoreA")
     private int scoreA;

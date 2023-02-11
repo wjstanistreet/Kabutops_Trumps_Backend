@@ -32,7 +32,7 @@ public class Account {
             name="played_game",
             joinColumns = @JoinColumn(name="account_id"),
             inverseJoinColumns = @JoinColumn(name="game_id"))
-    @JsonIgnoreProperties({"players"})
+    //@JsonIgnoreProperties({"players"})
     private List<Game> games;
 
 //    @ManyToMany

@@ -37,9 +37,10 @@ public class GameController {
     }
 
     @PostMapping
-    public ResponseEntity<Game> addNewReader(@RequestParam (required = true, value = "playerAId") long playerAId,
+    public ResponseEntity<Game> addNewGame(@RequestParam (required = true, value = "playerAId") long playerAId,
                                              @RequestParam (required = true, value = "playerBId") long playerBId) {
         Game newGame = gameService.startNewGame(accountRepository.findById(playerAId).get(), accountRepository.findById(playerBId).get());
+
         return new ResponseEntity<>(newGame, HttpStatus.CREATED);
     }
 
