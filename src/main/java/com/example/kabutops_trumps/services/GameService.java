@@ -104,12 +104,18 @@ public class GameService {
         }
     }
 
-    public Game processGame(Game game, int statA, int statB) {
+    public Game processGame(Game game, int statA, int statB, Type typeA, Type typeB) {
         int finalRound= 7;
         Game currentGame = gameRepository.findById(game.getId()).get();
         int roundNumber = currentGame.getRoundNumber();
         int scoreA = currentGame.getScoreA();
         int scoreB = currentGame.getScoreB();
+
+        // Type multiplier implementation
+        ArrayList<Integer> statList = typeCompare(typeA, typeB, statA, statB);
+        statA = statList.get(0);
+        statB = statList.get(1);
+        //
 
         if(roundNumber<=finalRound) {
             if (processRound(game.getPlayerA(), game.getPlayerB(), statA, statB).equals(game.getPlayerA())) {

@@ -2,6 +2,7 @@ package com.example.kabutops_trumps.controllers;
 
 import com.example.kabutops_trumps.models.Game;
 import com.example.kabutops_trumps.repositories.GameRepository;
+import com.example.kabutops_trumps.repositories.TypeRepository;
 import com.example.kabutops_trumps.services.GameService;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,9 @@ public class GameController {
     @Autowired
     GameService gameService;
 
+    @Autowired
+    TypeRepository typeRepository;
+
     @GetMapping
     public ResponseEntity<List<Game>> getAllGames(){
         List<Game> games = gameService.getAllGames();
@@ -35,8 +39,12 @@ public class GameController {
     }
 
     @PatchMapping(value = "/{id}")
-    public ResponseEntity<Game> updateGame(@PathVariable long id, @RequestParam int statA, @RequestParam int statB){
-        Game updatedGame = gameService.processGame(gameRepository.findById(id).get(), statA, statB);
+    public ResponseEntity<Game> updateGame(@PathVariable long id,
+                                           @RequestParam int statA,
+                                           @RequestParam int statB,
+                                           @RequestParam long typeAId,
+                                           @RequestParam long typeBId){
+        Game updatedGame = gameService.processGame(gameRepository.findById(id).get(), statA, statB, typeRepository.findById(typeAId).get(), typeRepository.findById(typeBId).get());
         return new ResponseEntity<>(updatedGame, HttpStatus.OK);
     }
 
