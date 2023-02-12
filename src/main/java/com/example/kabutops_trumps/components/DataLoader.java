@@ -156,11 +156,17 @@ public class DataLoader implements ApplicationRunner {
         //Add Pokemon based on trainers
 
         //Brock's Pokemon
-        Card steelix = new Card("Steelix", "https://64.media.tumblr.com/8e687a5cc2ca7f20a571182192df1027/4a15e17d7c405c57-5a/s1280x1920/8d2e677a97e81077f97fa35dac1b0653f6b38820.jpg", steel, 75,85,200,55,65,30,3);
+        Card steelix = new Card("Steelix", "https://64.media.tumblr.com/8e687a5cc2ca7f20a571182192df1027/4a15e17d7c405c57-5a/s1280x1920/8d2e677a97e81077f97fa35dac1b0653f6b38820.jpg", steel, 75,85,200,55,65,30,4);
         Card croagunk = new Card("Croagunk", "https://cdn.donmai.us/original/f2/e7/__croagunk_pokemon_drawn_by_kikuyoshi_tracco__f2e73221d43b4bb7aad96a4af623b55d.jpg", poison, 48, 61, 40, 60, 40, 50, 2  );
         Card sudowoodo = new Card("Sudowoodo", "https://cdn.discordapp.com/attachments/1072211977482535013/1074360470162653274/the_woods_doesn_t_let_you_see_the_sudowoodo_by_edonovaillustrator_dehmups-fullview.png", rock, 70, 100, 115, 30, 65,30, 3);
         Card crobat = new Card("Crobat", "https://64.media.tumblr.com/75f5ac2dad6893e30f05c63c54c03b22/tumblr_nebgscyLoR1r1hsklo1_1280.jpg", poison,  85, 90, 80, 70, 80, 130, 2);
-        Card geodude = new Card ("Geodude", "https://64.media.tumblr.com/75f5ac2dad6893e30f05c63c54c03b22/tumblr_nebgscyLoR1r1hsklo1_1280.jpg",)
+        Card geodude = new Card ("Geodude", "https://pm1.narvii.com/6568/e84d2668884576df48cd72a627ae7f7d40c698f1_00.jpg",rock, 40, 80,100,30,30,20,2);
+        Card marshtomp = new Card ("Marshtomp", "https://i.pinimg.com/564x/b1/5c/08/b15c0817328a1697a3ca42c2f323b157.jpg", ground, 70, 85, 70, 60, 70 , 50, 3);
+        Card ludicolo = new Card("Ludicolo", "https://i.pinimg.com/originals/d2/d5/17/d2d5173fa29b1fb81cffebce7ecceaee.png", water, 80, 70, 70, 90, 100, 70, 3);
+        Card blissey = new Card("Blissey", "https://pbs.twimg.com/media/FnHtBQqXoAAPyE6?format=jpg&name=medium", normal, 255, 10, 10, 75, 135, 55, 4);
+        Card forretress = new Card("Forretress", "https://cdn.wallpapersafari.com/90/33/neb0Ro.jpg", bug, 75, 90, 140, 60, 60, 40, 2);
+        Card vulpix = new Card("Vulpix", "https://cdn.donmai.us/original/d3/55/d3554825bc8d5dd0b9c1c8f1fde55c47.png", fire, 38, 41 ,40, 50, 65, 65, 1);
+        Card kabutops = new Card("Kabutops", "https://cdn.donmai.us/original/f0/24/f02412f7644f79fe0183cc4c69a3edf6.jpg", rock, 60, 115, 105, 65, 70, 80, 2);
 
         //Blue's Pokemon
         Card rhyperior = new Card("Rhyperior", "https://external-preview.redd.it/Hqdvy8jkjKdiiejjXgXt7DJ-VwAGHHIUQ6tGh7zIzjE.png?auto=webp&s=aa5a79afec74dd5dc44fb1740bd4c456217c605e", ground, 115, 140, 130, 55, 55, 40, 4);
