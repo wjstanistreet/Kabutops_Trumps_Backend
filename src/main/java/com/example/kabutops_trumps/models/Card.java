@@ -45,6 +45,9 @@ public class Card {
     @Column(name ="speed")
     private int speed;
 
+    @Column(name ="rating")
+    private int rating;
+
 //    @ManyToMany(mappedBy = "cardsOwned")
 //    @JsonIgnoreProperties({"cardsOwned"})
 //    private ArrayList<Account> accountsThatOwnCards;
@@ -58,7 +61,7 @@ public class Card {
 //    private ArrayList<Account> decksThatOwnCards;
 
 
-    public Card(String name, String imgUrl, Type type, int hp, int attack, int defence, int specialAttack, int specialDefence, int speed) {
+    public Card(String name, String imgUrl, Type type, int hp, int attack, int defence, int specialAttack, int specialDefence, int speed, int rating) {
         this.name = name;
         this.imgUrl = imgUrl;
         this.type = type;
@@ -68,6 +71,7 @@ public class Card {
         this.defence = defence;
         this.specialDefence = specialDefence;
         this.speed = speed;
+        this.rating= rating;
         this.ownerships = new ArrayList<>();
         //this.decksThatOwnCards = new ArrayList<Account>();
     }
@@ -152,6 +156,14 @@ public class Card {
 
     public void setSpeed(int speed) {
         this.speed = speed;
+    }
+
+    public int getRating() {
+        return rating;
+    }
+
+    public void setRating(int rating) {
+        this.rating = rating;
     }
 
     public List<Ownership> getOwnerships() {
