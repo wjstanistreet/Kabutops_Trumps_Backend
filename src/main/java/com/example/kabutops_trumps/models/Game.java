@@ -28,7 +28,7 @@ public class Game {
 //    private Account playerB;
 
     @ManyToMany(mappedBy = "games")
-    //@JsonIgnoreProperties({"games"})
+    @JsonIgnoreProperties({"games"})
     private List<Account> players;
 
     @Column(name = "scoreA")
