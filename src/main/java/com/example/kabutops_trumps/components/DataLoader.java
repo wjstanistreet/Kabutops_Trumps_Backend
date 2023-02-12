@@ -156,8 +156,11 @@ public class DataLoader implements ApplicationRunner {
         //Add Pokemon based on trainers
 
         //Brock's Pokemon
-
-
+        Card steelix = new Card("Steelix", "https://64.media.tumblr.com/8e687a5cc2ca7f20a571182192df1027/4a15e17d7c405c57-5a/s1280x1920/8d2e677a97e81077f97fa35dac1b0653f6b38820.jpg", steel, 75,85,200,55,65,30,3);
+        Card croagunk = new Card("Croagunk", "https://cdn.donmai.us/original/f2/e7/__croagunk_pokemon_drawn_by_kikuyoshi_tracco__f2e73221d43b4bb7aad96a4af623b55d.jpg", poison, 48, 61, 40, 60, 40, 50, 2  );
+        Card sudowoodo = new Card("Sudowoodo", "https://cdn.discordapp.com/attachments/1072211977482535013/1074360470162653274/the_woods_doesn_t_let_you_see_the_sudowoodo_by_edonovaillustrator_dehmups-fullview.png", rock, 70, 100, 115, 30, 65,30, 3);
+        Card crobat = new Card("Crobat", "https://64.media.tumblr.com/75f5ac2dad6893e30f05c63c54c03b22/tumblr_nebgscyLoR1r1hsklo1_1280.jpg", poison,  85, 90, 80, 70, 80, 130, 2);
+        Card geodude = new Card ("Geodude", "https://64.media.tumblr.com/75f5ac2dad6893e30f05c63c54c03b22/tumblr_nebgscyLoR1r1hsklo1_1280.jpg",)
 
         //Blue's Pokemon
 
