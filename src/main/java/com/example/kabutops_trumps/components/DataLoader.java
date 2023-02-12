@@ -169,6 +169,32 @@ public class DataLoader implements ApplicationRunner {
         Card machamp = new Card("Machamp", "https://i.pinimg.com/originals/7e/da/0a/7eda0a28d0266ee13436d22e4d94b806.jpg", fighting, 90, 130, 80, 65, 85, 55, 4);
         cardRepository.save(machamp);
 
+        Card alolanExeggutor = new Card("Exeggutor", "https://pbs.twimg.com/media/DYQe2geW4AISDYb?format=jpg&name=4096x4096", grass, 95, 95, 85, 125, 75, 55, 4);
+        cardRepository.save(alolanExeggutor);
+
+        Card shinyGyarados = new Card("Lake of Rage Gyarados", "https://pbs.twimg.com/media/Eb0PkgQU8AA8h77?format=jpg&name=medium", water, 95, 125, 79, 60, 100, 81, 4);
+        cardRepository.save(shinyGyarados);
+
+        Card heracross = new Card("Heracross", "https://cdn.donmai.us/sample/7a/0e/__heracross_pokemon_drawn_by_tsukkon__sample-7a0e358e5afaea1c3d7e6d9866d8b1fc.jpg", bug, 80, 125, 75, 40, 95, 85, 4);
+        cardRepository.save(heracross);
+
+        Card magnezone = new Card("Magnezone", "https://cdn.donmai.us/original/bf/56/bf56efa1e33d390366936817de7367e6.jpg", electric, 70, 70, 115, 130, 90, 60, 4 );
+        cardRepository.save(magnezone);
+
+        Account blue = new Account("Blue","smellYaLater", "Champion", true);
+        accountRepository.save(blue);
+
+        ownershipRepository.save(new Ownership(blue, blastoise, true));
+        ownershipRepository.save(new Ownership(blue, pidgeot, true));
+        ownershipRepository.save(new Ownership(blue, arcanine, true));
+        ownershipRepository.save(new Ownership(blue, alakazam, true));
+        ownershipRepository.save(new Ownership(blue, alolanExeggutor, true));
+        ownershipRepository.save(new Ownership(blue, rhyperior, true));
+        ownershipRepository.save(new Ownership(blue, magnezone, true));
+        ownershipRepository.save(new Ownership(blue, heracross, true));
+        ownershipRepository.save(new Ownership(blue, machamp, true));
+        ownershipRepository.save(new Ownership(blue, sandslash, true));
+        ownershipRepository.save(new Ownership(blue, shinyGyarados, true));
 
         //Red's Pokemon
 
