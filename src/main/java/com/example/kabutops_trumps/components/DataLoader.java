@@ -163,7 +163,11 @@ public class DataLoader implements ApplicationRunner {
         Card geodude = new Card ("Geodude", "https://64.media.tumblr.com/75f5ac2dad6893e30f05c63c54c03b22/tumblr_nebgscyLoR1r1hsklo1_1280.jpg",)
 
         //Blue's Pokemon
+        Card rhyperior = new Card("Rhyperior", "https://external-preview.redd.it/Hqdvy8jkjKdiiejjXgXt7DJ-VwAGHHIUQ6tGh7zIzjE.png?auto=webp&s=aa5a79afec74dd5dc44fb1740bd4c456217c605e", ground, 115, 140, 130, 55, 55, 40, 4);
+        cardRepository.save(rhyperior);
 
+        Card machamp = new Card("Machamp", "https://i.pinimg.com/originals/7e/da/0a/7eda0a28d0266ee13436d22e4d94b806.jpg", fighting, 90, 130, 80, 65, 85, 55, 4);
+        cardRepository.save(machamp);
 
 
         //Red's Pokemon
