@@ -187,7 +187,7 @@ public class DataLoader implements ApplicationRunner {
         cardRepository.save(megaVenusar);
 
 
-        Card snorlax = new Card("Snorlax", "https://modernphilosophystandards.files.wordpress.com/2021/07/snorlax-final.jpg", normal,160, 110, 65,65,110,30,5 );
+        Card snorlax = new Card("Snorlax", "https://www.pngitem.com/pimgs/m/102-1023845_pic-pokemon-sun-and-moon-snorlax-hd-png.png", normal,160, 110, 65,65,110,30,5 );
         cardRepository.save(snorlax);
 
         Card lapras = new Card("Lapras","https://i.pinimg.com/736x/85/36/8e/85368e255b067f9b3495022cb2118b15.jpg", water,130,85,80,85,95,60,5);
@@ -196,13 +196,13 @@ public class DataLoader implements ApplicationRunner {
         Card espeon = new Card("Espeon","https://cdnb.artstation.com/p/assets/images/images/017/288/281/large/april-seymour-espeon-seyumei2.jpg?1555374729", psychic,65,65,60,130,95,110,5);
         cardRepository.save(espeon);
 
-        Card articuno = new Card("articuno","https://wallpapercave.com/wp/wp2487762.jpg",ice,90,85,100,95,125,85,5);
+        Card articuno = new Card("articuno","https://wallpaperaccess.com/full/1668732.jpg",ice,90,85,100,95,125,85,5);
         cardRepository.save(articuno);
 
         Card zapdos = new Card("Zapdos","https://w0.peakpx.com/wallpaper/390/304/HD-wallpaper-zapdos-pokemon-anime-pokemon-zapdos.jpg", electric,90,90,85,125,90,100,5);
         cardRepository.save(zapdos);
 
-        Card moltres = new Card("Moltress","https://files.cults3d.com/uploaders/17560495/illustration-file/363e7ec2-3e85-4a7d-830e-476192586ce8/moltres.jpg", fire,90,100,90,125,85,90,5);
+        Card moltres = new Card("Moltress","https://wallpaperaccess.com/full/1993616.jpg", fire,90,100,90,125,85,90,5);
         cardRepository.save(moltres);
 
 
