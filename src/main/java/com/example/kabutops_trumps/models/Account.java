@@ -159,4 +159,12 @@ public class Account {
     public void setComputer(boolean computer) {
         isComputer = computer;
     }
+
+    public List<Game> getGames() {
+        return games;
+    }
+
+    public void setGames(List<Game> games) {
+        this.games = games;
+    }
 }
