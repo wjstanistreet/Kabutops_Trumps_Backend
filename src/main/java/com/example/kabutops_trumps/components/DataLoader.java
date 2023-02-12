@@ -202,7 +202,7 @@ public class DataLoader implements ApplicationRunner {
         Card zapdos = new Card("Zapdos","https://w0.peakpx.com/wallpaper/390/304/HD-wallpaper-zapdos-pokemon-anime-pokemon-zapdos.jpg", electric,90,90,85,125,90,100,5);
         cardRepository.save(zapdos);
 
-        Card moltres = new Card("Moltress","https://w0.peakpx.com/wallpaper/390/304/HD-wallpaper-zapdos-pokemon-anime-pokemon-zapdos.jpg", electric,90,90,85,125,90,100,5);
+        Card moltres = new Card("Moltress","https://files.cults3d.com/uploaders/17560495/illustration-file/363e7ec2-3e85-4a7d-830e-476192586ce8/moltres.jpg", fire,90,100,90,125,85,90,5);
         cardRepository.save(moltres);
 
 
