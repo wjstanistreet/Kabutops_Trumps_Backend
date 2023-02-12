@@ -172,6 +172,39 @@ public class DataLoader implements ApplicationRunner {
 
         //Red's Pokemon
 
+        //mega charizard X
+
+        Card megaCharizardX = new Card("Mega Charizard X", "https://i.pinimg.com/originals/bd/e1/54/bde154723b4d09a6eab43748f1c12ac5.jpg", fire, 78, 130, 111, 85,85,100,5);
+        cardRepository.save(megaCharizardX);
+
+        Card megaBlastoise = new Card("Mega Blastoise","https://wallpaper.dog/large/10911396.jpg",water,79, 103, 120, 135, 115, 78,5);
+        cardRepository.save(megaBlastoise);
+
+        Card mewTwo = new Card("MewTwo","https://external-preview.redd.it/yni5ckiWnLLgVx-bs--uiS2xajFOPpMGxBrefVV2sTk.jpg?auto=webp&s=11c00e88538210ac3760133ff37b292bf55d91f3",psychic,106, 110, 90, 154, 90, 130,5);
+        cardRepository.save(mewTwo);
+
+        Card megaVenusar = new Card("Mega Venusar","https://assets.pokemon.com/assets//cms2/img/trading-card-game/_downloads/xy1/xy1-wallpaper-venusaur-th-169.jpg",psychic,80, 100, 123, 122, 120, 80,5);
+        cardRepository.save(megaVenusar);
+
+
+        Card snorlax = new Card("Snorlax", "https://modernphilosophystandards.files.wordpress.com/2021/07/snorlax-final.jpg", normal,160, 110, 65,65,110,30,5 );
+        cardRepository.save(snorlax);
+
+        Card lapras = new Card("Lapras","https://i.pinimg.com/736x/85/36/8e/85368e255b067f9b3495022cb2118b15.jpg", water,130,85,80,85,95,60,5);
+        cardRepository.save(lapras);
+
+        Card espeon = new Card("Espeon","https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/43d7c22d-6b9c-4a70-86b4-4d5c68ed816c/dczqt4w-f783af3a-0856-465d-8b8d-c4babcee0359.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzQzZDdjMjJkLTZiOWMtNGE3MC04NmI0LTRkNWM2OGVkODE2Y1wvZGN6cXQ0dy1mNzgzYWYzYS0wODU2LTQ2NWQtOGI4ZC1jNGJhYmNlZTAzNTkucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.M5JQmPCPphfl9Ohv9NfMP6WNzBQ5vPtPjjoLUyJoqfs", psychic,65,65,60,130,95,110,5);
+        cardRepository.save(espeon);
+
+        Card articuno = new Card("articuno","https://wallpapercave.com/wp/wp2487762.jpg",ice,90,85,100,95,125,85,5);
+        cardRepository.save(articuno);
+
+        Card zapdos = new Card("Zapdos","https://w0.peakpx.com/wallpaper/390/304/HD-wallpaper-zapdos-pokemon-anime-pokemon-zapdos.jpg", electric,90,90,85,125,90,100,5);
+        cardRepository.save(zapdos);
+
+        Card moltres = new Card("Moltress","https://w0.peakpx.com/wallpaper/390/304/HD-wallpaper-zapdos-pokemon-anime-pokemon-zapdos.jpg", electric,90,90,85,125,90,100,5);
+        cardRepository.save(moltres);
+
 
 
         //Cynthia's Pokemon
