@@ -193,7 +193,7 @@ public class DataLoader implements ApplicationRunner {
         Card lapras = new Card("Lapras","https://i.pinimg.com/736x/85/36/8e/85368e255b067f9b3495022cb2118b15.jpg", water,130,85,80,85,95,60,5);
         cardRepository.save(lapras);
 
-        Card espeon = new Card("Espeon","https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/43d7c22d-6b9c-4a70-86b4-4d5c68ed816c/dczqt4w-f783af3a-0856-465d-8b8d-c4babcee0359.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzQzZDdjMjJkLTZiOWMtNGE3MC04NmI0LTRkNWM2OGVkODE2Y1wvZGN6cXQ0dy1mNzgzYWYzYS0wODU2LTQ2NWQtOGI4ZC1jNGJhYmNlZTAzNTkucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.M5JQmPCPphfl9Ohv9NfMP6WNzBQ5vPtPjjoLUyJoqfs", psychic,65,65,60,130,95,110,5);
+        Card espeon = new Card("Espeon","https://cdnb.artstation.com/p/assets/images/images/017/288/281/large/april-seymour-espeon-seyumei2.jpg?1555374729", psychic,65,65,60,130,95,110,5);
         cardRepository.save(espeon);
 
         Card articuno = new Card("articuno","https://wallpapercave.com/wp/wp2487762.jpg",ice,90,85,100,95,125,85,5);
