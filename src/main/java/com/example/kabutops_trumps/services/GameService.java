@@ -115,7 +115,7 @@ public class GameService {
         ArrayList<Integer> statList = typeCompare(typeA, typeB, statA, statB);
         statA = statList.get(0);
         statB = statList.get(1);
-        //
+        
 
         if(roundNumber<=finalRound) {
             if (processRound(game.getPlayerA(), game.getPlayerB(), statA, statB).equals(game.getPlayerA())) {

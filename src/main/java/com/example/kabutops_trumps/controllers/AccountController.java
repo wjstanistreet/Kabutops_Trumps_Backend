@@ -32,6 +32,13 @@ public class AccountController {
         return new ResponseEntity<>(account, HttpStatus.OK);
     }
 
+    // ACCOUNT BY USERNAME AND PASSWORD
+//    @GetMapping(value = "/{accountName}")
+//    public ResponseEntity<Account> getAccountByName(@PathVariable String accountName){
+//        Account account = accountService.findByAccountName(accountName);
+//        return new ResponseEntity<>(account, HttpStatus.OK);
+//    }
+
     @PostMapping
     public ResponseEntity<Account> addNewAccount(@RequestBody Account account) {
         Account newAccount = accountService.addNewAccount(account);

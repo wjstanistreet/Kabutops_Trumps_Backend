@@ -42,7 +42,7 @@ public class AccountService {
 
     // to complete
     public void deleteAccount(long id) {
-
+        
         List<Ownership> ownershipsToDelete = ownershipRepository.findByAccount(accountRepository.findById(id).get());
         for (Ownership ownership : ownershipsToDelete) {
             ownershipRepository.deleteById(ownership.getId());
