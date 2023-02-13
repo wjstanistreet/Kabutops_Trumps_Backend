@@ -558,6 +558,7 @@ public class DataLoader implements ApplicationRunner {
         Card bisharp = new Card("Bisharp", "", dark, 65, 125, 100, 60, 70, 70, 4);
         cardRepository.save(bisharp);
         Card metagross = new Card("Metagross", "", steel, 80, 135, 130, 95, 90, 70, 5);
+        cardRepository.save(metagross);
         Card megaBlaziken = new Card("Mega Blaziken", "", fire, 80, 160, 80, 130, 80, 100, 5);
         cardRepository.save(megaBlaziken);
         Card zekrom = new Card("Zekrom", "", dragon, 100, 150, 120, 120, 100, 90, 6);
