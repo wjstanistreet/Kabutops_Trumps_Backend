@@ -19,20 +19,16 @@ import java.util.Map;
 public class GameController {
 
     @Autowired
-    GameRepository gameRepository;
-
-    @Autowired
     GameService gameService;
 
-    @Autowired
-    TypeRepository typeRepository;
-
+    //get all games
     @GetMapping
     public ResponseEntity<List<Game>> getAllGames(){
         List<Game> games = gameService.getAllGames();
         return new ResponseEntity<>(games, HttpStatus.OK);
     }
 
+    //add new game
     @PostMapping
     public ResponseEntity<Game> addNewGame(@RequestParam (required = true, value = "playerAId") long playerAId,
                                              @RequestParam (required = true, value = "playerBId") long playerBId) {
@@ -40,6 +36,7 @@ public class GameController {
         return new ResponseEntity<>(newGame, HttpStatus.CREATED);
     }
 
+    //update game
     @PatchMapping(value = "/{id}")
     public ResponseEntity<Game> updateGame(@PathVariable long id,
                                            @RequestParam(value = "statA") int statA,
