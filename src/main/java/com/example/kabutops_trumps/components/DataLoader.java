@@ -268,7 +268,6 @@ public class DataLoader implements ApplicationRunner {
         Account red = new Account("Red", ".....", "Champion", true);
         accountRepository.save(red);
 
-        ownershipRepository.save(new Ownership(red, redsPikachu, true));
         ownershipRepository.save(new Ownership(red, megaCharizardX, true));
         ownershipRepository.save(new Ownership(red, megaBlastoise, true));
         ownershipRepository.save(new Ownership(red, megaVenusar, true));
@@ -279,6 +278,7 @@ public class DataLoader implements ApplicationRunner {
         ownershipRepository.save(new Ownership(red, articuno, true));
         ownershipRepository.save(new Ownership(red, zapdos, true));
         ownershipRepository.save(new Ownership(red, moltres, true));
+        ownershipRepository.save(new Ownership(red, redsPikachu, true));
 
         // Cynthia's Pokemon
         Card garchomp = new Card("Garchomp", "https://wallpapercave.com/wp/wp8659080.png", dragon, 108, 130, 95, 80, 85, 102, 5);
@@ -343,6 +343,32 @@ public class DataLoader implements ApplicationRunner {
         ownershipRepository.save(ashInfernape);
         ownershipRepository.save(ashGreninja);
         ownershipRepository.save(ashMegaLucario);
+
+        // ------------ Steven's Pokemon ------------
+        Card skarmory = new Card("Skarmory", "", steel, 65, 80, 140, 40, 70, 70, 3);
+        cardRepository.save(skarmory);
+        Card claydol = new Card("Claydol", "", ground, 60, 70, 105, 70, 120, 75, 3);
+        cardRepository.save(claydol);
+        Card aggron = new Card("Aggron", "", steel, 70, 110, 180, 60, 60, 50, 4);
+        cardRepository.save(aggron);
+        Card cradily = new Card("Cradily", "", rock, 86, 81, 97, 81, 107, 43, 3);
+        cardRepository.save(cradily);
+        Card armaldo = new Card("Armaldo", "", rock, 75, 125, 100, 70, 80, 45, 3);
+        cardRepository.save(armaldo);
+        Card megaMetagross = new Card("Mega Metagross", "", steel, 80, 145, 150, 105, 110, 110, 5);
+        cardRepository.save(megaMetagross);
+
+        // Steven
+        Account steven = new Account("Steven", "loveMeSomeStones", "Champion", true);
+        accountRepository.save(steven);
+
+        ownershipRepository.save(new Ownership(steven, skarmory, true));
+        ownershipRepository.save(new Ownership(steven, claydol, true));
+        ownershipRepository.save(new Ownership(steven, aggron, true));
+        ownershipRepository.save(new Ownership(steven, cradily, true));
+        ownershipRepository.save(new Ownership(steven, armaldo, true));
+        ownershipRepository.save(new Ownership(steven, megaMetagross, true));
+
 
     }
 
