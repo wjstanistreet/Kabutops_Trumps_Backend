@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/accounts")
@@ -32,12 +33,17 @@ public class AccountController {
         return new ResponseEntity<>(account, HttpStatus.OK);
     }
 
-    // ACCOUNT BY USERNAME AND PASSWORD
-//    @GetMapping(value = "/{accountName}")
-//    public ResponseEntity<Account> getAccountByName(@PathVariable String accountName){
-//        Account account = accountService.findByAccountName(accountName);
-//        return new ResponseEntity<>(account, HttpStatus.OK);
-//    }
+     //ACCOUNT BY USERNAME AND PASSWORD
+    @GetMapping(value = "/login")
+    public ResponseEntity<Account> getAccountByName(@RequestParam(name ="name") String name,
+                                                    @RequestParam(name ="password") String password){
+        Account account = accountService.findByAccountDetails(name,password);
+        if(account==null){
+            return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+        } else {
+            return new ResponseEntity<>(account, HttpStatus.OK);
+        }
+    }
 
     @PostMapping
     public ResponseEntity<Account> addNewAccount(@RequestBody Account account) {

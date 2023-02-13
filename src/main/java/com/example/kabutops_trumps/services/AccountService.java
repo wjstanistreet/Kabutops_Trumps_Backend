@@ -22,6 +22,17 @@ public class AccountService {
         return accountRepository.findAll();
     }
 
+    public Account findByAccountDetails(String name, String password){
+        List<Account> allAccounts = accountRepository.findAll();
+        for(Account currentAccount : allAccounts){
+            if ((currentAccount.getUsername().equals(name))&&(currentAccount.getPassword().equals(password))){
+                return currentAccount;
+            }
+        }
+
+        return null;
+    }
+
     public Account addNewAccount(Account account) {
         accountRepository.save(account);
         return account;
