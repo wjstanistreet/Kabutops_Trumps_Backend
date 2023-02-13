@@ -3,6 +3,7 @@ package com.example.kabutops_trumps.services;
 import com.example.kabutops_trumps.controllers.CardController;
 import com.example.kabutops_trumps.models.Account;
 import com.example.kabutops_trumps.models.Card;
+import com.example.kabutops_trumps.repositories.AccountRepository;
 import com.example.kabutops_trumps.repositories.CardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,13 +17,36 @@ public class CardService {
     @Autowired
     CardRepository cardRepository;
 
+    @Autowired
+    AccountRepository accountRepository;
+
 
 
     public List<Card> getAllCards() {
         return cardRepository.findAll();
     }
 
-    public List<Card> shuffleDeck(Account account) {
+    public Card findCardByID(Long id){
+        Card card = cardRepository.findById(id).get();
+        return card;
+    }
+
+    public List<Card> getCardsByAccountId(Long id){
+        Account account = accountRepository.findById(id).get();
+        List<Card> cardsInAccount = cardRepository.findByOwnershipsAccount(account);
+        return cardsInAccount;
+    }
+
+
+
+    public List<Card> getCardsInDeckByAccountId(Long id){
+        Account account = accountRepository.findById(id).get();
+        List<Card> cardsInAccountDeck = cardRepository.findByOwnershipsAccountAndOwnershipsInDeckTrue(account);
+        return cardsInAccountDeck;
+    }
+
+    public List<Card> shuffleDeck(Long id) {
+        Account account = accountRepository.findById(id).get();
         List<Card> deck = cardRepository.findByOwnershipsAccountAndOwnershipsInDeckTrue(account);
         Collections.shuffle(deck);
         return deck;

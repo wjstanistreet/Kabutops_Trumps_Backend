@@ -16,24 +16,23 @@ import java.util.Optional;
 public class AccountController {
 
     @Autowired
-    AccountRepository accountRepository;
-
-    @Autowired
     AccountService accountService;
 
+    //get all accounts
     @GetMapping
     public ResponseEntity<List<Account>> getAllAccounts(){
         List<Account> accounts = accountService.getAllAccounts();
         return new ResponseEntity<>(accounts, HttpStatus.OK);
     }
 
+    //get account by id
     @GetMapping(value = "/{id}")
     public ResponseEntity<Account> getAccountById(@PathVariable long id){
-        Account account = accountRepository.findById(id).get();
+        Account account = accountService.findAccountByID(id);
         return new ResponseEntity<>(account, HttpStatus.OK);
     }
 
-     //ACCOUNT BY USERNAME AND PASSWORD
+     //get account by username and password
     @GetMapping(value = "/login")
     public ResponseEntity<Account> getAccountByName(@RequestParam(name ="name") String name,
                                                     @RequestParam(name ="password") String password){
@@ -45,24 +44,25 @@ public class AccountController {
         }
     }
 
+    //add new account
     @PostMapping
     public ResponseEntity<Account> addNewAccount(@RequestBody Account account) {
         Account newAccount = accountService.addNewAccount(account);
         return new ResponseEntity<>(newAccount, HttpStatus.CREATED);
     }
 
+    //update an account
     @PatchMapping(value = "/{id}")
     public ResponseEntity<Account> updateAccount(@PathVariable long id, @RequestBody Account account){
-        accountService.updateAccountDetails(id, account);
-        return new ResponseEntity<>(accountRepository.findById(id).get(), HttpStatus.OK);
+        Account updatedAccount = accountService.updateAccountDetails(id, account);
+        return new ResponseEntity<>(updatedAccount, HttpStatus.OK);
     }
 
+    //delete an account
     @DeleteMapping(value = "/{id}")
     public ResponseEntity<Long> deleteAccount(@PathVariable long id){
         accountService.deleteAccount(id);
         return new ResponseEntity<>(id, HttpStatus.OK);
     }
-
-
 
 }

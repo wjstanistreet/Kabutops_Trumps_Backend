@@ -25,9 +25,6 @@ public class GameController {
     GameService gameService;
 
     @Autowired
-    AccountRepository accountRepository;
-
-    @Autowired
     TypeRepository typeRepository;
 
     @GetMapping
@@ -39,17 +36,17 @@ public class GameController {
     @PostMapping
     public ResponseEntity<Game> addNewGame(@RequestParam (required = true, value = "playerAId") long playerAId,
                                              @RequestParam (required = true, value = "playerBId") long playerBId) {
-        Game newGame = gameService.startNewGame(accountRepository.findById(playerAId).get(), accountRepository.findById(playerBId).get());
+        Game newGame = gameService.startNewGame(playerAId,playerBId);
         return new ResponseEntity<>(newGame, HttpStatus.CREATED);
     }
 
     @PatchMapping(value = "/{id}")
     public ResponseEntity<Game> updateGame(@PathVariable long id,
-                                           @RequestParam int statA,
-                                           @RequestParam int statB,
-                                           @RequestParam long typeAId,
-                                           @RequestParam long typeBId){
-        Game updatedGame = gameService.processGame(gameRepository.findById(id).get(), statA, statB, typeRepository.findById(typeAId).get(), typeRepository.findById(typeBId).get());
+                                           @RequestParam(value = "statA") int statA,
+                                           @RequestParam(value = "statB") int statB,
+                                           @RequestParam(value = "typeAId") long typeAId,
+                                           @RequestParam(value = "typeBId") long typeBId){
+        Game updatedGame = gameService.processGame(id, statA, statB, typeAId,typeBId);
         return new ResponseEntity<>(updatedGame, HttpStatus.OK);
     }
 

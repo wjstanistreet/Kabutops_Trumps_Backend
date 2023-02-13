@@ -17,11 +17,9 @@ import java.util.List;
 public class TypeController {
 
     @Autowired
-    TypeRepository typeRepository;
-
-    @Autowired
     TypeService typeService;
 
+    //get all types
     @GetMapping
     public ResponseEntity<List<Type>> getAllTypes(){
         List<Type> types = typeService.getAllTypes();

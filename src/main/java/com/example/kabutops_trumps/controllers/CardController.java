@@ -22,43 +22,44 @@ import java.util.List;
 @RequestMapping("/cards")
 public class CardController {
 
-    @Autowired
-    CardRepository cardRepository;
 
-    @Autowired
-    AccountRepository accountRepository;
+
 
     @Autowired
     CardService cardService;
 
+    //get all cards
     @GetMapping
     public ResponseEntity<List<Card>> getAllCards(){
         List<Card> cards = cardService.getAllCards();
         return new ResponseEntity<>(cards, HttpStatus.OK);
     }
 
+    //get card by id
     @GetMapping(value = "/{id}")
     public ResponseEntity<Card> getCardById(@PathVariable long id){
-        Card card = cardRepository.findById(id).get();
+        Card card = cardService.findCardByID(id);
         return new ResponseEntity<>(card, HttpStatus.OK);
     }
 
-
+    //get cards by account
     @GetMapping(value = "/account/{id}")
     public ResponseEntity<List<Card>> getCardsByAccountId(@PathVariable long id){
-        List<Card> cardsInAccount = cardRepository.findByOwnershipsAccount(accountRepository.findById(id).get());
+        List<Card> cardsInAccount = cardService.getCardsByAccountId(id);
         return new ResponseEntity<>(cardsInAccount, HttpStatus.OK);
     }
 
+    //get cards in accounts deck
     @GetMapping(value = "/account/{id}/deck")
     public ResponseEntity<List<Card>> getCardsInDeckByAccountId(@PathVariable long id){
-        List<Card> cardsInAccountDeck = cardRepository.findByOwnershipsAccountAndOwnershipsInDeckTrue(accountRepository.findById(id).get());
+        List<Card> cardsInAccountDeck = cardService.getCardsInDeckByAccountId(id);
         return new ResponseEntity<>(cardsInAccountDeck, HttpStatus.OK);
     }
 
+    //get shuffled deck of an account
     @GetMapping(value = "/account/{id}/deck/shuffle")
     public ResponseEntity<List<Card>> getShuffledDeckForAccount(@PathVariable long id){
-        List<Card> shuffledDeck = cardService.shuffleDeck(accountRepository.findById(id).get());
+        List<Card> shuffledDeck = cardService.shuffleDeck(id);
         return new ResponseEntity<>(shuffledDeck, HttpStatus.OK);
     }
 

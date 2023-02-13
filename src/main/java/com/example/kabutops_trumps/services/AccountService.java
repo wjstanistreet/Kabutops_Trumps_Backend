@@ -1,5 +1,6 @@
 package com.example.kabutops_trumps.services;
 
+import com.example.kabutops_trumps.controllers.AccountController;
 import com.example.kabutops_trumps.models.Account;
 import com.example.kabutops_trumps.models.Ownership;
 import com.example.kabutops_trumps.repositories.AccountRepository;
@@ -22,6 +23,11 @@ public class AccountService {
         return accountRepository.findAll();
     }
 
+    public Account findAccountByID(Long id){
+        Account account = accountRepository.findById(id).get();
+        return account;
+    }
+
     public Account findByAccountDetails(String name, String password){
         List<Account> allAccounts = accountRepository.findAll();
         for(Account currentAccount : allAccounts){
@@ -38,7 +44,7 @@ public class AccountService {
         return account;
     }
 
-    public void updateAccountDetails(long id, Account accountParameter) {
+    public Account updateAccountDetails(long id, Account accountParameter) {
         Account account = accountRepository.findById(id).get();
         account.setUsername(accountParameter.getUsername());
         account.setPassword(accountParameter.getPassword());
@@ -49,6 +55,8 @@ public class AccountService {
         account.setTrainerTitle(accountParameter.getTrainerTitle());
         account.setComputer(accountParameter.isComputer());
         accountRepository.save(account);
+        Account updatedAccount = accountRepository.findById(id).get();
+        return updatedAccount;
     }
 
     // to complete

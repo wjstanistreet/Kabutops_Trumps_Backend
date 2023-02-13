@@ -19,6 +19,9 @@ public class GameService {
     GameRepository gameRepository;
 
     @Autowired
+    AccountRepository accountRepository;
+
+    @Autowired
     TypeRepository typeRepository;
 
     public List<Game> getAllGames() {
@@ -87,7 +90,9 @@ public class GameService {
 
 
     //§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
-    public Game startNewGame(Account accountA, Account accountB){
+    public Game startNewGame(long playerAId, long playerBId){
+        Account accountA = accountRepository.findById(playerAId).get();
+        Account accountB = accountRepository.findById(playerBId).get();
         List<Account> players = new ArrayList<>();
         players.add(accountA);
         players.add(accountB);
@@ -110,7 +115,11 @@ public class GameService {
         }
     }
 
-    public Game processGame(Game game, int statA, int statB, Type typeA, Type typeB) {
+    public Game processGame(Long id, int statA, int statB, Long typeAId, Long typeBId) {
+
+        Game game = gameRepository.findById(id).get();
+        Type typeA = typeRepository.findById(typeAId).get();
+        Type typeB = typeRepository.findById(typeBId).get();
         int finalRound= 7;
         Game currentGame = gameRepository.findById(game.getId()).get();
         int roundNumber = currentGame.getRoundNumber();

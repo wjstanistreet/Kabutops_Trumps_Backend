@@ -25,6 +25,16 @@ public class OwnershipService {
         return ownershipRepository.findAll();
     }
 
+    public List<Ownership> getOwnershipsByAccountInDeck(Long id){
+        List<Ownership> ownershipsInAccountDeck = ownershipRepository.findByAccountAndInDeckTrue(accountRepository.findById(id).get());
+        return ownershipsInAccountDeck;
+    }
+
+    public List<Ownership> getOwnershipsByAccount(Long id){
+        List<Ownership> ownershipsInAccount = ownershipRepository.findByAccount(accountRepository.findById(id).get());
+        return ownershipsInAccount;
+    }
+
 
     public Ownership addOwnership(long accountId, long cardId, boolean inDeck) {
         Ownership ownership = new Ownership(accountRepository.findById(accountId).get(), cardRepository.findById(cardId).get(), inDeck);
@@ -33,12 +43,13 @@ public class OwnershipService {
         return ownership;
     }
 
-    public void updateOwnership(long id, boolean inDeck) {
+    public Ownership updateOwnership(long id, boolean inDeck) {
 
         Ownership ownership = ownershipRepository.findById(id).get();
         ownership.setInDeck(inDeck);
         ownershipRepository.save(ownership);
-
+        Ownership updatedOwnership = ownershipRepository.findById(id).get();
+        return updatedOwnership;
     }
 
     public void deleteOwnership(long id) {
