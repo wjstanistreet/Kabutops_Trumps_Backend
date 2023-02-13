@@ -157,18 +157,45 @@ public class DataLoader implements ApplicationRunner {
 
         //Brock's Pokemon
         Card steelix = new Card("Steelix", "https://64.media.tumblr.com/8e687a5cc2ca7f20a571182192df1027/4a15e17d7c405c57-5a/s1280x1920/8d2e677a97e81077f97fa35dac1b0653f6b38820.jpg", steel, 75,85,200,55,65,30,4);
+        cardRepository.save(steelix);
         Card croagunk = new Card("Croagunk", "https://cdn.donmai.us/original/f2/e7/__croagunk_pokemon_drawn_by_kikuyoshi_tracco__f2e73221d43b4bb7aad96a4af623b55d.jpg", poison, 48, 61, 40, 60, 40, 50, 2);
+        cardRepository.save(croagunk);
         Card sudowoodo = new Card("Sudowoodo", "https://cdn.discordapp.com/attachments/1072211977482535013/1074360470162653274/the_woods_doesn_t_let_you_see_the_sudowoodo_by_edonovaillustrator_dehmups-fullview.png", rock, 70, 100, 115, 30, 65,30, 3);
+        cardRepository.save(sudowoodo);
         Card crobat = new Card("Crobat", "https://64.media.tumblr.com/75f5ac2dad6893e30f05c63c54c03b22/tumblr_nebgscyLoR1r1hsklo1_1280.jpg", poison,  85, 90, 80, 70, 80, 130, 2);
-        Card geodude = new Card ("Geodude", "https://pm1.narvii.com/6568/e84d2668884576df48cd72a627ae7f7d40c698f1_00.jpg",rock, 40, 80,100,30,30,20,2);
+        cardRepository.save(crobat);
+        Card geodude = new Card ("Geodude", "https://pm1.narvii.com/6568/e84d2668884576df48cd72a627ae7f7d40c698f1_00.jpg",rock, 40, 80,100,30,30,20,1);
+        cardRepository.save(geodude);
         Card marshtomp = new Card ("Marshtomp", "https://i.pinimg.com/564x/b1/5c/08/b15c0817328a1697a3ca42c2f323b157.jpg", ground, 70, 85, 70, 60, 70 , 50, 3);
+        cardRepository.save(marshtomp);
         Card ludicolo = new Card("Ludicolo", "https://i.pinimg.com/originals/d2/d5/17/d2d5173fa29b1fb81cffebce7ecceaee.png", water, 80, 70, 70, 90, 100, 70, 3);
+        cardRepository.save(ludicolo);
         Card blissey = new Card("Blissey", "https://pbs.twimg.com/media/FnHtBQqXoAAPyE6?format=jpg&name=medium", normal, 255, 10, 10, 75, 135, 55, 4);
+        cardRepository.save(blissey);
         Card forretress = new Card("Forretress", "https://cdn.wallpapersafari.com/90/33/neb0Ro.jpg", bug, 75, 90, 140, 60, 60, 40, 2);
+        cardRepository.save(forretress);
         Card vulpix = new Card("Vulpix", "https://cdn.donmai.us/original/d3/55/d3554825bc8d5dd0b9c1c8f1fde55c47.png", fire, 38, 41 ,40, 50, 65, 65, 1);
+        cardRepository.save(vulpix);
         Card kabutops = new Card("Kabutops", "https://cdn.donmai.us/original/f0/24/f02412f7644f79fe0183cc4c69a3edf6.jpg", rock, 60, 115, 105, 65, 70, 80, 2);
+        cardRepository.save(kabutops);
 
-        //Blue's Pokemon
+        // Brock
+        Account brock = new Account("Brock", "fryingToDryingPan", "Leader", true);
+        accountRepository.save(brock);
+
+        ownershipRepository.save(new Ownership(brock, steelix, true));
+        ownershipRepository.save(new Ownership(brock, croagunk, true));
+        ownershipRepository.save(new Ownership(brock, sudowoodo, true));
+        ownershipRepository.save(new Ownership(brock, crobat, true));
+        ownershipRepository.save(new Ownership(brock, geodude, true));
+        ownershipRepository.save(new Ownership(brock, marshtomp, true));
+        ownershipRepository.save(new Ownership(brock, ludicolo, true));
+        ownershipRepository.save(new Ownership(brock, blissey, true));
+        ownershipRepository.save(new Ownership(brock, forretress, true));
+        ownershipRepository.save(new Ownership(brock, vulpix, true));
+        ownershipRepository.save(new Ownership(brock, kabutops, true));
+
+        // ------------ Blue's Pokemon ------------
         Card rhyperior = new Card("Rhyperior", "https://external-preview.redd.it/Hqdvy8jkjKdiiejjXgXt7DJ-VwAGHHIUQ6tGh7zIzjE.png?auto=webp&s=aa5a79afec74dd5dc44fb1740bd4c456217c605e", ground, 115, 140, 130, 55, 55, 40, 4);
         cardRepository.save(rhyperior);
 
@@ -187,6 +214,7 @@ public class DataLoader implements ApplicationRunner {
         Card magnezone = new Card("Magnezone", "https://cdn.donmai.us/original/bf/56/bf56efa1e33d390366936817de7367e6.jpg", electric, 70, 70, 115, 130, 90, 60, 4 );
         cardRepository.save(magnezone);
 
+        // Blue
         Account blue = new Account("Blue","smellYaLater", "Champion", true);
         accountRepository.save(blue);
 
@@ -202,7 +230,7 @@ public class DataLoader implements ApplicationRunner {
         ownershipRepository.save(new Ownership(blue, sandslash, true));
         ownershipRepository.save(new Ownership(blue, shinyGyarados, true));
 
-        //Red's Pokemon
+        // ------------ Red's Pokemon ------------
 
         //mega charizard X
 
@@ -218,8 +246,7 @@ public class DataLoader implements ApplicationRunner {
         Card megaVenusar = new Card("Mega Venusar","https://assets.pokemon.com/assets//cms2/img/trading-card-game/_downloads/xy1/xy1-wallpaper-venusaur-th-169.jpg",psychic,80, 100, 123, 122, 120, 80,5);
         cardRepository.save(megaVenusar);
 
-
-        Card snorlax = new Card("Snorlax", "https://www.pngitem.com/pimgs/m/102-1023845_pic-pokemon-sun-and-moon-snorlax-hd-png.png", normal,160, 110, 65,65,110,30,5 );
+        Card snorlax = new Card("Snorlax", "https://www.pngitem.com/pimgs/m/102-1023845_pic-pokemon-sun-and-moon-snorlax-hd-png.png", normal,160, 110, 65,65,110,30,5);
         cardRepository.save(snorlax);
 
         Card lapras = new Card("Lapras","https://i.pinimg.com/736x/85/36/8e/85368e255b067f9b3495022cb2118b15.jpg", water,130,85,80,85,95,60,5);
@@ -237,9 +264,23 @@ public class DataLoader implements ApplicationRunner {
         Card moltres = new Card("Moltress","https://wallpaperaccess.com/full/1993616.jpg", fire,90,100,90,125,85,90,5);
         cardRepository.save(moltres);
 
+        // Red
+        Account red = new Account("Red", ".....", "Champion", true);
+        accountRepository.save(red);
 
+        ownershipRepository.save(new Ownership(red, redsPikachu, true));
+        ownershipRepository.save(new Ownership(red, megaCharizardX, true));
+        ownershipRepository.save(new Ownership(red, megaBlastoise, true));
+        ownershipRepository.save(new Ownership(red, megaVenusar, true));
+        ownershipRepository.save(new Ownership(red, mewTwo, true));
+        ownershipRepository.save(new Ownership(red, snorlax, true));
+        ownershipRepository.save(new Ownership(red, lapras, true));
+        ownershipRepository.save(new Ownership(red, espeon, true));
+        ownershipRepository.save(new Ownership(red, articuno, true));
+        ownershipRepository.save(new Ownership(red, zapdos, true));
+        ownershipRepository.save(new Ownership(red, moltres, true));
 
-        //Cynthia's Pokemon
+        // Cynthia's Pokemon
         Card garchomp = new Card("Garchomp", "https://wallpapercave.com/wp/wp8659080.png", dragon, 108, 130, 95, 80, 85, 102, 5);
         Card milotic = new Card("Milotic", "https://i.pinimg.com/originals/7a/40/a3/7a40a3fee27f2e18947994b6e2363451.png", water, 95, 60, 79, 100, 125, 81, 4);
         Card lucario = new Card("Lucario", "https://image-1.uhdpaper.com/wallpaper/lucario-pokemon-phone-wallpaper-hd-uhdpaper.com-466@1@j.jpg", fighting, 70, 110, 70, 115, 70, 90, 4);
@@ -271,7 +312,6 @@ public class DataLoader implements ApplicationRunner {
         ownershipRepository.save(cynthiaSpiritomb);
         ownershipRepository.save(cynthiaMilotic);
         ownershipRepository.save(cynthiaTogekiss);
-
 
         // ------------ Ash's Pokemon Pikachu and Charizard alrady added ------------
         Card sceptile = new Card("Sceptile", "https://i.pinimg.com/originals/43/8b/cb/438bcb48ef21a8d88249afc6bd06842c.jpg", grass, 70, 85, 65, 105, 85, 120, 4);
