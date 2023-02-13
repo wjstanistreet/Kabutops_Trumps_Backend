@@ -1,6 +1,10 @@
 package com.example.kabutops_trumps.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity(name = "games")
 public class Game {
@@ -11,12 +15,25 @@ public class Game {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+//    @ManyToOne
+//    @JsonIgnoreProperties({"games"})
+//    @JoinColumn(name = "account_id")
+////    @Column(name = "playerA")
+//    private Account playerA;
+//
+//    @ManyToOne
+//    @JsonIgnoreProperties({"games"})
+//    @JoinColumn(name = "account_id")
+////    @Column(name = "playerB")
+//    private Account playerB;
 
-    @Column(name = "playerA")
-    private String playerA;
-
-    @Column(name = "playerB")
-    private String playerB;
+    @ManyToMany
+    @JoinTable(
+            name="played_game",
+            joinColumns = @JoinColumn(name="game_id"),
+            inverseJoinColumns = @JoinColumn(name="account_id"))
+    @JsonIgnoreProperties({"games"})
+    private List<Account> players;
 
     @Column(name = "scoreA")
     private int scoreA;
@@ -33,9 +50,8 @@ public class Game {
     @Column(name = "winner")
     private String winner;
 
-    public Game(String playerA, String playerB) {
-        this.playerA = playerA;
-        this.playerB = playerB;
+    public Game(List<Account> players) {
+        this.players = players;
         this.scoreA = 0;
         this.scoreB = 0;
         this.roundNumber = 0;
@@ -53,20 +69,20 @@ public class Game {
         this.id = id;
     }
 
-    public String getPlayerA() {
-        return playerA;
+//    public Account getPlayerA() {
+//        return players.get(0);
+//    }
+//
+//    public Account getPlayerB() {
+//        return players.get(1);
+//    }
+
+    public List<Account> getPlayers() {
+        return players;
     }
 
-    public void setPlayerA(String playerA) {
-        this.playerA = playerA;
-    }
-
-    public String getPlayerB() {
-        return playerB;
-    }
-
-    public void setPlayerB(String playerB) {
-        this.playerB = playerB;
+    public void setPlayers(List<Account> players) {
+        this.players = players;
     }
 
     public int getScoreA() {

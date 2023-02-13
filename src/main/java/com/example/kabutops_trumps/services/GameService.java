@@ -5,6 +5,7 @@ import com.example.kabutops_trumps.models.Card;
 import com.example.kabutops_trumps.models.Game;
 import com.example.kabutops_trumps.models.Type;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.ReactiveAdapterRegistry;
 import org.springframework.stereotype.Service;
 import com.example.kabutops_trumps.repositories.*;
 
@@ -86,13 +87,18 @@ public class GameService {
 
 
     //§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
-    public Game startNewGame(String accountA, String accountB){
-        Game game = new Game(accountA, accountB);
+    public Game startNewGame(Account accountA, Account accountB){
+        List<Account> players = new ArrayList<>();
+        players.add(accountA);
+        players.add(accountB);
+        System.out.println(players);
+        Game game = new Game(players);
+        game.setPlayers(players);
         gameRepository.save(game);
         return game;
     }
 
-    public String processRound(String accountA, String accountB, int statA, int statB){
+    public Account processRound(Account accountA, Account accountB, int statA, int statB){
         if(statA>statB){
             return accountA;
         }
@@ -117,10 +123,10 @@ public class GameService {
         statB = statList.get(1);
         
 
-        if(roundNumber<=finalRound) {
-            if (processRound(game.getPlayerA(), game.getPlayerB(), statA, statB).equals(game.getPlayerA())) {
+        if(roundNumber<finalRound) {
+            if (processRound(game.getPlayers().get(0), game.getPlayers().get(1), statA, statB).equals(game.getPlayers().get(0))) {
                 scoreA += 1;
-            } else if (processRound(game.getPlayerA(), game.getPlayerB(), statA, statB).equals(game.getPlayerB())) {
+            } else if (processRound(game.getPlayers().get(0), game.getPlayers().get(1), statA, statB).equals(game.getPlayers().get(1))) {
                 scoreB += 1;
             } else {
                 scoreA += 0.5;
@@ -133,10 +139,10 @@ public class GameService {
             currentGame.setPlayerATurn(!currentGame.isPlayerATurn());
             if(roundNumber==finalRound){
                 if(scoreA>scoreB){
-                    currentGame.setWinner(game.getPlayerA());
+                    currentGame.setWinner(game.getPlayers().get(0).getUsername());
                 }
                 else if(scoreB>scoreA){
-                    currentGame.setWinner(game.getPlayerB());
+                    currentGame.setWinner(game.getPlayers().get(1).getUsername());
                 }
                 else{
                     currentGame.setWinner("Tie");

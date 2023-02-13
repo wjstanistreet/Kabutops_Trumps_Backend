@@ -1,6 +1,7 @@
 package com.example.kabutops_trumps.controllers;
 
 import com.example.kabutops_trumps.models.Game;
+import com.example.kabutops_trumps.repositories.AccountRepository;
 import com.example.kabutops_trumps.repositories.GameRepository;
 import com.example.kabutops_trumps.repositories.TypeRepository;
 import com.example.kabutops_trumps.services.GameService;
@@ -24,6 +25,9 @@ public class GameController {
     GameService gameService;
 
     @Autowired
+    AccountRepository accountRepository;
+
+    @Autowired
     TypeRepository typeRepository;
 
     @GetMapping
@@ -33,8 +37,9 @@ public class GameController {
     }
 
     @PostMapping
-    public ResponseEntity<Game> addNewGame(@RequestBody Game game) {
-        Game newGame = gameService.startNewGame(game.getPlayerA(), game.getPlayerB());
+    public ResponseEntity<Game> addNewGame(@RequestParam (required = true, value = "playerAId") long playerAId,
+                                             @RequestParam (required = true, value = "playerBId") long playerBId) {
+        Game newGame = gameService.startNewGame(accountRepository.findById(playerAId).get(), accountRepository.findById(playerBId).get());
         return new ResponseEntity<>(newGame, HttpStatus.CREATED);
     }
 

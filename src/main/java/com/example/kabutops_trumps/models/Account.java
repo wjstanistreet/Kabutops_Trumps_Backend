@@ -24,9 +24,12 @@ public class Account {
     @Column(name = "gamesPlayed")
     private int gamesPlayed;
 
-
     @Column(name = "wins")
     private int wins;
+
+    @ManyToMany(mappedBy = "players")
+    @JsonIgnoreProperties({"players"})
+    private List<Game> games;
 
 //    @ManyToMany
 //    @JoinTable(name = "accounts_cards",
@@ -151,5 +154,13 @@ public class Account {
 
     public void setComputer(boolean computer) {
         isComputer = computer;
+    }
+
+    public List<Game> getGames() {
+        return games;
+    }
+
+    public void setGames(List<Game> games) {
+        this.games = games;
     }
 }
