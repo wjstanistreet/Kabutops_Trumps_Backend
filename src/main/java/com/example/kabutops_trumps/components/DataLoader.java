@@ -389,7 +389,7 @@ public class DataLoader implements ApplicationRunner {
         Account N = new Account("N", "aNaturalHarmoniaGropius", "Team Plasma King", true);
         accountRepository.save(N);
 
-        Card reshiram = new Card("Reshiram", "", dragon, 100, 120, 100, 150, 120, 90, 6)
+        Card reshiram = new Card("Reshiram", "", dragon, 100, 120, 100, 150, 120, 90, 6);
         cardRepository.save(reshiram);
         Card carracosta = new Card("Carracosta", "", water, 74, 108, 133, 83, 65, 32, 4);
         cardRepository.save(carracosta);
