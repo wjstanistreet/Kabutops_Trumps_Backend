@@ -473,12 +473,145 @@ public class DataLoader implements ApplicationRunner {
         ownershipRepository.save(new Ownership(leon, charizard, true));
         ownershipRepository.save(new Ownership(leon, rhyperior, true));
 
-        
-       
+        // Eesaa's Pokemon
+        Account eesaa = new Account("Eesaa", "", "Pokemon Master (?)", false);
+        accountRepository.save(eesaa);
+
+        Card gengar = new Card("Gengar", "", ghost, 60, 65, 60, 130, 75, 110, 4);
+        cardRepository.save(gengar);
+        Card megaCharizardY = new Card("Mega Charizard Y", "", fire, 78, 104, 78, 159, 115, 100, 5);
+        cardRepository.save(megaCharizardY);
+        Card darkrai = new Card("Darkrai", "", dark, 70, 90, 90, 135, 90, 125, 5);
+        cardRepository.save(darkrai);
+        Card jolteon = new Card("Jolteon", "", electric, 65, 65, 60, 110, 95, 130, 4);
+        cardRepository.save(jolteon);
+        Card metapod = new Card("Metapod", "", bug, 50, 20, 55, 25, 25, 30, 1);
+        cardRepository.save(metapod);
+        Card dragonite = new Card("Dragonite", "", dragon, 91, 134, 95, 100, 100, 80, 5);
+        cardRepository.save(dragonite);
+        Card noivern = new Card("Noivern", "", dragon, 85, 70, 80, 97, 80, 123, 4);
+        cardRepository.save(noivern);
+        Card lunala = new Card("Lunala", "", psychic, 137, 113, 89, 137, 107, 97, 6);
+        cardRepository.save(lunala);
+        Card swampert = new Card("Swampert", "", water, 100, 110, 90, 85, 90, 60, 4);
+        cardRepository.save(swampert);
+
+        ownershipRepository.save(new Ownership(eesaa, metapod, true));
+        ownershipRepository.save(new Ownership(eesaa, jolteon, true));
+        ownershipRepository.save(new Ownership(eesaa, gengar, true));
+        ownershipRepository.save(new Ownership(eesaa, noivern, true));
+        ownershipRepository.save(new Ownership(eesaa, swampert, true));
+        ownershipRepository.save(new Ownership(eesaa, infernape, true));
+        ownershipRepository.save(new Ownership(eesaa, inteleon, true));
+        ownershipRepository.save(new Ownership(eesaa, dragonite, true));
+        ownershipRepository.save(new Ownership(eesaa, megaCharizardY, true));
+        ownershipRepository.save(new Ownership(eesaa, darkrai, true));
+        ownershipRepository.save(new Ownership(eesaa, lunala, true));
+
+        // Will's Pokemon
+        Account will = new Account("Will", "", "Pokemon Breeder", false);
+        accountRepository.save(will);
+
+        Card vaporeon = new Card("Vaporeon", "", water, 130, 65, 60, 110, 95, 65, 4);
+        cardRepository.save(vaporeon);
+        Card torterra = new Card("Torterra", "", grass, 95, 109, 105, 75, 85, 56, 4);
+        cardRepository.save(torterra);
+        Card tyranitar = new Card("Tyranitar", "", rock, 100, 134, 110, 95, 100, 61, 5);
+        cardRepository.save(tyranitar);
+        Card salamence = new Card("Salamence", "", dragon, 95, 135, 80, 110, 80, 100, 5);
+        cardRepository.save(salamence);
+        Card chandelure = new Card("Chandelure", "", ghost, 60, 55, 90, 145, 90, 80, 4);
+        cardRepository.save(chandelure);
+        Card gallade = new Card("Gallade", "", psychic, 68, 125, 65, 65, 115, 80, 4);
+        cardRepository.save(gallade);
+        Card rotomWash = new Card("Rotom-Wash", "", water, 50, 65, 107, 105, 107, 86, 4);
+        cardRepository.save(rotomWash);
+        Card rayquaza = new Card("Rayquaza", "", dragon, 105, 150, 90, 150, 90, 95, 6);
+        cardRepository.save(rayquaza);
+
+        ownershipRepository.save(new Ownership(will, vaporeon, true));
+        ownershipRepository.save(new Ownership(will, magnezone, true));
+        ownershipRepository.save(new Ownership(will, garchomp, true));
+        ownershipRepository.save(new Ownership(will, torterra, true));
+        ownershipRepository.save(new Ownership(will, tyranitar, true));
+        ownershipRepository.save(new Ownership(will, salamence, true));
+        ownershipRepository.save(new Ownership(will, chandelure, true));
+        ownershipRepository.save(new Ownership(will, gallade, true));
+        ownershipRepository.save(new Ownership(will, rotomWash, true));
+        ownershipRepository.save(new Ownership(will, megaLucario, true));
+        ownershipRepository.save(new Ownership(will, rayquaza, true));
+
+        // Bav's Pokemon
+        Account bav = new Account("Bav", "", "Veteran", false);
+        accountRepository.save(bav);
+
+        Card scizor = new Card("Scizor", "", bug, 70, 130, 100, 55, 80, 65, 4 );
+        cardRepository.save(scizor);
+        Card electivire = new Card("Electivire", "", electric, 75, 123, 67, 95, 85, 95, 4);
+        cardRepository.save(electivire);
+        Card umbreon = new Card("Umbreon", "", dark, 95, 65, 110, 60, 130, 65, 4);
+        cardRepository.save(umbreon);
+        Card empoleon = new Card("Empoleon", "", water, 84, 86, 88, 111, 101, 60, 4);
+        cardRepository.save(empoleon);
+        Card staraptor = new Card("Staraptor", "", flying, 85, 120, 70, 50, 60, 100, 4);
+        cardRepository.save(staraptor);
+        Card bisharp = new Card("Bisharp", "", dark, 65, 125, 100, 60, 70, 70, 4);
+        cardRepository.save(bisharp);
+        Card metagross = new Card("Metagross", "", steel, 80, 135, 130, 95, 90, 70, 5);
+        Card megaBlaziken = new Card("Mega Blaziken", "", fire, 80, 160, 80, 130, 80, 100, 5);
+        cardRepository.save(megaBlaziken);
+        Card zekrom = new Card("Zekrom", "", dragon, 100, 150, 120, 120, 100, 90, 6);
+        cardRepository.save(zekrom);
+
+        ownershipRepository.save(new Ownership(bav, aggron, true));
+        ownershipRepository.save(new Ownership(bav, heracross, true));
+        ownershipRepository.save(new Ownership(bav, umbreon, true));
+        ownershipRepository.save(new Ownership(bav, staraptor, true));
+        ownershipRepository.save(new Ownership(bav, bisharp, true));
+        ownershipRepository.save(new Ownership(bav, electivire, true));
+        ownershipRepository.save(new Ownership(bav, empoleon, true));
+        ownershipRepository.save(new Ownership(bav, scizor, true));
+        ownershipRepository.save(new Ownership(bav, metagross, true));
+        ownershipRepository.save(new Ownership(bav, megaBlaziken, true));
+        ownershipRepository.save(new Ownership(bav, zekrom, true));
 
 
 
+        // Shawn
+        Account shawn = new Account("Shawn", "password", "Leader", false);
+        accountRepository.save(shawn);
 
+        Card serperior = new Card("Serperior", "", grass, 75, 75, 95, 75, 95, 113, 4);
+        cardRepository.save(serperior);
+        Card grovyle = new Card("Grovyle", "", grass, 50, 65, 45, 85, 65, 95, 3);
+        cardRepository.save(grovyle);
+        Card delphox = new Card("Delphox", "", fire, 75, 69, 72, 114, 100, 104, 4);
+        cardRepository.save(delphox);
+        Card krookodile = new Card("Krookodile", "", ground, 95, 117, 80, 65, 70, 92, 4);
+        cardRepository.save(krookodile);
+        Card feraligatr = new Card("Feraligatr", "", water, 85, 105, 100, 79, 83, 78, 4);
+        cardRepository.save(feraligatr);
+        Card gardevoir = new Card("Gardevoir", "", psychic, 68, 65, 65, 125, 115, 80, 4);
+        cardRepository.save(gardevoir);
+        Card glaceon = new Card("Glaceon", "", ice, 65, 60, 110, 130, 95, 65, 4);
+        cardRepository.save(glaceon);
+        Card sableye = new Card("Sableye", "", dark, 50, 75, 75, 65, 65, 50, 3);
+        cardRepository.save(sableye);
+        Card zygarde = new Card("Zygarde", "", dragon, 108, 100, 121, 81, 95, 95, 5);
+        cardRepository.save(zygarde);
+
+
+        ownershipRepository.save(new Ownership(shawn, serperior, true));
+        ownershipRepository.save(new Ownership(shawn, grovyle, true));
+        ownershipRepository.save(new Ownership(shawn, delphox, true));
+        ownershipRepository.save(new Ownership(shawn, krookodile, true));
+        ownershipRepository.save(new Ownership(shawn, feraligatr, true));
+        ownershipRepository.save(new Ownership(shawn, gardevoir, true));
+        ownershipRepository.save(new Ownership(shawn, machamp, true));
+        ownershipRepository.save(new Ownership(shawn, glaceon, true));
+        ownershipRepository.save(new Ownership(shawn, sableye, true));
+        ownershipRepository.save(new Ownership(shawn, zoroark, true));
+        ownershipRepository.save(new Ownership(shawn, zygarde, true));
     }
 
 }
