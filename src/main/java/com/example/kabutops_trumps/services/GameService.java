@@ -123,7 +123,7 @@ public class GameService {
         statB = statList.get(1);
         //
 
-        if(roundNumber<=finalRound) {
+        if(roundNumber<finalRound) {
             if (processRound(game.getPlayers().get(0), game.getPlayers().get(1), statA, statB).equals(game.getPlayers().get(0))) {
                 scoreA += 1;
             } else if (processRound(game.getPlayers().get(0), game.getPlayers().get(1), statA, statB).equals(game.getPlayers().get(1))) {

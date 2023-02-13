@@ -27,11 +27,7 @@ public class Account {
     @Column(name = "wins")
     private int wins;
 
-    @ManyToMany
-    @JoinTable(
-            name="played_game",
-            joinColumns = @JoinColumn(name="account_id"),
-            inverseJoinColumns = @JoinColumn(name="game_id"))
+    @ManyToMany(mappedBy = "players")
     @JsonIgnoreProperties({"players"})
     private List<Game> games;
 
