@@ -464,14 +464,14 @@ public class DataLoader implements ApplicationRunner {
         ownershipRepository.save(new Ownership(leon, aegislash, true));
         ownershipRepository.save(new Ownership(leon, coalossal, true));
         ownershipRepository.save(new Ownership(leon, dragapult, true));
-        ownershipRepository.save(new Ownership(leon, inteleon, true));
-        ownershipRepository.save(new Ownership(leon, rillaboom, true));
         ownershipRepository.save(new Ownership(leon, haxorus, true));
         ownershipRepository.save(new Ownership(leon, mrRime, true));
-        ownershipRepository.save(new Ownership(leon, cinderace, true));
         ownershipRepository.save(new Ownership(leon, seismitoad, true));
-        ownershipRepository.save(new Ownership(leon, charizard, true));
         ownershipRepository.save(new Ownership(leon, rhyperior, true));
+        ownershipRepository.save(new Ownership(leon, rillaboom, true));
+        ownershipRepository.save(new Ownership(leon, cinderace, true));
+        ownershipRepository.save(new Ownership(leon, inteleon, true));
+        ownershipRepository.save(new Ownership(leon, charizard, true));
 
         // Eesaa's Pokemon
         Account eesaa = new Account("Eesaa", "", "Pokemon Master (?)", false);
