@@ -1,5 +1,7 @@
 package com.example.kabutops_trumps.services;
 
+import com.example.kabutops_trumps.models.Account;
+import com.example.kabutops_trumps.models.Card;
 import com.example.kabutops_trumps.models.Ownership;
 import com.example.kabutops_trumps.repositories.AccountRepository;
 import com.example.kabutops_trumps.repositories.CardRepository;
@@ -32,6 +34,14 @@ public class OwnershipService {
 
     public List<Ownership> getOwnershipsByAccount(Long id){
         List<Ownership> ownershipsInAccount = ownershipRepository.findByAccount(accountRepository.findById(id).get());
+        return ownershipsInAccount;
+    }
+
+    public List<Ownership> getOwnershipsByAccountAndCard(Long accountId, Long cardId){
+
+        Account account = accountRepository.findById(accountId).get();
+        Card card = cardRepository.findById(cardId).get();
+        List<Ownership> ownershipsInAccount = ownershipRepository.findByAccountAndCard(account, card);
         return ownershipsInAccount;
     }
 
