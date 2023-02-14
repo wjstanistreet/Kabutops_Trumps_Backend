@@ -8,6 +8,7 @@ import com.example.kabutops_trumps.repositories.CardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -43,6 +44,17 @@ public class CardService {
         Account account = accountRepository.findById(id).get();
         List<Card> cardsInAccountDeck = cardRepository.findByOwnershipsAccountAndOwnershipsInDeckTrue(account);
         return cardsInAccountDeck;
+    }
+
+    public List<Card> getCardsByType(String pokeType){
+        List<Card> allCards = cardRepository.findAll();
+        List<Card> typeCards = new ArrayList<>();
+        for(Card currentCard : allCards){
+            if (currentCard.getType().getName().equals(pokeType)){
+                typeCards.add(currentCard);
+            }
+        }
+        return typeCards;
     }
 
     public List<Card> shuffleDeck(Long id) {

@@ -34,25 +34,28 @@ public class GameService {
     public ArrayList<Integer> typeCompare(Type typeA, Type typeB, int statA, int statB) {
         int strAgainstMultiplier = 2;
 
+        int newStatA =statA;
+        int newStatB =statB;
+
         if (typeA.getStrongAgainst().contains(typeB.getName())) {
-            statA *= strAgainstMultiplier;
+            newStatA = statA * strAgainstMultiplier;
         }
 
         if (typeA.getWeakAgainst().contains(typeB.getName())) {
-            statA /= strAgainstMultiplier;
+            newStatA = statA / strAgainstMultiplier;
         }
 
         if (typeB.getStrongAgainst().contains(typeA.getName())) {
-            statB *= strAgainstMultiplier;
+            newStatB = statB * strAgainstMultiplier;
         }
 
         if (typeB.getWeakAgainst().contains(typeA.getName())) {
-            statB /= strAgainstMultiplier;
+            newStatB = statB / strAgainstMultiplier;
         }
 
         ArrayList<Integer> statList = new ArrayList<Integer>();
-        statList.add(statA);
-        statList.add(statB);
+        statList.add(newStatA);
+        statList.add(newStatB);
 
 //        int stats[] = new int[2];
 //
@@ -117,11 +120,13 @@ public class GameService {
 
     public Game processGame(Long id, int statA, int statB, Long typeAId, Long typeBId) {
 
-        Game game = gameRepository.findById(id).get();
+        int finalRound= 7;
         Type typeA = typeRepository.findById(typeAId).get();
         Type typeB = typeRepository.findById(typeBId).get();
-        int finalRound= 7;
+
+        Game game = gameRepository.findById(id).get();
         Game currentGame = gameRepository.findById(game.getId()).get();
+        
         int roundNumber = currentGame.getRoundNumber();
         int scoreA = currentGame.getScoreA();
         int scoreB = currentGame.getScoreB();
