@@ -1,9 +1,6 @@
 package com.example.kabutops_trumps.services;
 
-import com.example.kabutops_trumps.models.Account;
-import com.example.kabutops_trumps.models.Card;
-import com.example.kabutops_trumps.models.Game;
-import com.example.kabutops_trumps.models.Type;
+import com.example.kabutops_trumps.models.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ReactiveAdapterRegistry;
 import org.springframework.stereotype.Service;
@@ -26,12 +23,25 @@ public class GameService {
     @Autowired
     TypeRepository typeRepository;
 
+    @Autowired
+    OwnershipService ownershipService;
+
     public List<Game> getAllGames() {
         return gameRepository.findAll();
     }
 
     //Type Multiplier - Eesaa Sheikh §§§§§§§§§§§§§§§§§§§§§§§§§§
     //§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
+
+    public void rewardWinner(Long winnerId, Long loserId){
+        //get losers deck
+        //get card that winner doesnt have
+        //pick 2 random cards at most
+        //create ownership for winner but not in deck
+
+        //idea of returning list of cards won that game to show on frontend
+        //congrats u won : display cards or nothing?
+    }
 
     public ArrayList<Double> typeCompare(Type typeA, Type typeB, int statA, int statB) {
         double strAgainstMultiplier = 2.0;
