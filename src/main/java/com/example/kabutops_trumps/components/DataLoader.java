@@ -39,24 +39,24 @@ public class DataLoader implements ApplicationRunner {
     public void run(ApplicationArguments args) throws Exception {
 
         //type
-        Type normal = new Type("Normal", "https://archives.bulbagarden.net/media/upload/9/95/Normal_icon_SwSh.png",new ArrayList<>(List.of()),new ArrayList<>(List.of("Rock","Ghost","Steel")), "#9099a1");
-        Type fighting = new Type("Fighting", "https://archives.bulbagarden.net/media/upload/3/3b/Fighting_icon_SwSh.png",new ArrayList<>(List.of("Normal","Dark","Ice","Rock","Steel")),new ArrayList<>(List.of("Bug","Fairy","Psychic","Poison","Flying","Ghost")), "#ce4069");
-        Type flying = new Type("Flying", "https://archives.bulbagarden.net/media/upload/b/b5/Flying_icon_SwSh.png",new ArrayList<>(List.of("Fighting","Bug","Grass")),new ArrayList<>(List.of("Rock","Electric","Steel")), "#8fa8dd");
-        Type poison = new Type("Poison", "https://archives.bulbagarden.net/media/upload/8/8d/Poison_icon_SwSh.png",new ArrayList<>(List.of("Grass","Fairy")),new ArrayList<>(List.of("Steel","Rock","Ground","Poison","Ghost")), "#ad6dc9");
-        Type ground = new Type("Ground", "https://archives.bulbagarden.net/media/upload/2/27/Ground_icon_SwSh.png",new ArrayList<>(List.of("Fire","Rock","Poison","Steel","Electric")),new ArrayList<>(List.of("Bug","Grass","Flying")), "#d97746");
-        Type rock = new Type("Rock", "https://archives.bulbagarden.net/media/upload/1/11/Rock_icon_SwSh.png",new ArrayList<>(List.of("Bug","Fire","Flying","Ice")),new ArrayList<>(List.of("Fighting","Ground","Steel")), "#c7b78b");
-        Type bug = new Type("Bug", "https://archives.bulbagarden.net/media/upload/9/9c/Bug_icon_SwSh.png",new ArrayList<>(List.of("Dark", "Grass", "Psychic")),new ArrayList<>(List.of("Fire","Flying","Fairy","Fighting","Ghost","Poison","Steel")), "#90c12c");
-        Type ghost = new Type("Ghost", "https://archives.bulbagarden.net/media/upload/0/01/Ghost_icon_SwSh.png",new ArrayList<>(List.of("Ghost","Psychic")),new ArrayList<>(List.of("Dark","Normal")), "#5369ac");
-        Type steel = new Type("Steel", "https://archives.bulbagarden.net/media/upload/0/09/Steel_icon_SwSh.png",new ArrayList<>(List.of("Fairy","Ice","Rock")),new ArrayList<>(List.of("Electric","Fire","Steel","Water")), "#5a8ea1");
-        Type fire = new Type("Fire", "https://archives.bulbagarden.net/media/upload/a/ab/Fire_icon_SwSh.png",new ArrayList<>(List.of("Bug","Grass","Ice","Steel")),new ArrayList<>(List.of("Dragon","Fire","Rock","Water")), "#ff9c54");
-        Type water = new Type("Water", "https://archives.bulbagarden.net/media/upload/8/80/Water_icon_SwSh.png",new ArrayList<>(List.of("Rock","Ground","Fire")),new ArrayList<>(List.of("Dragon","Grass","Water")), "#4c90d6");
-        Type grass = new Type("Grass", "https://archives.bulbagarden.net/media/upload/a/a8/Grass_icon_SwSh.png",new ArrayList<>(List.of("Ground","Rock","Water")),new ArrayList<>(List.of("Flying","Poison","Bug","Steel","Fire","Grass","Dragon")), "#63bb5b");
-        Type electric = new Type("Electric", "https://archives.bulbagarden.net/media/upload/7/7b/Electric_icon_SwSh.png",new ArrayList<>(List.of("Flying","Water")),new ArrayList<>(List.of("Ground","Grass","Electric","Dragon")), "#f4d23b");
-        Type psychic = new Type("Psychic", "https://archives.bulbagarden.net/media/upload/7/73/Psychic_icon_SwSh.png",new ArrayList<>(List.of("Fighting","Poison")),new ArrayList<>(List.of("Steel","Psychic","Dark")), "#f97177");
-        Type ice = new Type("Ice", "https://archives.bulbagarden.net/media/upload/1/15/Ice_icon_SwSh.png",new ArrayList<>(List.of("Flying","Ground","Grass","Dragon")),new ArrayList<>(List.of("Steel","Fire","Water","Ice")), "#74cec0");
-        Type dragon = new Type("Dragon", "https://archives.bulbagarden.net/media/upload/7/70/Dragon_icon_SwSh.png",new ArrayList<>(List.of("Dragon")),new ArrayList<>(List.of("Steel","Fairy")), "#0a6dc4");
-        Type dark = new Type("Dark", "https://archives.bulbagarden.net/media/upload/d/d5/Dark_icon_SwSh.png",new ArrayList<>(List.of("Ghost","Psychic")),new ArrayList<>(List.of("Fighting","Dark","Fairy")), "#5a5366");
-        Type fairy = new Type("Fairy", "https://archives.bulbagarden.net/media/upload/c/c6/Fairy_icon_SwSh.png",new ArrayList<>(List.of("Fighting","Dragon","Dark")),new ArrayList<>(List.of("Poison","Steel","Fire")), "#ec8fe6");
+        Type normal = new Type("Normal", new ArrayList<>(List.of()),new ArrayList<>(List.of("Rock","Ghost","Steel")), "#9099a1");
+        Type fighting = new Type("Fighting", new ArrayList<>(List.of("Normal","Dark","Ice","Rock","Steel")),new ArrayList<>(List.of("Bug","Fairy","Psychic","Poison","Flying","Ghost")), "#ce4069");
+        Type flying = new Type("Flying", new ArrayList<>(List.of("Fighting","Bug","Grass")),new ArrayList<>(List.of("Rock","Electric","Steel")), "#8fa8dd");
+        Type poison = new Type("Poison", new ArrayList<>(List.of("Grass","Fairy")),new ArrayList<>(List.of("Steel","Rock","Ground","Poison","Ghost")), "#ad6dc9");
+        Type ground = new Type("Ground", new ArrayList<>(List.of("Fire","Rock","Poison","Steel","Electric")),new ArrayList<>(List.of("Bug","Grass","Flying")), "#d97746");
+        Type rock = new Type("Rock", new ArrayList<>(List.of("Bug","Fire","Flying","Ice")),new ArrayList<>(List.of("Fighting","Ground","Steel")), "#c7b78b");
+        Type bug = new Type("Bug", new ArrayList<>(List.of("Dark", "Grass", "Psychic")),new ArrayList<>(List.of("Fire","Flying","Fairy","Fighting","Ghost","Poison","Steel")), "#90c12c");
+        Type ghost = new Type("Ghost", new ArrayList<>(List.of("Ghost","Psychic")),new ArrayList<>(List.of("Dark","Normal")), "#5369ac");
+        Type steel = new Type("Steel", new ArrayList<>(List.of("Fairy","Ice","Rock")),new ArrayList<>(List.of("Electric","Fire","Steel","Water")), "#5a8ea1");
+        Type fire = new Type("Fire", new ArrayList<>(List.of("Bug","Grass","Ice","Steel")),new ArrayList<>(List.of("Dragon","Fire","Rock","Water")), "#ff9c54");
+        Type water = new Type("Water", new ArrayList<>(List.of("Rock","Ground","Fire")),new ArrayList<>(List.of("Dragon","Grass","Water")), "#4c90d6");
+        Type grass = new Type("Grass", new ArrayList<>(List.of("Ground","Rock","Water")),new ArrayList<>(List.of("Flying","Poison","Bug","Steel","Fire","Grass","Dragon")), "#63bb5b");
+        Type electric = new Type("Electric", new ArrayList<>(List.of("Flying","Water")),new ArrayList<>(List.of("Ground","Grass","Electric","Dragon")), "#f4d23b");
+        Type psychic = new Type("Psychic", new ArrayList<>(List.of("Fighting","Poison")),new ArrayList<>(List.of("Steel","Psychic","Dark")), "#f97177");
+        Type ice = new Type("Ice", new ArrayList<>(List.of("Flying","Ground","Grass","Dragon")),new ArrayList<>(List.of("Steel","Fire","Water","Ice")), "#74cec0");
+        Type dragon = new Type("Dragon", new ArrayList<>(List.of("Dragon")),new ArrayList<>(List.of("Steel","Fairy")), "#0a6dc4");
+        Type dark = new Type("Dark", new ArrayList<>(List.of("Ghost","Psychic")),new ArrayList<>(List.of("Fighting","Dark","Fairy")), "#5a5366");
+        Type fairy = new Type("Fairy", new ArrayList<>(List.of("Fighting","Dragon","Dark")),new ArrayList<>(List.of("Poison","Steel","Fire")), "#ec8fe6");
 
         typeRepository.save(normal);
         typeRepository.save(fighting);

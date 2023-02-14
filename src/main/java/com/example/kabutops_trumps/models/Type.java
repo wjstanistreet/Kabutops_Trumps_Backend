@@ -16,9 +16,6 @@ public class Type {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "imgUrl")
-    private String imgUrl;
-
     @Column(name = "strongAgainst")
     private ArrayList<String> strongAgainst;
 
@@ -32,9 +29,8 @@ public class Type {
     @JsonIgnoreProperties({"type"})
     private List<Card> cardList;
 
-    public Type(String name, String imgUrl, ArrayList<String> strongAgainst, ArrayList<String> weakAgainst, String colourType) {
+    public Type(String name, ArrayList<String> strongAgainst, ArrayList<String> weakAgainst, String colourType) {
         this.name = name;
-        this.imgUrl= imgUrl;
         this.strongAgainst = strongAgainst;
         this.weakAgainst = weakAgainst;
         this.colourType =colourType;
@@ -56,14 +52,6 @@ public class Type {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getImgUrl() {
-        return imgUrl;
-    }
-
-    public void setImgUrl(String imgUrl) {
-        this.imgUrl = imgUrl;
     }
 
     public ArrayList<String> getStrongAgainst() {
@@ -98,5 +86,6 @@ public class Type {
     public void setCardList(List<Card> cardList) {
         this.cardList = cardList;
     }
+
 
 }
