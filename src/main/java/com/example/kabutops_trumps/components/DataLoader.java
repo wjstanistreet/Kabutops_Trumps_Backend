@@ -39,24 +39,24 @@ public class DataLoader implements ApplicationRunner {
     public void run(ApplicationArguments args) throws Exception {
 
         //type
-        Type normal = new Type("Normal", new ArrayList<>(List.of()),new ArrayList<>(List.of("Rock","Ghost","Steel")));
-        Type fighting = new Type("Fighting", new ArrayList<>(List.of("Normal","Dark","Ice","Rock","Steel")),new ArrayList<>(List.of("Bug","Fairy","Psychic","Poison","Flying","Ghost")));
-        Type flying = new Type("Flying", new ArrayList<>(List.of("Fighting","Bug","Grass")),new ArrayList<>(List.of("Rock","Electric","Steel")));
-        Type poison = new Type("Poison", new ArrayList<>(List.of("Grass","Fairy")),new ArrayList<>(List.of("Steel","Rock","Ground","Poison","Ghost")));
-        Type ground = new Type("Ground", new ArrayList<>(List.of("Fire","Rock","Poison","Steel","Electric")),new ArrayList<>(List.of("Bug","Grass","Flying")));
-        Type rock = new Type("Rock", new ArrayList<>(List.of("Bug","Fire","Flying","Ice")),new ArrayList<>(List.of("Fighting","Ground","Steel")));
-        Type bug = new Type("Bug", new ArrayList<>(List.of("Dark", "Grass", "Psychic")),new ArrayList<>(List.of("Fire","Flying","Fairy","Fighting","Ghost","Poison","Steel")));
-        Type ghost = new Type("Ghost", new ArrayList<>(List.of("Ghost","Psychic")),new ArrayList<>(List.of("Dark","Normal")));
-        Type steel = new Type("Steel", new ArrayList<>(List.of("Fairy","Ice","Rock")),new ArrayList<>(List.of("Electric","Fire","Steel","Water")));
-        Type fire = new Type("Fire", new ArrayList<>(List.of("Bug","Grass","Ice","Steel")),new ArrayList<>(List.of("Dragon","Fire","Rock","Water")));
-        Type water = new Type("Water", new ArrayList<>(List.of("Rock","Ground","Fire")),new ArrayList<>(List.of("Dragon","Grass","Water")));
-        Type grass = new Type("Grass", new ArrayList<>(List.of("Ground","Rock","Water")),new ArrayList<>(List.of("Flying","Poison","Bug","Steel","Fire","Grass","Dragon")));
-        Type electric = new Type("Electric", new ArrayList<>(List.of("Flying","Water")),new ArrayList<>(List.of("Ground","Grass","Electric","Dragon")));
-        Type psychic = new Type("Psychic", new ArrayList<>(List.of("Fighting","Poison")),new ArrayList<>(List.of("Steel","Psychic","Dark")));
-        Type ice = new Type("Ice", new ArrayList<>(List.of("Flying","Ground","Grass","Dragon")),new ArrayList<>(List.of("Steel","Fire","Water","Ice")));
-        Type dragon = new Type("Dragon", new ArrayList<>(List.of("Dragon")),new ArrayList<>(List.of("Steel","Fairy")));
-        Type dark = new Type("Dark", new ArrayList<>(List.of("Ghost","Psychic")),new ArrayList<>(List.of("Fighting","Dark","Fairy")));
-        Type fairy = new Type("Fairy", new ArrayList<>(List.of("Fighting","Dragon","Dark")),new ArrayList<>(List.of("Poison","Steel","Fire")));
+        Type normal = new Type("Normal", new ArrayList<>(List.of()),new ArrayList<>(List.of("Rock","Ghost","Steel")), "#9099a1");
+        Type fighting = new Type("Fighting", new ArrayList<>(List.of("Normal","Dark","Ice","Rock","Steel")),new ArrayList<>(List.of("Bug","Fairy","Psychic","Poison","Flying","Ghost")), "#ce4069");
+        Type flying = new Type("Flying", new ArrayList<>(List.of("Fighting","Bug","Grass")),new ArrayList<>(List.of("Rock","Electric","Steel")), "#8fa8dd");
+        Type poison = new Type("Poison", new ArrayList<>(List.of("Grass","Fairy")),new ArrayList<>(List.of("Steel","Rock","Ground","Poison","Ghost")), "#ad6dc9");
+        Type ground = new Type("Ground", new ArrayList<>(List.of("Fire","Rock","Poison","Steel","Electric")),new ArrayList<>(List.of("Bug","Grass","Flying")), "#d97746");
+        Type rock = new Type("Rock", new ArrayList<>(List.of("Bug","Fire","Flying","Ice")),new ArrayList<>(List.of("Fighting","Ground","Steel")), "##c7b78b");
+        Type bug = new Type("Bug", new ArrayList<>(List.of("Dark", "Grass", "Psychic")),new ArrayList<>(List.of("Fire","Flying","Fairy","Fighting","Ghost","Poison","Steel")), "#90c12c");
+        Type ghost = new Type("Ghost", new ArrayList<>(List.of("Ghost","Psychic")),new ArrayList<>(List.of("Dark","Normal")), "#5369ac");
+        Type steel = new Type("Steel", new ArrayList<>(List.of("Fairy","Ice","Rock")),new ArrayList<>(List.of("Electric","Fire","Steel","Water")), "#5a8ea1");
+        Type fire = new Type("Fire", new ArrayList<>(List.of("Bug","Grass","Ice","Steel")),new ArrayList<>(List.of("Dragon","Fire","Rock","Water")), "#ff9c54");
+        Type water = new Type("Water", new ArrayList<>(List.of("Rock","Ground","Fire")),new ArrayList<>(List.of("Dragon","Grass","Water")), "#4c90d6");
+        Type grass = new Type("Grass", new ArrayList<>(List.of("Ground","Rock","Water")),new ArrayList<>(List.of("Flying","Poison","Bug","Steel","Fire","Grass","Dragon")), "#63bb5b");
+        Type electric = new Type("Electric", new ArrayList<>(List.of("Flying","Water")),new ArrayList<>(List.of("Ground","Grass","Electric","Dragon")), "#f4d23b");
+        Type psychic = new Type("Psychic", new ArrayList<>(List.of("Fighting","Poison")),new ArrayList<>(List.of("Steel","Psychic","Dark")), "#f97177");
+        Type ice = new Type("Ice", new ArrayList<>(List.of("Flying","Ground","Grass","Dragon")),new ArrayList<>(List.of("Steel","Fire","Water","Ice")), "#74cec0");
+        Type dragon = new Type("Dragon", new ArrayList<>(List.of("Dragon")),new ArrayList<>(List.of("Steel","Fairy")), "#0a6dc4");
+        Type dark = new Type("Dark", new ArrayList<>(List.of("Ghost","Psychic")),new ArrayList<>(List.of("Fighting","Dark","Fairy")), "#5a5366");
+        Type fairy = new Type("Fairy", new ArrayList<>(List.of("Fighting","Dragon","Dark")),new ArrayList<>(List.of("Poison","Steel","Fire")), "#ec8fe6");
 
         typeRepository.save(normal);
         typeRepository.save(fighting);
@@ -613,6 +613,36 @@ public class DataLoader implements ApplicationRunner {
         ownershipRepository.save(new Ownership(shawn, sableye, true));
         ownershipRepository.save(new Ownership(shawn, zoroark, true));
         ownershipRepository.save(new Ownership(shawn, zygarde, true));
+
+        //Losh
+        Account losh = new Account("Losh", "", "Pokemon Connoisseur", false);
+        accountRepository.save(losh);
+
+        Card hooh = new Card("Ho-oh", "https://images4.alphacoders.com/823/823720.png", fire, 106, 130, 90, 110, 154, 90, 6);
+        cardRepository.save(hooh);
+        Card giratina = new Card("Giratina", "https://pbs.twimg.com/media/FXuZqr-aIAA1yhR.jpg:large", ghost, 150, 100, 120, 100, 120, 90, 6 );
+        cardRepository.save(giratina);
+        Card sawk = new Card("Sawk", "https://i.imgur.com/fspNjKR.jpg", fighting, 75, 125, 75, 30, 75, 85, 3);
+        cardRepository.save(sawk);
+        Card goodra = new Card("Goodra", "https://pbs.twimg.com/media/FOeCMitXMAMpE-E?format=jpg&name=large", dragon, 90, 100, 70, 110, 150, 80, 5);
+        cardRepository.save(goodra);
+        Card beartic = new Card("Beartic", "https://i.pinimg.com/originals/cf/03/2d/cf032d2af799dd8b496f5a60a8ffbd37.jpg", ice, 95, 30, 80, 70, 50, 50, 4);
+        cardRepository.save(beartic);
+        Card trubbish = new Card("Trubbish", "https://d.furaffinity.net/art/haychel/1378191688/1378191688.haychel_trubbish.jpg", poison, 50, 50, 62, 40, 62, 65,1 );
+        cardRepository.save(trubbish);
+
+        ownershipRepository.save(new Ownership(losh, hooh, true ));
+        ownershipRepository.save(new Ownership(losh, giratina, true));
+        ownershipRepository.save(new Ownership(losh, sawk, true));
+        ownershipRepository.save(new Ownership(losh, goodra, true));
+        ownershipRepository.save(new Ownership(losh, beartic, true));
+        ownershipRepository.save(new Ownership(losh, trubbish, true));
+        ownershipRepository.save(new Ownership(losh, megaCharizardX, true));
+        ownershipRepository.save(new Ownership(losh, alolanNinetales, true));
+        ownershipRepository.save(new Ownership(losh, shinyGyarados, true));
+        ownershipRepository.save(new Ownership(losh, lucario, true));
+        ownershipRepository.save(new Ownership(losh, arcanine, true));
+
     }
 
 }
