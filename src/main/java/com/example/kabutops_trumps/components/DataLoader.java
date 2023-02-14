@@ -624,9 +624,13 @@ public class DataLoader implements ApplicationRunner {
         cardRepository.save(giratina);
         Card sawk = new Card("Sawk", "https://i.imgur.com/fspNjKR.jpg", fighting, 75, 125, 75, 30, 75, 85, 3);
         cardRepository.save(sawk);
+        Card goodra = new Card("Goodra", "https://pbs.twimg.com/media/FOeCMitXMAMpE-E?format=jpg&name=large", dragon, 90, 100, 70, 110, 150, 80, 5);
+        cardRepository.save(goodra);
+        Card beartic = new Card("Beartic", "https://i.pinimg.com/originals/cf/03/2d/cf032d2af799dd8b496f5a60a8ffbd37.jpg", ice, 95, 30, 80, 70, 50, 50, 4);
+        cardRepository.save(beartic);
+        Card trubbish = new Card("Trubbish", "https://d.furaffinity.net/art/haychel/1378191688/1378191688.haychel_trubbish.jpg", poison, 50, 50, 62, 40, 62, 65,1 );
+        cardRepository.save(trubbish);
 
-
-        //ho-oh giratina sawk dodrio milotic trubbish
     }
 
 }
