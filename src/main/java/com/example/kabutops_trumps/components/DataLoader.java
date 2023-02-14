@@ -618,7 +618,7 @@ public class DataLoader implements ApplicationRunner {
         Account losh = new Account("Losh", "", "Pokemon Connoisseur", false);
         accountRepository.save(losh);
 
-        Card hooh = new Card("Ho-oh", "https://static.wikia.nocookie.net/victoryroad/images/4/4e/TCG_Burning_Shadows_Ho-Oh.png/revision/latest?cb=20190330225355", fire, 106, 130, 90, 110, 154, 90, 6);
+        Card hooh = new Card("Ho-oh", "https://i.pinimg.com/originals/df/e7/e0/dfe7e004027fbf880e39836bf221f4f2.jpg", fire, 106, 130, 90, 110, 154, 90, 6);
         cardRepository.save(hooh);
         Card giratina = new Card("Giratina", "https://pbs.twimg.com/media/FXuZqr-aIAA1yhR.jpg:large", ghost, 150, 100, 120, 100, 120, 90, 6 );
         cardRepository.save(giratina);
