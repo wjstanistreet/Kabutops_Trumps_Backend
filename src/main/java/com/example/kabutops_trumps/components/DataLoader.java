@@ -613,6 +613,20 @@ public class DataLoader implements ApplicationRunner {
         ownershipRepository.save(new Ownership(shawn, sableye, true));
         ownershipRepository.save(new Ownership(shawn, zoroark, true));
         ownershipRepository.save(new Ownership(shawn, zygarde, true));
+
+        //Losh
+        Account losh = new Account("Losh", "", "Pokemon Connoisseur", false);
+        accountRepository.save(losh);
+
+        Card hooh = new Card("Ho-oh", "https://images4.alphacoders.com/823/823720.png", fire, 106, 130, 90, 110, 154, 90, 6);
+        cardRepository.save(hooh);
+        Card giratina = new Card("Giratina", "https://pbs.twimg.com/media/FXuZqr-aIAA1yhR.jpg:large", ghost, 150, 100, 120, 100, 120, 90, 6 );
+        cardRepository.save(giratina);
+        Card sawk = new Card("Sawk", "https://i.imgur.com/fspNjKR.jpg", fighting, 75, 125, 75, 30, 75, 85, 3);
+        cardRepository.save(sawk);
+
+
+        //ho-oh giratina sawk dodrio milotic trubbish
     }
 
 }
