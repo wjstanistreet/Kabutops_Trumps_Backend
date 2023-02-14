@@ -618,7 +618,7 @@ public class DataLoader implements ApplicationRunner {
         Account losh = new Account("Losh", "", "Pokemon Connoisseur", false);
         accountRepository.save(losh);
 
-        Card hooh = new Card("Ho-oh", "https://images4.alphacoders.com/823/823720.png", fire, 106, 130, 90, 110, 154, 90, 6);
+        Card hooh = new Card("Ho-oh", "https://i.pinimg.com/originals/df/e7/e0/dfe7e004027fbf880e39836bf221f4f2.jpg", fire, 106, 130, 90, 110, 154, 90, 6);
         cardRepository.save(hooh);
         Card giratina = new Card("Giratina", "https://pbs.twimg.com/media/FXuZqr-aIAA1yhR.jpg:large", ghost, 150, 100, 120, 100, 120, 90, 6 );
         cardRepository.save(giratina);
@@ -626,7 +626,7 @@ public class DataLoader implements ApplicationRunner {
         cardRepository.save(sawk);
         Card goodra = new Card("Goodra", "https://pbs.twimg.com/media/FOeCMitXMAMpE-E?format=jpg&name=large", dragon, 90, 100, 70, 110, 150, 80, 5);
         cardRepository.save(goodra);
-        Card beartic = new Card("Beartic", "https://i.pinimg.com/originals/cf/03/2d/cf032d2af799dd8b496f5a60a8ffbd37.jpg", ice, 95, 30, 80, 70, 50, 50, 4);
+        Card beartic = new Card("Beartic", "https://i.pinimg.com/originals/cf/03/2d/cf032d2af799dd8b496f5a60a8ffbd37.jpg", ice, 95, 130, 80, 70, 80, 50, 4);
         cardRepository.save(beartic);
         Card trubbish = new Card("Trubbish", "https://d.furaffinity.net/art/haychel/1378191688/1378191688.haychel_trubbish.jpg", poison, 50, 50, 62, 40, 62, 65,1 );
         cardRepository.save(trubbish);
