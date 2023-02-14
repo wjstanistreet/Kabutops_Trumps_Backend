@@ -34,6 +34,7 @@ public class Type {
 
     public Type(String name, String imgUrl, ArrayList<String> strongAgainst, ArrayList<String> weakAgainst, String colourType) {
         this.name = name;
+        this.imgUrl= imgUrl;
         this.strongAgainst = strongAgainst;
         this.weakAgainst = weakAgainst;
         this.colourType =colourType;
