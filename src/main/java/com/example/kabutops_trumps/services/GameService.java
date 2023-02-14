@@ -34,7 +34,7 @@ public class GameService {
     //§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
 
     public ArrayList<Double> typeCompare(Type typeA, Type typeB, int statA, int statB) {
-        int strAgainstMultiplier = 2;
+        double strAgainstMultiplier = 2.0;
 
         double newStatA =statA;
         double newStatB =statB;

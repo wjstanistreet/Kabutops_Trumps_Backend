@@ -61,8 +61,8 @@ public class CardController {
     }
 
     @GetMapping(value = "/type")
-    public ResponseEntity<List<Card>> getCardsByType(@RequestParam(value = "type") String type){
-        List<Card> cardsByType = cardService.getCardsByType(type);
+    public ResponseEntity<List<Card>> getCardsByType(@RequestParam(value = "typeId") Long id){
+        List<Card> cardsByType = cardService.getCardsByType(id);
         return new ResponseEntity<>(cardsByType, HttpStatus.OK);
     }
 
