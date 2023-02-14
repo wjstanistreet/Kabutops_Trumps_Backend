@@ -22,14 +22,6 @@ public class Type {
     @Column(name= "colourType")
     private String colourType;
 
-    public String getColourType() {
-        return colourType;
-    }
-
-    public void setColourType(String colourType) {
-        this.colourType = colourType;
-    }
-
     @Column(name = "weakAgainst")
     private ArrayList<String> weakAgainst;
 
@@ -78,6 +70,15 @@ public class Type {
         this.weakAgainst = weakAgainst;
     }
 
+
+    public String getColourType() {
+        return colourType;
+    }
+
+    public void setColourType(String colourType) {
+        this.colourType = colourType;
+    }
+
     public List<Card> getCardList() {
         return cardList;
     }
@@ -85,4 +86,6 @@ public class Type {
     public void setCardList(List<Card> cardList) {
         this.cardList = cardList;
     }
+
+
 }
