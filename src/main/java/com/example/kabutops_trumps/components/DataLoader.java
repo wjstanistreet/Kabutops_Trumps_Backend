@@ -631,6 +631,18 @@ public class DataLoader implements ApplicationRunner {
         Card trubbish = new Card("Trubbish", "https://d.furaffinity.net/art/haychel/1378191688/1378191688.haychel_trubbish.jpg", poison, 50, 50, 62, 40, 62, 65,1 );
         cardRepository.save(trubbish);
 
+        ownershipRepository.save(new Ownership(losh, hooh, true ));
+        ownershipRepository.save(new Ownership(losh, giratina, true));
+        ownershipRepository.save(new Ownership(losh, sawk, true));
+        ownershipRepository.save(new Ownership(losh, goodra, true));
+        ownershipRepository.save(new Ownership(losh, beartic, true));
+        ownershipRepository.save(new Ownership(losh, trubbish, true));
+        ownershipRepository.save(new Ownership(losh, megaCharizardX, true));
+        ownershipRepository.save(new Ownership(losh, alolanNinetales, true));
+        ownershipRepository.save(new Ownership(losh, shinyGyarados, true));
+        ownershipRepository.save(new Ownership(losh, lucario, true));
+        ownershipRepository.save(new Ownership(losh, arcanine, true));
+
     }
 
 }
