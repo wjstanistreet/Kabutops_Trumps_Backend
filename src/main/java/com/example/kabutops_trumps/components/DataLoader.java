@@ -320,7 +320,7 @@ public class DataLoader implements ApplicationRunner {
         // ------------ Ash's Pokemon Pikachu and Charizard alrady added ------------
         Card sceptile = new Card("Sceptile", "https://i.pinimg.com/originals/43/8b/cb/438bcb48ef21a8d88249afc6bd06842c.jpg", grass, 70, 85, 65, 105, 85, 120, 4);
         Card infernape = new Card("Infernape", "https://cdn.donmai.us/original/64/1d/641d772e66791f08271247595a9ae98d.png", fire, 76, 104, 71, 104, 71, 108, 4);
-        Card ashGreninja = new Card("Ash's Greninja", "a83f2a577d6f5ba134e953847a45b7579a5d19bd", water, 72, 145, 67, 153, 71, 132, 5);
+        Card ashGreninja = new Card("Ash's Greninja", "https://preview.redd.it/fnq1rnmoy5n51.jpg?auto=webp&s=a83f2a577d6f5ba134e953847a45b7579a5d19bd", water, 72, 145, 67, 153, 71, 132, 5);
         Card megaLucario = new Card("Mega Lucario", "https://w0.peakpx.com/wallpaper/511/197/HD-wallpaper-mega-lucario-pokemon.jpg", fighting, 70, 145, 88, 140, 70, 112, 5);
 
         cardRepository.save(pikachu);
