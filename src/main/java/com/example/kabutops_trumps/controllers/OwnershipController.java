@@ -42,6 +42,13 @@ public class OwnershipController {
         return new ResponseEntity<>(ownershipsInAccount, HttpStatus.OK);
     }
 
+    @GetMapping(value = "/precise")
+    public ResponseEntity<List<Ownership>> getOwnershipsByAccount(@RequestParam(value = "accountid") long accountid,
+                                                                  @RequestParam(value = "cardid") long cardid){
+        List<Ownership> preciseCard = ownershipService.getOwnershipsByAccountAndCard(accountid, cardid);
+        return new ResponseEntity<>(preciseCard, HttpStatus.OK);
+    }
+
     //add ownership
     @PostMapping(value = "/{accountId}/{cardId}")
     public ResponseEntity<Ownership> addOwnership(@PathVariable long accountId, @PathVariable long cardId, @RequestParam boolean inDeck){
