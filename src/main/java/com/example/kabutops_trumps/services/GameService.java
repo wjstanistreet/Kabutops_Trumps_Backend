@@ -12,6 +12,8 @@ import com.example.kabutops_trumps.repositories.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import static java.lang.Double.compare;
+
 @Service
 public class GameService {
 
@@ -31,11 +33,11 @@ public class GameService {
     //Type Multiplier - Eesaa Sheikh §§§§§§§§§§§§§§§§§§§§§§§§§§
     //§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
 
-    public ArrayList<Integer> typeCompare(Type typeA, Type typeB, int statA, int statB) {
+    public ArrayList<Double> typeCompare(Type typeA, Type typeB, int statA, int statB) {
         int strAgainstMultiplier = 2;
 
-        int newStatA =statA;
-        int newStatB =statB;
+        double newStatA =statA;
+        double newStatB =statB;
 
         if (typeA.getStrongAgainst().contains(typeB.getName())) {
             newStatA = statA * strAgainstMultiplier;
@@ -53,44 +55,13 @@ public class GameService {
             newStatB = statB / strAgainstMultiplier;
         }
 
-        ArrayList<Integer> statList = new ArrayList<Integer>();
+        ArrayList<Double> statList = new ArrayList<Double>();
         statList.add(newStatA);
         statList.add(newStatB);
-
-//        int stats[] = new int[2];
-//
-//        stats[0] = statA;
-//        stats[1] = statB;
 
         return statList;
 
     }
-    //§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
-    //if the code from line 30 does not work, use this instead.
-
-
-    //§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
-//    public int typeCompareStrong(Type typeA, Type typeB, int statA, int statB){
-//        int strAgainstMultiplier = 2;
-//        if (typeA.getStrongAgainst().contains(typeB.getName())) {
-//            statA *= strAgainstMultiplier;
-//
-//
-//        }
-//        return statA;
-//    }
-//
-//    public int typeCompareWeak(Type typeA, Type typeB, int statA, int statB){
-//        int strAgainstMultiplier = 2;
-//        if (typeB.getStrongAgainst().contains(typeA.getName())) {
-//            statB *= strAgainstMultiplier;
-//
-//
-//        }
-//        return statB;
-//    }
-
-
 
     //§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
     public Game startNewGame(long playerAId, long playerBId){
@@ -106,16 +77,11 @@ public class GameService {
         return game;
     }
 
-    public Account processRound(Account accountA, Account accountB, int statA, int statB){
-        if(statA>statB){
-            return accountA;
+    public boolean alternatingTurn(boolean turn){
+        if(turn){
+            return false;
         }
-        if(statB>statA){
-            return accountB;
-        }
-        else{
-            return null;
-        }
+        return true;
     }
 
     public Game processGame(Long id, int statA, int statB, Long typeAId, Long typeBId) {
@@ -123,49 +89,47 @@ public class GameService {
         int finalRound= 7;
         Type typeA = typeRepository.findById(typeAId).get();
         Type typeB = typeRepository.findById(typeBId).get();
-
         Game game = gameRepository.findById(id).get();
-        Game currentGame = gameRepository.findById(game.getId()).get();
-        
-        int roundNumber = currentGame.getRoundNumber();
-        int scoreA = currentGame.getScoreA();
-        int scoreB = currentGame.getScoreB();
+
+        int roundNumber = game.getRoundNumber();
+        double scoreA = game.getScoreA();
+        double scoreB = game.getScoreB();
 
         // Type multiplier implementation
-        ArrayList<Integer> statList = typeCompare(typeA, typeB, statA, statB);
-        statA = statList.get(0);
-        statB = statList.get(1);
-        
+        ArrayList<Double> statList = typeCompare(typeA, typeB, statA, statB);
+        Double newStatA = statList.get(0);
+        Double newStatB = statList.get(1);
 
         if(roundNumber<finalRound) {
-            if (processRound(game.getPlayers().get(0), game.getPlayers().get(1), statA, statB).equals(game.getPlayers().get(0))) {
+            double roundWinner = (Double.compare(newStatA, newStatB));
+            if (roundWinner>0) {
                 scoreA += 1;
-            } else if (processRound(game.getPlayers().get(0), game.getPlayers().get(1), statA, statB).equals(game.getPlayers().get(1))) {
+            }
+            else if (roundWinner<0) {
                 scoreB += 1;
             } else {
                 scoreA += 0.5;
                 scoreB += 0.5;
             }
-            currentGame.setScoreA(scoreA);
-            currentGame.setScoreB(scoreB);
             roundNumber+=1;
-            currentGame.setRoundNumber(roundNumber);
-            currentGame.setPlayerATurn(!currentGame.isPlayerATurn());
+
+            game.setScoreA(scoreA);
+            game.setScoreB(scoreB);
+            game.setRoundNumber(roundNumber);
+            game.setPlayerATurn(alternatingTurn(game.isPlayerATurn()));
             if(roundNumber==finalRound){
                 if(scoreA>scoreB){
-                    currentGame.setWinner(game.getPlayers().get(0).getUsername());
+                    game.setWinner(game.getPlayers().get(0).getUsername());
                 }
                 else if(scoreB>scoreA){
-                    currentGame.setWinner(game.getPlayers().get(1).getUsername());
+                    game.setWinner(game.getPlayers().get(1).getUsername());
                 }
                 else{
-                    currentGame.setWinner("Tie");
+                    game.setWinner("Tie");
                 }
             }
         }
-        gameRepository.save(currentGame);
-        return currentGame;
+        gameRepository.save(game);
+        return game;
     }
-
-
 }

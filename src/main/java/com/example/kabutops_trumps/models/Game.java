@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 @Entity(name = "games")
 public class Game {
@@ -36,10 +37,10 @@ public class Game {
     private List<Account> players;
 
     @Column(name = "scoreA")
-    private int scoreA;
+    private double scoreA;
 
     @Column(name = "scoreB")
-    private int scoreB;
+    private double scoreB;
 
     @Column(name = "roundNumber")
     private int roundNumber;
@@ -51,11 +52,12 @@ public class Game {
     private String winner;
 
     public Game(List<Account> players) {
+        Random rd = new Random();
         this.players = players;
         this.scoreA = 0;
         this.scoreB = 0;
         this.roundNumber = 0;
-        this.playerATurn = true; // might randomise this later
+        this.playerATurn = rd.nextBoolean(); // might randomise this later
         this.winner = "";
     }
 
@@ -85,19 +87,19 @@ public class Game {
         this.players = players;
     }
 
-    public int getScoreA() {
+    public double getScoreA() {
         return scoreA;
     }
 
-    public void setScoreA(int scoreA) {
+    public void setScoreA(double scoreA) {
         this.scoreA = scoreA;
     }
 
-    public int getScoreB() {
+    public double getScoreB() {
         return scoreB;
     }
 
-    public void setScoreB(int scoreB) {
+    public void setScoreB(double scoreB) {
         this.scoreB = scoreB;
     }
 
