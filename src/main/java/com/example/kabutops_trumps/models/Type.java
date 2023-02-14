@@ -19,6 +19,17 @@ public class Type {
     @Column(name = "strongAgainst")
     private ArrayList<String> strongAgainst;
 
+    @Column(name= "colourType")
+    private String colourType;
+
+    public String getColourType() {
+        return colourType;
+    }
+
+    public void setColourType(String colourType) {
+        this.colourType = colourType;
+    }
+
     @Column(name = "weakAgainst")
     private ArrayList<String> weakAgainst;
 
@@ -26,10 +37,11 @@ public class Type {
     @JsonIgnoreProperties({"type"})
     private List<Card> cardList;
 
-    public Type(String name, ArrayList<String> strongAgainst, ArrayList<String> weakAgainst) {
+    public Type(String name, ArrayList<String> strongAgainst, ArrayList<String> weakAgainst, String colourType) {
         this.name = name;
         this.strongAgainst = strongAgainst;
         this.weakAgainst = weakAgainst;
+        this.colourType =colourType;
     }
 
     public Type() {};
