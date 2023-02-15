@@ -26,6 +26,9 @@ public class GameService {
     TypeRepository typeRepository;
 
     @Autowired
+    CardRepository cardRepository;
+
+    @Autowired
     OwnershipService ownershipService;
 
     public List<Game> getAllGames() {
@@ -85,7 +88,10 @@ public class GameService {
         players.add(accountA);
         players.add(accountB);
 
-        finalRound = accountA.getOwnerships().stream().filter(ownership -> ownership.isInDeck()).mapToInt(trueOwnership -> 1).sum();
+        finalRound = cardRepository.findByOwnershipsAccountAndOwnershipsInDeckTrue(accountA).size();
+//                accountA.getOwnerships().stream().filter(ownership -> ownership.isInDeck()).mapToInt(trueOwnership -> 1).sum();
+
+
 
         Game game = new Game(players);
         game.setPlayers(players);
