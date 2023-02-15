@@ -346,25 +346,25 @@ public class DataLoader implements ApplicationRunner {
         ownershipRepository.save(ashMegaLucario);
 
         // ------------ Steven's Pokemon ------------
-        Card skarmory = new Card("Skarmory", "https://cdn.donmai.us/original/fb/26/fb2656c1584bd31bb854e8f3b1a183fd.jpg", steel, 65, 80, 140, 40, 70, 70, 3);
+        Card skarmory = new Card("Skarmory", "https://cdn.donmai.us/original/fb/26/fb2656c1584bd31bb854e8f3b1a183fd.jpg", steel, 65, 80, 140, 40, 70, 70, 4);
         cardRepository.save(skarmory);
-        Card claydol = new Card("Claydol", "https://cdn.donmai.us/original/ee/4d/ee4d92f3002bb0ec1febe829306d5c90.jpg", ground, 60, 70, 105, 70, 120, 75, 3);
+        Card claydol = new Card("Claydol", "https://cdn.donmai.us/original/ee/4d/ee4d92f3002bb0ec1febe829306d5c90.jpg", ground, 60, 70, 105, 70, 120, 75, 4);
         cardRepository.save(claydol);
         Card aggron = new Card("Aggron", "https://pbs.twimg.com/media/E8rTR5WUUAcaq7g?format=jpg&name=4096x4096", steel, 70, 110, 180, 60, 60, 50, 4);
         cardRepository.save(aggron);
-        Card cradily = new Card("Cradily", "https://i.pinimg.com/564x/05/13/f9/0513f921d923afc1d4828562c07faa94.jpg", rock, 86, 81, 97, 81, 107, 43, 3);
+        Card cradily = new Card("Cradily", "https://i.pinimg.com/564x/05/13/f9/0513f921d923afc1d4828562c07faa94.jpg", rock, 86, 81, 97, 81, 107, 43, 4);
         cardRepository.save(cradily);
-        Card armaldo = new Card("Armaldo", "https://i.pinimg.com/originals/8d/c1/97/8dc1971cc5b59fa1ed6936b148afcffd.png", rock, 75, 125, 100, 70, 80, 45, 3);
+        Card armaldo = new Card("Armaldo", "https://i.pinimg.com/originals/8d/c1/97/8dc1971cc5b59fa1ed6936b148afcffd.png", rock, 75, 125, 100, 70, 80, 45, 4);
         cardRepository.save(armaldo);
-        Card megaMetagross = new Card("Mega Metagross", "https://cdn.donmai.us/original/ec/5c/ec5c5ea24165aa0ef102f174005a4283.jpg", steel, 80, 145, 150, 105, 110, 110, 5);
+        Card megaMetagross = new Card("Mega Metagross", "https://cdn.donmai.us/original/ec/5c/ec5c5ea24165aa0ef102f174005a4283.jpg", steel, 80, 145, 150, 105, 110, 110, 7);
         cardRepository.save(megaMetagross);
         Card aerodactyl = new Card("Aerodactyl", "https://staticg.sportskeeda.com/editor/2023/01/dffa4-16746432089401-1920.jpg", rock, 80, 105, 65, 60, 75, 130, 4);
         cardRepository.save(aerodactyl);
-        Card excadrill = new Card("Excadrill", "https://cdn.donmai.us/original/de/bd/debd4d2a8633ebb72a93b1e9c39509b3.jpg", ground, 110, 135, 60, 50, 65, 88, 3);
+        Card excadrill = new Card("Excadrill", "https://cdn.donmai.us/original/de/bd/debd4d2a8633ebb72a93b1e9c39509b3.jpg", ground, 110, 135, 60, 50, 65, 88, 4);
         cardRepository.save(excadrill);
-        Card archeops = new Card("Archeops", "https://i.pinimg.com/originals/f4/2d/0a/f42d0a3bf3a6db220bbb82ae1be5cca2.jpg", flying, 75, 140, 65, 112, 65, 110, 5);
+        Card archeops = new Card("Archeops", "https://i.pinimg.com/originals/f4/2d/0a/f42d0a3bf3a6db220bbb82ae1be5cca2.jpg", rock, 75, 140, 65, 112, 65, 110, 5);
         cardRepository.save(archeops);
-        Card bastiodon = new Card("Bastiodon", "https://i.pinimg.com/736x/53/69/42/5369426751676c4e849957a9fbf42e03.jpg", rock, 60, 52, 168, 47, 138, 30, 3);
+        Card bastiodon = new Card("Bastiodon", "https://i.pinimg.com/736x/53/69/42/5369426751676c4e849957a9fbf42e03.jpg", rock, 60, 52, 168, 47, 138, 30, 4);
         cardRepository.save(bastiodon);
 
 
