@@ -96,7 +96,7 @@ public class GameService {
 
     public Game processGame(Long id, int statA, int statB, Long typeAId, Long typeBId) {
 
-        int finalRound= 7;
+        int finalRound= 11;
         Type typeA = typeRepository.findById(typeAId).get();
         Type typeB = typeRepository.findById(typeBId).get();
         Game game = gameRepository.findById(id).get();
