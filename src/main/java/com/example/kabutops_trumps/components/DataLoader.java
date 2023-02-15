@@ -655,6 +655,7 @@ public class DataLoader implements ApplicationRunner {
         Card arceus = new Card("Arceus", "https://i.redd.it/hd3mu638r4b61.jpg", normal, 120, 120, 120, 120, 120, 120, 7);
         cardRepository.save(arceus);
         Card cynthiaGarchomp = new Card("Cynthia's Garchomp", "https://i.kym-cdn.com/photos/images/original/001/904/021/984", dragon, 118, 140, 105, 90, 95, 112, 6);
+        cardRepository.save(cynthiaGarchomp);
 
         ownershipRepository.save(new Ownership(cynthia, glaceon, true));
         ownershipRepository.save(new Ownership(cynthia, eelektross, true));
