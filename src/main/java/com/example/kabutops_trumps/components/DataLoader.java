@@ -600,7 +600,7 @@ public class DataLoader implements ApplicationRunner {
         cardRepository.save(sableye);
         Card zygarde = new Card("Zygarde", "https://i.pinimg.com/736x/a3/aa/f3/a3aaf32f69125b55475ad4324b93f601.jpg", dragon, 108, 100, 121, 81, 95, 95, 5);
         cardRepository.save(zygarde);
-        Card braviary = new Card("Braviary", "https://i.pinimg.com/originals/fe/cd/a2/fecda2075de2aca36e3698ed6400db10.png", flying, 100, 123, 75, 57, 75, 80, 4);
+        Card braviary = new Card("Braviary", "https://cdn.donmai.us/original/b8/d4/b8d4ffaefa304e35a50724d0de1f7dac.jpg", flying, 100, 123, 75, 57, 75, 80, 4);
         cardRepository.save(braviary);
 
 
@@ -658,6 +658,7 @@ public class DataLoader implements ApplicationRunner {
         cardRepository.save(cynthiaGarchomp);
 
         ownershipRepository.save(new Ownership(cynthia, glaceon, true));
+        ownershipRepository.save(new Ownership(cynthia, braviary, true));
         ownershipRepository.save(new Ownership(cynthia, eelektross, true));
         ownershipRepository.save(new Ownership(cynthia, porygonZ, true));
         ownershipRepository.save(new Ownership(cynthia, cynthiaGarchomp, true));
@@ -669,6 +670,7 @@ public class DataLoader implements ApplicationRunner {
         ownershipRepository.save(new Ownership(ash, butterfree, true));
         ownershipRepository.save(new Ownership(ash, dragonite, true));
         ownershipRepository.save(new Ownership(ash, staraptor, true));
+        ownershipRepository.save(new Ownership(ash, heracross, true));
 
     }
 
