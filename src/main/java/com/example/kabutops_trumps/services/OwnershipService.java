@@ -47,10 +47,27 @@ public class OwnershipService {
 
 
     public Ownership addOwnership(long accountId, long cardId, boolean inDeck) {
-        Ownership ownership = new Ownership(accountRepository.findById(accountId).get(), cardRepository.findById(cardId).get(), inDeck);
+        Account account = accountRepository.findById(accountId).get();
+        Card card = cardRepository.findById(cardId).get();
+        List<Ownership> ownershipsInAccount = ownershipRepository.findByAccountAndCard(account, card);
+        if(ownershipsInAccount.isEmpty()){
+            Ownership ownership = new Ownership(accountRepository.findById(accountId).get(), cardRepository.findById(cardId).get(), inDeck);
+            ownershipRepository.save(ownership);
+            return ownership;
+        }
+        else{
+            return ownershipsInAccount.get(0);
+        }
+    }
 
-        ownershipRepository.save(ownership);
-        return ownership;
+    public void rewardWinner(Long winnerId, Long loserId){
+        //get losers deck
+        //get card that winner doesnt have
+        //pick 2 random cards at most
+        //create ownership for winner but not in deck
+
+        //idea of returning list of cards won that game to show on frontend
+        //congrats u won : display cards or nothing?
     }
 
     public Ownership updateOwnership(long id, boolean inDeck) {
