@@ -43,7 +43,7 @@ public class Account {
     private List<Ownership> ownerships;
 
     @Column(name = "spriteNumber")
-    private int spriteNumber;
+    private String spriteNumber;
 
     @Column(name = "trainerTitle")
     private String trainerTitle;
@@ -64,7 +64,19 @@ public class Account {
         this.gamesPlayed = 0;
         this.wins = 0;
         this.ownerships = new ArrayList<>();
-        this.spriteNumber = 0;
+        this.spriteNumber = "";
+        this.trainerTitle = trainerTitle;
+        //this.deck = new ArrayList<Card>();
+        this.isComputer = isComputer;
+    }
+
+    public Account(String username, String password, String trainerTitle, boolean isComputer, String spriteNumber ) {
+        this.username = username;
+        this.password = password;
+        this.gamesPlayed = 0;
+        this.wins = 0;
+        this.ownerships = new ArrayList<>();
+        this.spriteNumber = spriteNumber;
         this.trainerTitle = trainerTitle;
         //this.deck = new ArrayList<Card>();
         this.isComputer = isComputer;
@@ -123,11 +135,11 @@ public class Account {
         this.ownerships = ownerships;
     }
 
-    public int getSpriteNumber() {
+    public String getSpriteNumber() {
         return spriteNumber;
     }
 
-    public void setSpriteNumber(int spriteNumber) {
+    public void setSpriteNumber(String spriteNumber) {
         this.spriteNumber = spriteNumber;
     }
 

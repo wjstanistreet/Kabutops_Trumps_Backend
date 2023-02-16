@@ -184,7 +184,7 @@ public class DataLoader implements ApplicationRunner {
         cardRepository.save(kabutops);
 
         // Brock
-        Account brock = new Account("Brock", "fryingToDryingPan", "Leader", true);
+        Account brock = new Account("Brock", "fryingToDryingPan", "Leader", true, "https://archives.bulbagarden.net/media/upload/1/1c/Spr_B2W2_Brock.png");
         accountRepository.save(brock);
 
         ownershipRepository.save(new Ownership(brock, steelix, true));
@@ -219,7 +219,7 @@ public class DataLoader implements ApplicationRunner {
         cardRepository.save(magnezone);
 
         // Blue
-        Account blue = new Account("Blue","smellYaLater", "Champion", true);
+        Account blue = new Account("Blue","smellYaLater", "Champion", true, "https://archives.bulbagarden.net/media/upload/f/f4/Spr_B2W2_Blue.png");
         accountRepository.save(blue);
 
         ownershipRepository.save(new Ownership(blue, blastoise, true));
@@ -269,7 +269,7 @@ public class DataLoader implements ApplicationRunner {
         cardRepository.save(moltres);
 
         // Red
-        Account red = new Account("Red", ".....", "Champion", true);
+        Account red = new Account("Red", ".....", "Champion", true, "https://archives.bulbagarden.net/media/upload/9/9a/Spr_B2W2_Red.png");
         accountRepository.save(red);
 
         ownershipRepository.save(new Ownership(red, megaCharizardX, true));
@@ -301,7 +301,7 @@ public class DataLoader implements ApplicationRunner {
 
 
         // Cynthia
-        Account cynthia = new Account("Cynthia", "IChooseYouGible", "Champion", true);
+        Account cynthia = new Account("Cynthia", "IChooseYouGible", "Champion", true, "https://archives.bulbagarden.net/media/upload/8/83/Spr_B2W2_Cynthia.png");
         accountRepository.save(cynthia);
 
         Ownership cynthiaLucario = new Ownership(cynthia, lucario, true);
@@ -329,7 +329,7 @@ public class DataLoader implements ApplicationRunner {
         cardRepository.save(megaLucario);
 
         // Ash
-        Account ash = new Account("Ash","ichooseyouPikachu", "Trainer", true);
+        Account ash = new Account("Ash","ichooseyouPikachu", "Trainer", true, "https://forums.p-insurgence.com/uploads/default/original/3X/9/8/98b4473d564e96176be7296d1263692e099b3f37.png");
         accountRepository.save(ash);
 
         Ownership ashPikachu = new Ownership(ash, pikachu, false);
@@ -369,7 +369,7 @@ public class DataLoader implements ApplicationRunner {
 
 
         // Steven
-        Account steven = new Account("Steven", "loveMeSomeStones", "Champion", true);
+        Account steven = new Account("Steven", "loveMeSomeStones", "Champion", true, "https://archives.bulbagarden.net/media/upload/4/42/Spr_B2W2_Steven.png");
         accountRepository.save(steven);
 
         ownershipRepository.save(new Ownership(steven, steelix, true));
@@ -385,7 +385,7 @@ public class DataLoader implements ApplicationRunner {
         ownershipRepository.save(new Ownership(steven, megaMetagross, true));
 
         // ------------ N's Pokemon ------------
-        Account N = new Account("N", "aNaturalHarmoniaGropius", "Team Plasma King", true);
+        Account N = new Account("N", "aNaturalHarmoniaGropius", "Team Plasma King", true, "https://archives.bulbagarden.net/media/upload/2/2c/Spr_B2W2_N.png");
         accountRepository.save(N);
 
         Card reshiram = new Card("Reshiram", "https://pm1.narvii.com/6630/a7afc700d7f84625b02e7495ba34d132d0293e16_hq.jpg", dragon, 100, 120, 100, 150, 120, 90, 6);
@@ -427,7 +427,7 @@ public class DataLoader implements ApplicationRunner {
 
 
 
-          Account leon = new Account("Leon", "championOfGalar", "Wyndon Stadium", true);
+          Account leon = new Account("Leon", "championOfGalar", "Wyndon Stadium", true, "https://www.pokepedia.fr/images/thumb/7/7b/Tarak-EB.png/1200px-Tarak-EB.png");
         accountRepository.save(leon);
 
 
@@ -474,7 +474,7 @@ public class DataLoader implements ApplicationRunner {
         ownershipRepository.save(new Ownership(leon, charizard, true));
 
         // Eesaa's Pokemon
-        Account eesaa = new Account("Eesaa", "", "Pokemon Master (?)", false);
+        Account eesaa = new Account("Eesaa", "", "Pokemon Master (?)", false, "https://archives.bulbagarden.net/media/upload/c/cd/Spr_B2W2_Nate.png");
         accountRepository.save(eesaa);
 
         Card gengar = new Card("Gengar", "https://pbs.twimg.com/media/EHvW_w0XYAAD7EG.jpg:large", ghost, 60, 65, 60, 130, 75, 110, 4);
@@ -509,7 +509,7 @@ public class DataLoader implements ApplicationRunner {
         ownershipRepository.save(new Ownership(eesaa, lunala, true));
 
         // Will's Pokemon
-        Account will = new Account("Will", "", "Pokemon Breeder", false);
+        Account will = new Account("Will", "", "Pokemon Breeder", false, "https://archives.bulbagarden.net/media/upload/8/8d/Spr_B2W2_Pok%C3%A9mon_Breeder_M.png");
         accountRepository.save(will);
 
         Card vaporeon = new Card("Vaporeon", "https://i.pinimg.com/564x/f7/35/e1/f735e17c0402769543d7c1eaf27fa72b.jpg", water, 130, 65, 60, 110, 95, 65, 4);
@@ -542,7 +542,7 @@ public class DataLoader implements ApplicationRunner {
         ownershipRepository.save(new Ownership(will, rayquaza, true));
 
         // Bav's Pokemon
-        Account bav = new Account("Bav", "", "Veteran", false);
+        Account bav = new Account("Bav", "", "Veteran", false, "https://archives.bulbagarden.net/media/upload/7/70/Spr_B2W2_Hugh.png");
         accountRepository.save(bav);
 
         Card scizor = new Card("Scizor", "https://cdn.donmai.us/original/57/c8/57c82e4b88edf513efbcf55b9de9300c.jpg", bug, 70, 130, 100, 55, 80, 65, 4 );
@@ -580,7 +580,7 @@ public class DataLoader implements ApplicationRunner {
 
 
         // Shawn
-        Account shawn = new Account("Shawn", "password", "Leader", false);
+        Account shawn = new Account("Shawn", "password", "Leader", false, "https://archives.bulbagarden.net/media/upload/a/a0/Spr_B2W2_Hilbert.png");
         accountRepository.save(shawn);
 
         Card serperior = new Card("Serperior", "https://jutsume.com/images/2022/05/07/pokemon-serperior-wallpaper.jpg", grass, 75, 75, 95, 75, 95, 113, 4);
@@ -618,7 +618,7 @@ public class DataLoader implements ApplicationRunner {
         ownershipRepository.save(new Ownership(shawn, zygarde, true));
 
         //Losh
-        Account losh = new Account("Losh", "", "Pokemon Connoisseur", false);
+        Account losh = new Account("Losh", "", "Pokemon Connoisseur", false, "https://archives.bulbagarden.net/media/upload/d/de/Spr_B2W2_Marshal.png");
         accountRepository.save(losh);
 
         Card hooh = new Card("Ho-oh", "https://i.pinimg.com/originals/df/e7/e0/dfe7e004027fbf880e39836bf221f4f2.jpg", fire, 106, 130, 90, 110, 154, 90, 6);
