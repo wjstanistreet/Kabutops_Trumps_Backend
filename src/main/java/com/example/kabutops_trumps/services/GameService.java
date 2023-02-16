@@ -8,8 +8,10 @@ import com.example.kabutops_trumps.repositories.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.IntStream;
 
 import static java.lang.Double.compare;
+import static java.lang.Double.sum;
 
 @Service
 public class GameService {
@@ -24,11 +26,16 @@ public class GameService {
     TypeRepository typeRepository;
 
     @Autowired
+    CardRepository cardRepository;
+
+    @Autowired
     OwnershipService ownershipService;
 
     public List<Game> getAllGames() {
         return gameRepository.findAll();
     }
+
+    private int finalRound;
 
     //Type Multiplier - Eesaa Sheikh §§§§§§§§§§§§§§§§§§§§§§§§§§
     //§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
@@ -80,7 +87,12 @@ public class GameService {
         List<Account> players = new ArrayList<>();
         players.add(accountA);
         players.add(accountB);
-        System.out.println(players);
+
+        finalRound = cardRepository.findByOwnershipsAccountAndOwnershipsInDeckTrue(accountA).size();
+//                accountA.getOwnerships().stream().filter(ownership -> ownership.isInDeck()).mapToInt(trueOwnership -> 1).sum();
+
+
+
         Game game = new Game(players);
         game.setPlayers(players);
         gameRepository.save(game);
@@ -95,8 +107,6 @@ public class GameService {
     }
 
     public Game processGame(Long id, int statA, int statB, Long typeAId, Long typeBId) {
-
-        int finalRound= 7;
         Type typeA = typeRepository.findById(typeAId).get();
         Type typeB = typeRepository.findById(typeBId).get();
         Game game = gameRepository.findById(id).get();

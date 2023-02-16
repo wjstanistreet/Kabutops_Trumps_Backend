@@ -88,34 +88,34 @@ public class DataLoader implements ApplicationRunner {
         Card blastoise = new Card("Blastoise", "https://e1.pxfuel.com/desktop-wallpaper/780/410/desktop-wallpaper-%E3%83%86%E3%83%83%E3%82%B7%E3%83%BC-on-twitter-pokemon-blastoise.jpg", water, 79, 83, 100, 85, 105, 78, 4);
         cardRepository.save(blastoise);
 
-        Card butterfree = new Card("Butterfree", "https://i.kym-cdn.com/photos/images/original/001/029/820/6bf.png", bug, 60, 45, 50, 90, 80, 70, 1);
+        Card butterfree = new Card("Butterfree", "https://i.kym-cdn.com/photos/images/original/001/029/820/6bf.png", bug, 60, 45, 50, 90, 80, 70, 3);
         cardRepository.save(butterfree);
 
-        Card beedrill = new Card("Beedrill", "https://cdn.donmai.us/original/65/63/65636100d5515e5df8d092b485332e24.jpg", bug, 65, 90, 40, 45, 80, 75, 1);
+        Card beedrill = new Card("Beedrill", "https://cdn.donmai.us/original/65/63/65636100d5515e5df8d092b485332e24.jpg", bug, 65, 90, 40, 45, 80, 75, 3);
         cardRepository.save(beedrill);
 
-        Card pidgeot = new Card("Pidgeot", "https://cdna.artstation.com/p/assets/images/images/028/931/102/large/victor-lin-victor76520-pidgeot-pokemon-1-2a3ad3c5-b4jq.jpg?1595951463", flying, 83, 80, 75, 70, 70, 101, 2);
+        Card pidgeot = new Card("Pidgeot", "https://cdna.artstation.com/p/assets/images/images/028/931/102/large/victor-lin-victor76520-pidgeot-pokemon-1-2a3ad3c5-b4jq.jpg?1595951463", flying, 83, 80, 75, 70, 70, 101, 4);
         cardRepository.save(pidgeot);
 
-        Card fearow = new Card("Fearow", "https://cdn.donmai.us/original/fa/d4/fad4272d309efae61a2b4883d6dc8707.png", flying, 65, 90, 65, 61, 61, 100, 1);
+        Card fearow = new Card("Fearow", "https://cdn.donmai.us/original/fa/d4/fad4272d309efae61a2b4883d6dc8707.png", flying, 65, 90, 65, 61, 61, 100, 3);
         cardRepository.save(fearow);
 
-        Card pikachu = new Card("Pikachu", "https://wallpaperaccess.com/full/20999.jpg", electric, 45, 80, 50, 75, 60, 120, 2);
+        Card pikachu = new Card("Pikachu", "https://wallpaperaccess.com/full/20999.jpg", electric, 45, 80, 50, 75, 60, 120, 3);
         cardRepository.save(pikachu);
 
         Card redsPikachu = new Card("Red's Pikachu", "https://rare-gallery.com/uploads/posts/329910-Anime-Pokemon-Red-Pikachu-Mega-Charizard-X-4K-iphone-wallpaper.jpg", electric, 65, 160, 80, 125, 90, 160, 6);
         cardRepository.save(redsPikachu);
 
-        Card raichu = new Card("Raichu", "https://wallpapercave.com/wp/wp3684826.png", electric, 60, 90, 55, 90, 80, 110, 3);
+        Card raichu = new Card("Raichu", "https://wallpapercave.com/wp/wp3684826.png", electric, 60, 90, 55, 90, 80, 110, 4);
         cardRepository.save(raichu);
 
-        Card sandslash = new Card("Sandslash", "https://preview.redd.it/83gb9vd053951.jpg?width=640&crop=smart&auto=webp&s=d35a1a27b7c87e0fc3db195c5df6fabc5ff8ca6f", ground, 75, 100, 110, 45, 55, 65, 2);
+        Card sandslash = new Card("Sandslash", "https://preview.redd.it/83gb9vd053951.jpg?width=640&crop=smart&auto=webp&s=d35a1a27b7c87e0fc3db195c5df6fabc5ff8ca6f", ground, 75, 100, 110, 45, 55, 65, 3);
         cardRepository.save(sandslash);
 
         Card alolanSandslash = new Card("Alolan Sandslash", "https://wallpapercave.com/uwp/uwp844564.jpeg", ice, 75, 100, 120, 25, 65, 65, 3);
         cardRepository.save(alolanSandslash);
 
-        Card nidoking = new Card("Nidoking", "https://i.kym-cdn.com/photos/images/original/001/968/245/d77", poison, 81, 102, 77, 85, 75, 85, 2);
+        Card nidoking = new Card("Nidoking", "https://i.kym-cdn.com/photos/images/original/001/968/245/d77", poison, 81, 102, 77, 85, 75, 85, 4);
         cardRepository.save(nidoking);
 
         Card ninetales = new Card("Ninetales", "https://cdn.wallpapersafari.com/27/59/RqUHMc.jpg", fire, 73, 76, 75, 81, 100, 100, 4);
@@ -124,37 +124,37 @@ public class DataLoader implements ApplicationRunner {
         Card alolanNinetales = new Card("Alolan Ninetales", "https://scontent-lhr8-1.xx.fbcdn.net/v/t1.6435-9/107093938_3874921945867749_5064761047748729637_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=973b4a&_nc_ohc=ZGWpSkBe8I0AX_MbMaK&_nc_ht=scontent-lhr8-1.xx&oh=00_AfB-SrCC-lcsHoLJ2wU4pe5wKQeS6MAfLh2HYhSNBPKqgQ&oe=641057F6", ice, 73, 67, 75, 81, 100, 109, 4);
         cardRepository.save(alolanNinetales);
 
-        Card parasect = new Card("Parasect", "https://cdn.inprnt.com/thumbs/31/4d/314deb87e2798e0b5debc607c8190ddc.jpg", bug, 60, 95, 80, 60, 80, 30, 1);
+        Card parasect = new Card("Parasect", "https://cdn.inprnt.com/thumbs/31/4d/314deb87e2798e0b5debc607c8190ddc.jpg", bug, 60, 95, 80, 60, 80, 30, 3);
         cardRepository.save(parasect);
 
-        Card dugtrio = new Card("Dugtrio", "https://www.smogon.com/articles/images/ou-spotlight-dugtrio.png", ground, 35, 100, 50, 50, 70, 120, 1);
+        Card dugtrio = new Card("Dugtrio", "https://www.smogon.com/articles/images/ou-spotlight-dugtrio.png", ground, 35, 100, 50, 50, 70, 120, 3);
         cardRepository.save(dugtrio);
 
-        Card meowth = new Card("Meowth", "https://cdn.donmai.us/sample/15/b5/__meowth_pokemon_drawn_by_spareribs__sample-15b5da7bc4b083b866f896f381ed7bea.jpg", normal, 40, 45, 35, 40, 40, 90, 1);
+        Card meowth = new Card("Meowth", "https://cdn.donmai.us/sample/15/b5/__meowth_pokemon_drawn_by_spareribs__sample-15b5da7bc4b083b866f896f381ed7bea.jpg", normal, 40, 45, 35, 40, 40, 90, 2);
         cardRepository.save(meowth);
 
-        Card persian = new Card("Persian", "https://i.pinimg.com/736x/b9/90/a8/b990a800babf67d64fd5230224cba2a0--pay-day-persian.jpg", normal, 65, 70, 60, 65, 65, 115, 1);
+        Card persian = new Card("Persian", "https://i.pinimg.com/736x/b9/90/a8/b990a800babf67d64fd5230224cba2a0--pay-day-persian.jpg", normal, 65, 70, 60, 65, 65, 115, 3);
         cardRepository.save(persian);
 
-        Card golduck = new Card("Golduck", "https://preview.redd.it/gjekkise01061.jpg?auto=webp&s=6a34393f8c9d9abf50aea68ce9a5f0416c618030", water, 80, 82, 78, 95, 80, 85, 2);
+        Card golduck = new Card("Golduck", "https://preview.redd.it/gjekkise01061.jpg?auto=webp&s=6a34393f8c9d9abf50aea68ce9a5f0416c618030", water, 80, 82, 78, 95, 80, 85, 4);
         cardRepository.save(golduck);
 
-        Card primeape = new Card("Primeape", "https://i.pinimg.com/originals/0d/b4/6f/0db46fc58a41f74cd34ee7605a19390d.jpg", fighting, 65, 105, 60, 60, 70, 95, 1);
+        Card primeape = new Card("Primeape", "https://i.pinimg.com/originals/0d/b4/6f/0db46fc58a41f74cd34ee7605a19390d.jpg", fighting, 65, 105, 60, 60, 70, 95, 3);
         cardRepository.save(primeape);
 
-        Card annihilape = new Card("Annihilape", "https://64.media.tumblr.com/a99d1f79e7b0e3e436d3af0da0765e3b/78affbd67926385e-2e/s1280x1920/e04321bc05ed24cd8de2c5269adf843ace144362.jpg", ghost, 110, 115, 80, 50, 90, 90, 3);
+        Card annihilape = new Card("Annihilape", "https://64.media.tumblr.com/a99d1f79e7b0e3e436d3af0da0765e3b/78affbd67926385e-2e/s1280x1920/e04321bc05ed24cd8de2c5269adf843ace144362.jpg", ghost, 110, 115, 80, 50, 90, 90, 4);
         cardRepository.save(annihilape);
 
-        Card arcanine = new Card("Arcanine", "https://images5.alphacoders.com/497/497664.png", fire, 90, 110, 80, 100, 80, 95, 3);
+        Card arcanine = new Card("Arcanine", "https://images5.alphacoders.com/497/497664.png", fire, 90, 110, 80, 100, 80, 95, 5);
         cardRepository.save(arcanine);
 
-        Card poliwrath = new Card("Poliwrath", "https://pbs.twimg.com/media/DsTvmtwVYAAulOJ.jpg", water, 90, 95, 95, 70, 90, 70, 2);
+        Card poliwrath = new Card("Poliwrath", "https://pbs.twimg.com/media/DsTvmtwVYAAulOJ.jpg", water, 90, 95, 95, 70, 90, 70, 4);
         cardRepository.save(poliwrath);
 
-        Card alakazam = new Card("Alakazam", "https://cdn.donmai.us/original/55/7c/557c420e22e33b70ce796c96dd0c2382.png", psychic, 55, 50, 45, 135, 95, 120, 2);
+        Card alakazam = new Card("Alakazam", "https://cdn.donmai.us/original/55/7c/557c420e22e33b70ce796c96dd0c2382.png", psychic, 55, 50, 45, 135, 95, 120, 4);
         cardRepository.save(alakazam);
 
-        Card megaAlakazam = new Card("Mega Alakazam", "https://pbs.twimg.com/media/ECbvMm-XkAA3gdp.jpg:large", psychic, 55, 50, 65, 175, 105, 150, 4);
+        Card megaAlakazam = new Card("Mega Alakazam", "https://pbs.twimg.com/media/ECbvMm-XkAA3gdp.jpg:large", psychic, 55, 50, 65, 175, 105, 150, 5);
         cardRepository.save(megaAlakazam);
 
         //Add Pokemon based on trainers
@@ -166,21 +166,21 @@ public class DataLoader implements ApplicationRunner {
         cardRepository.save(croagunk);
         Card sudowoodo = new Card("Sudowoodo", "https://cdn.discordapp.com/attachments/1072211977482535013/1074360470162653274/the_woods_doesn_t_let_you_see_the_sudowoodo_by_edonovaillustrator_dehmups-fullview.png", rock, 70, 100, 115, 30, 65,30, 3);
         cardRepository.save(sudowoodo);
-        Card crobat = new Card("Crobat", "https://64.media.tumblr.com/75f5ac2dad6893e30f05c63c54c03b22/tumblr_nebgscyLoR1r1hsklo1_1280.jpg", poison,  85, 90, 80, 70, 80, 130, 2);
+        Card crobat = new Card("Crobat", "https://64.media.tumblr.com/75f5ac2dad6893e30f05c63c54c03b22/tumblr_nebgscyLoR1r1hsklo1_1280.jpg", poison,  85, 90, 80, 70, 80, 130, 4);
         cardRepository.save(crobat);
-        Card geodude = new Card ("Geodude", "https://pm1.narvii.com/6568/e84d2668884576df48cd72a627ae7f7d40c698f1_00.jpg",rock, 40, 80,100,30,30,20,1);
+        Card geodude = new Card ("Geodude", "https://pm1.narvii.com/6568/e84d2668884576df48cd72a627ae7f7d40c698f1_00.jpg",rock, 40, 80,100,30,30,20,2);
         cardRepository.save(geodude);
         Card marshtomp = new Card ("Marshtomp", "https://i.pinimg.com/564x/b1/5c/08/b15c0817328a1697a3ca42c2f323b157.jpg", ground, 70, 85, 70, 60, 70 , 50, 3);
         cardRepository.save(marshtomp);
-        Card ludicolo = new Card("Ludicolo", "https://i.pinimg.com/originals/d2/d5/17/d2d5173fa29b1fb81cffebce7ecceaee.png", water, 80, 70, 70, 90, 100, 70, 3);
+        Card ludicolo = new Card("Ludicolo", "https://i.pinimg.com/originals/d2/d5/17/d2d5173fa29b1fb81cffebce7ecceaee.png", water, 80, 70, 70, 90, 100, 70, 4);
         cardRepository.save(ludicolo);
         Card blissey = new Card("Blissey", "https://pbs.twimg.com/media/FnHtBQqXoAAPyE6?format=jpg&name=medium", normal, 255, 10, 10, 75, 135, 55, 4);
         cardRepository.save(blissey);
-        Card forretress = new Card("Forretress", "https://cdn.wallpapersafari.com/90/33/neb0Ro.jpg", bug, 75, 90, 140, 60, 60, 40, 2);
+        Card forretress = new Card("Forretress", "https://cdn.wallpapersafari.com/90/33/neb0Ro.jpg", bug, 75, 90, 140, 60, 60, 40, 4);
         cardRepository.save(forretress);
-        Card vulpix = new Card("Vulpix", "https://cdn.donmai.us/original/d3/55/d3554825bc8d5dd0b9c1c8f1fde55c47.png", fire, 38, 41 ,40, 50, 65, 65, 1);
+        Card vulpix = new Card("Vulpix", "https://cdn.donmai.us/original/d3/55/d3554825bc8d5dd0b9c1c8f1fde55c47.png", fire, 38, 41 ,40, 50, 65, 65, 2);
         cardRepository.save(vulpix);
-        Card kabutops = new Card("Kabutops", "https://cdn.donmai.us/original/f0/24/f02412f7644f79fe0183cc4c69a3edf6.jpg", rock, 60, 115, 105, 65, 70, 80, 2);
+        Card kabutops = new Card("Kabutops", "https://cdn.donmai.us/original/f0/24/f02412f7644f79fe0183cc4c69a3edf6.jpg", rock, 60, 115, 105, 65, 70, 80, 4);
         cardRepository.save(kabutops);
 
         // Brock
@@ -244,19 +244,19 @@ public class DataLoader implements ApplicationRunner {
         Card megaBlastoise = new Card("Mega Blastoise","https://wallpaper.dog/large/10911396.jpg",water,79, 103, 120, 135, 115, 78,5);
         cardRepository.save(megaBlastoise);
 
-        Card mewTwo = new Card("Mewtwo","https://external-preview.redd.it/yni5ckiWnLLgVx-bs--uiS2xajFOPpMGxBrefVV2sTk.jpg?auto=webp&s=11c00e88538210ac3760133ff37b292bf55d91f3",psychic,106, 110, 90, 154, 90, 130,5);
+        Card mewTwo = new Card("Mewtwo","https://external-preview.redd.it/yni5ckiWnLLgVx-bs--uiS2xajFOPpMGxBrefVV2sTk.jpg?auto=webp&s=11c00e88538210ac3760133ff37b292bf55d91f3",psychic,106, 110, 90, 154, 90, 130,6);
         cardRepository.save(mewTwo);
 
         Card megaVenusar = new Card("Mega Venusaur","\"https://assets.pokemon.com/assets//cms2/img/trading-card-game/_downloads/xy1/xy1-wallpaper-venusaur-1920x1200.jpg\"",psychic,80, 100, 123, 122, 120, 80,5);
         cardRepository.save(megaVenusar);
 
-        Card snorlax = new Card("Snorlax", "https://www.pngitem.com/pimgs/m/102-1023845_pic-pokemon-sun-and-moon-snorlax-hd-png.png", normal,160, 110, 65,65,110,30,5);
+        Card snorlax = new Card("Snorlax", "https://www.pngitem.com/pimgs/m/102-1023845_pic-pokemon-sun-and-moon-snorlax-hd-png.png", normal,160, 110, 65,65,110,30,4);
         cardRepository.save(snorlax);
 
-        Card lapras = new Card("Lapras","https://i.pinimg.com/736x/85/36/8e/85368e255b067f9b3495022cb2118b15.jpg", water,130,85,80,85,95,60,5);
+        Card lapras = new Card("Lapras","https://i.pinimg.com/736x/85/36/8e/85368e255b067f9b3495022cb2118b15.jpg", water,130,85,80,85,95,60,4);
         cardRepository.save(lapras);
 
-        Card espeon = new Card("Espeon","https://cdnb.artstation.com/p/assets/images/images/017/288/281/large/april-seymour-espeon-seyumei2.jpg?1555374729", psychic,65,65,60,130,95,110,5);
+        Card espeon = new Card("Espeon","https://cdnb.artstation.com/p/assets/images/images/017/288/281/large/april-seymour-espeon-seyumei2.jpg?1555374729", psychic,65,65,60,130,95,110,4);
         cardRepository.save(espeon);
 
         Card articuno = new Card("Articuno","https://wallpaperaccess.com/full/1668732.jpg",ice,90,85,100,95,125,85,5);
@@ -299,18 +299,17 @@ public class DataLoader implements ApplicationRunner {
         cardRepository.save(roserade);
         cardRepository.save(togekiss);
 
+
         // Cynthia
         Account cynthia = new Account("Cynthia", "IChooseYouGible", "Champion", true);
         accountRepository.save(cynthia);
 
-        Ownership cynthiaGarchomp = new Ownership(cynthia, garchomp, true);
         Ownership cynthiaLucario = new Ownership(cynthia, lucario, true);
         Ownership cynthiaRoserade = new Ownership(cynthia, roserade, true);
         Ownership cynthiaSpiritomb = new Ownership(cynthia, spiritomb, true);
         Ownership cynthiaMilotic = new Ownership(cynthia, milotic, true);
         Ownership cynthiaTogekiss = new Ownership(cynthia, togekiss, true);
 
-        ownershipRepository.save(cynthiaGarchomp);
         ownershipRepository.save(cynthiaLucario);
         ownershipRepository.save(cynthiaRoserade);
         ownershipRepository.save(cynthiaSpiritomb);
@@ -347,25 +346,25 @@ public class DataLoader implements ApplicationRunner {
         ownershipRepository.save(ashMegaLucario);
 
         // ------------ Steven's Pokemon ------------
-        Card skarmory = new Card("Skarmory", "https://cdn.donmai.us/original/fb/26/fb2656c1584bd31bb854e8f3b1a183fd.jpg", steel, 65, 80, 140, 40, 70, 70, 3);
+        Card skarmory = new Card("Skarmory", "https://cdn.donmai.us/original/fb/26/fb2656c1584bd31bb854e8f3b1a183fd.jpg", steel, 65, 80, 140, 40, 70, 70, 4);
         cardRepository.save(skarmory);
-        Card claydol = new Card("Claydol", "https://cdn.donmai.us/original/ee/4d/ee4d92f3002bb0ec1febe829306d5c90.jpg", ground, 60, 70, 105, 70, 120, 75, 3);
+        Card claydol = new Card("Claydol", "https://cdn.donmai.us/original/ee/4d/ee4d92f3002bb0ec1febe829306d5c90.jpg", ground, 60, 70, 105, 70, 120, 75, 4);
         cardRepository.save(claydol);
         Card aggron = new Card("Aggron", "https://pbs.twimg.com/media/E8rTR5WUUAcaq7g?format=jpg&name=4096x4096", steel, 70, 110, 180, 60, 60, 50, 4);
         cardRepository.save(aggron);
-        Card cradily = new Card("Cradily", "https://i.pinimg.com/564x/05/13/f9/0513f921d923afc1d4828562c07faa94.jpg", rock, 86, 81, 97, 81, 107, 43, 3);
+        Card cradily = new Card("Cradily", "https://i.pinimg.com/564x/05/13/f9/0513f921d923afc1d4828562c07faa94.jpg", rock, 86, 81, 97, 81, 107, 43, 4);
         cardRepository.save(cradily);
-        Card armaldo = new Card("Armaldo", "https://i.pinimg.com/originals/8d/c1/97/8dc1971cc5b59fa1ed6936b148afcffd.png", rock, 75, 125, 100, 70, 80, 45, 3);
+        Card armaldo = new Card("Armaldo", "https://i.pinimg.com/originals/8d/c1/97/8dc1971cc5b59fa1ed6936b148afcffd.png", rock, 75, 125, 100, 70, 80, 45, 4);
         cardRepository.save(armaldo);
-        Card megaMetagross = new Card("Mega Metagross", "https://cdn.donmai.us/original/ec/5c/ec5c5ea24165aa0ef102f174005a4283.jpg", steel, 80, 145, 150, 105, 110, 110, 5);
+        Card megaMetagross = new Card("Mega Metagross", "https://cdn.donmai.us/original/ec/5c/ec5c5ea24165aa0ef102f174005a4283.jpg", steel, 80, 145, 150, 105, 110, 110, 7);
         cardRepository.save(megaMetagross);
         Card aerodactyl = new Card("Aerodactyl", "https://staticg.sportskeeda.com/editor/2023/01/dffa4-16746432089401-1920.jpg", rock, 80, 105, 65, 60, 75, 130, 4);
         cardRepository.save(aerodactyl);
-        Card excadrill = new Card("Excadrill", "https://cdn.donmai.us/original/de/bd/debd4d2a8633ebb72a93b1e9c39509b3.jpg", ground, 110, 135, 60, 50, 65, 88, 3);
+        Card excadrill = new Card("Excadrill", "https://cdn.donmai.us/original/de/bd/debd4d2a8633ebb72a93b1e9c39509b3.jpg", ground, 110, 135, 60, 50, 65, 88, 4);
         cardRepository.save(excadrill);
-        Card archeops = new Card("Archeops", "https://i.pinimg.com/originals/f4/2d/0a/f42d0a3bf3a6db220bbb82ae1be5cca2.jpg", flying, 75, 140, 65, 112, 65, 110, 5);
+        Card archeops = new Card("Archeops", "https://i.pinimg.com/originals/f4/2d/0a/f42d0a3bf3a6db220bbb82ae1be5cca2.jpg", rock, 75, 140, 65, 112, 65, 110, 5);
         cardRepository.save(archeops);
-        Card bastiodon = new Card("Bastiodon", "https://i.pinimg.com/736x/53/69/42/5369426751676c4e849957a9fbf42e03.jpg", rock, 60, 52, 168, 47, 138, 30, 3);
+        Card bastiodon = new Card("Bastiodon", "https://i.pinimg.com/736x/53/69/42/5369426751676c4e849957a9fbf42e03.jpg", rock, 60, 52, 168, 47, 138, 30, 4);
         cardRepository.save(bastiodon);
 
 
@@ -564,6 +563,7 @@ public class DataLoader implements ApplicationRunner {
         Card zekrom = new Card("Zekrom", "https://cdn.donmai.us/original/65/bd/65bdfdc631b0040b90b16c6006314f9f.png", dragon, 100, 150, 120, 120, 100, 90, 6);
         cardRepository.save(zekrom);
 
+
         ownershipRepository.save(new Ownership(bav, aggron, true));
         ownershipRepository.save(new Ownership(bav, heracross, true));
         ownershipRepository.save(new Ownership(bav, umbreon, true));
@@ -600,6 +600,8 @@ public class DataLoader implements ApplicationRunner {
         cardRepository.save(sableye);
         Card zygarde = new Card("Zygarde", "https://i.pinimg.com/736x/a3/aa/f3/a3aaf32f69125b55475ad4324b93f601.jpg", dragon, 108, 100, 121, 81, 95, 95, 5);
         cardRepository.save(zygarde);
+        Card braviary = new Card("Braviary", "https://cdn.donmai.us/original/b8/d4/b8d4ffaefa304e35a50724d0de1f7dac.jpg", flying, 100, 123, 75, 57, 75, 80, 4);
+        cardRepository.save(braviary);
 
 
         ownershipRepository.save(new Ownership(shawn, serperior, true));
@@ -608,7 +610,7 @@ public class DataLoader implements ApplicationRunner {
         ownershipRepository.save(new Ownership(shawn, krookodile, true));
         ownershipRepository.save(new Ownership(shawn, feraligatr, true));
         ownershipRepository.save(new Ownership(shawn, gardevoir, true));
-        ownershipRepository.save(new Ownership(shawn, machamp, true));
+        ownershipRepository.save(new Ownership(shawn, braviary, true));
         ownershipRepository.save(new Ownership(shawn, glaceon, true));
         ownershipRepository.save(new Ownership(shawn, sableye, true));
         ownershipRepository.save(new Ownership(shawn, zoroark, true));
@@ -642,6 +644,33 @@ public class DataLoader implements ApplicationRunner {
         ownershipRepository.save(new Ownership(losh, shinyGyarados, true));
         ownershipRepository.save(new Ownership(losh, lucario, true));
         ownershipRepository.save(new Ownership(losh, arcanine, true));
+
+        // Extra pokémon - Cynthia
+        Card gastrodon = new Card("Gastrodon", "https://wallpapers.com/images/hd/gastrodon-fanart-pbn4q3o1tkz88le1.jpg", ground, 111, 83, 68, 92, 82, 39, 4);
+        cardRepository.save(gastrodon);
+        Card eelektross = new Card("Eelektross", "https://pbs.twimg.com/media/FLqach8aUAAICO-.jpg", electric, 85, 115, 80, 105, 80, 50, 4);
+        cardRepository.save(eelektross);
+        Card porygonZ = new Card("Porygon-Z", "https://i.pinimg.com/originals/fe/cd/a2/fecda2075de2aca36e3698ed6400db10.png", normal, 85, 80, 70, 135, 75, 90, 4);
+        cardRepository.save(porygonZ);
+        Card arceus = new Card("Arceus", "https://i.redd.it/hd3mu638r4b61.jpg", normal, 120, 120, 120, 120, 120, 120, 7);
+        cardRepository.save(arceus);
+        Card cynthiaGarchomp = new Card("Cynthia's Garchomp", "https://i.kym-cdn.com/photos/images/original/001/904/021/984", dragon, 118, 140, 105, 90, 95, 112, 6);
+        cardRepository.save(cynthiaGarchomp);
+
+        ownershipRepository.save(new Ownership(cynthia, glaceon, true));
+        ownershipRepository.save(new Ownership(cynthia, braviary, true));
+        ownershipRepository.save(new Ownership(cynthia, eelektross, true));
+        ownershipRepository.save(new Ownership(cynthia, porygonZ, true));
+        ownershipRepository.save(new Ownership(cynthia, cynthiaGarchomp, true));
+        ownershipRepository.save(new Ownership(cynthia, arceus, true));
+
+        // Ash
+        ownershipRepository.save(new Ownership(ash, primeape, true));
+        ownershipRepository.save(new Ownership(ash, snorlax, true));
+        ownershipRepository.save(new Ownership(ash, butterfree, true));
+        ownershipRepository.save(new Ownership(ash, dragonite, true));
+        ownershipRepository.save(new Ownership(ash, staraptor, true));
+        ownershipRepository.save(new Ownership(ash, heracross, true));
 
     }
 
