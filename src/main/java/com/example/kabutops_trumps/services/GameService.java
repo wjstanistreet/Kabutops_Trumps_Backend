@@ -40,15 +40,6 @@ public class GameService {
     //Type Multiplier - Eesaa Sheikh §§§§§§§§§§§§§§§§§§§§§§§§§§
     //§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
 
-    public void rewardWinner(Long winnerId, Long loserId){
-        //get losers deck
-        //get card that winner doesnt have
-        //pick 2 random cards at most
-        //create ownership for winner but not in deck
-
-        //idea of returning list of cards won that game to show on frontend
-        //congrats u won : display cards or nothing?
-    }
 
     public ArrayList<Double> typeCompare(Type typeA, Type typeB, int statA, int statB) {
         double strAgainstMultiplier = 2.0;
