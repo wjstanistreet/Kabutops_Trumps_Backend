@@ -330,7 +330,7 @@ public class DataLoader implements ApplicationRunner {
         cardRepository.save(megaLucario);
 
         // Ash
-        Account ash = new Account("Ash","ichooseyouPikachu", "Trainer", false);
+        Account ash = new Account("Ash","ichooseyouPikachu", "Trainer", true);
         accountRepository.save(ash);
 
         Ownership ashPikachu = new Ownership(ash, pikachu, false);
