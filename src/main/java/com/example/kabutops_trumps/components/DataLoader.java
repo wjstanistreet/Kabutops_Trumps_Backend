@@ -247,7 +247,7 @@ public class DataLoader implements ApplicationRunner {
         Card mewTwo = new Card("Mewtwo","https://external-preview.redd.it/yni5ckiWnLLgVx-bs--uiS2xajFOPpMGxBrefVV2sTk.jpg?auto=webp&s=11c00e88538210ac3760133ff37b292bf55d91f3",psychic,106, 110, 90, 154, 90, 130,6);
         cardRepository.save(mewTwo);
 
-        Card megaVenusar = new Card("Mega Venusaur","\"https://assets.pokemon.com/assets//cms2/img/trading-card-game/_downloads/xy1/xy1-wallpaper-venusaur-1920x1200.jpg\"",psychic,80, 100, 123, 122, 120, 80,5);
+        Card megaVenusar = new Card("Mega Venusaur","\"https://assets.pokemon.com/assets//cms2/img/trading-card-game/_downloads/xy1/xy1-wallpaper-venusaur-1920x1200.jpg\"",grass,80, 100, 123, 122, 120, 80,5);
         cardRepository.save(megaVenusar);
 
         Card snorlax = new Card("Snorlax", "https://www.pngitem.com/pimgs/m/102-1023845_pic-pokemon-sun-and-moon-snorlax-hd-png.png", normal,160, 110, 65,65,110,30,4);
