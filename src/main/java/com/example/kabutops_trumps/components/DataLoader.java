@@ -388,7 +388,7 @@ public class DataLoader implements ApplicationRunner {
         Account N = new Account("N", "aNaturalHarmoniaGropius", "Team Plasma King", true);
         accountRepository.save(N);
 
-        Card reshiram = new Card("N's Reshiram", "https://cdn.donmai.us/original/fb/f2/fbf2f631e65d09e67c6e596196154485.jpg", dragon, 100, 120, 100, 150, 120, 90, 6);
+        Card reshiram = new Card("N's Reshiram", "https://pm1.narvii.com/6630/a7afc700d7f84625b02e7495ba34d132d0293e16_hq.jpg", dragon, 100, 120, 100, 150, 120, 90, 6);
         cardRepository.save(reshiram);
         Card carracosta = new Card("Carracosta", "https://i.pinimg.com/236x/1f/e2/a0/1fe2a0f02b1307ad0cc37234615125ad--shelters-pokemon-fan-art.jpg", water, 74, 108, 133, 83, 65, 32, 4);
         cardRepository.save(carracosta);
@@ -419,7 +419,8 @@ public class DataLoader implements ApplicationRunner {
         ownershipRepository.save(new Ownership(N, vanilluxe, true));
         ownershipRepository.save(new Ownership(N, klinklang, true));
         ownershipRepository.save(new Ownership(N, zoroark, true));
-        ownershipRepository.save(new Ownership(N, reshiram, true));
+
+
 
 
         //------------------- Leons Pokemon -------------------
@@ -574,7 +575,7 @@ public class DataLoader implements ApplicationRunner {
         ownershipRepository.save(new Ownership(bav, scizor, true));
         ownershipRepository.save(new Ownership(bav, metagross, true));
         ownershipRepository.save(new Ownership(bav, megaBlaziken, true));
-        ownershipRepository.save(new Ownership(bav, zekrom, true));
+        ownershipRepository.save(new Ownership(bav, reshiram, true));
 
 
 
@@ -671,6 +672,10 @@ public class DataLoader implements ApplicationRunner {
         ownershipRepository.save(new Ownership(ash, dragonite, true));
         ownershipRepository.save(new Ownership(ash, staraptor, true));
         ownershipRepository.save(new Ownership(ash, heracross, true));
+
+        //N
+        ownershipRepository.save(new Ownership(N, zekrom, true));
+
 
     }
 
