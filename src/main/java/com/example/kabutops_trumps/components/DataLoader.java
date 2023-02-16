@@ -388,7 +388,7 @@ public class DataLoader implements ApplicationRunner {
         Account N = new Account("N", "aNaturalHarmoniaGropius", "Team Plasma King", true);
         accountRepository.save(N);
 
-        Card reshiram = new Card("N's Reshiram", "https://pm1.narvii.com/6630/a7afc700d7f84625b02e7495ba34d132d0293e16_hq.jpg", dragon, 100, 120, 100, 150, 120, 90, 6);
+        Card reshiram = new Card("Reshiram", "https://pm1.narvii.com/6630/a7afc700d7f84625b02e7495ba34d132d0293e16_hq.jpg", dragon, 100, 120, 100, 150, 120, 90, 6);
         cardRepository.save(reshiram);
         Card carracosta = new Card("Carracosta", "https://i.pinimg.com/236x/1f/e2/a0/1fe2a0f02b1307ad0cc37234615125ad--shelters-pokemon-fan-art.jpg", water, 74, 108, 133, 83, 65, 32, 4);
         cardRepository.save(carracosta);
